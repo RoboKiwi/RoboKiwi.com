@@ -1,0 +1,31 @@
+{
+  "name": "robokiwi",
+  "version": "1.0.0",
+  "description": "RoboKiwi.com",
+  "main": "index.js",
+  "devDependencies": {
+    "@babel/core": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "cssnano": "^4.1.10",
+    "mini-css-extract-plugin": "^0.8.0",
+    "postcss": "^7.0.21",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "style-loader": "^1.0.0",
+    "tachyons": "^4.11.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:production": "webpack -p",
+    "build": "webpack --progress --colors --watch",
+    "start": "npm run build"
+  },
+  "keywords": [],
+  "author": "David Moore",
+  "license": "MIT"
+}

@@ -1,0 +1,126 @@
+{{ define "main" }}
+<div class="w-100 ph4 pb5 pb6-ns pt1 mt2 pt3-ns">
+
+  {{ $currentPage := . }}
+  <div class="flex">
+    <div class="dn db-l w-20">
+      <nav role="navigation">
+        <ul class="list pa0 nl2">
+          {{ range .FirstSection.Sections.ByWeight }}
+            <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+              <a href="{{ .URL }}" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2">{{ .Name }}</a>
+      
+              
+              <ul class="desktopmenu animated fadeIn list pl0 bg-light-gray">
+                {{- range .Sections }}
+                <li class="f6 fw4">
+                  <a href="{{.URL}}" class="db link hover-bg-gray hover-white pl3 pr2 pv2">
+                    {{ .Name }}
+                  </a>
+                </li>
+                {{- end}}
+              </ul>
+              
+            </li>
+          {{- end}}
+        </ul>
+      </nav>
+    </div>
+
+    <div class="w-100 w-80-l ph0 ph4-l">
+
+      <!-- partial "breadcrumbs.html" . -->
+
+      <article class="w-100 nested-copy-line-height nested-links nested-img">
+        <h1 class="primary-color-dark f2">
+          {{ with $.Data.Singular }}{{ . | humanize }}: {{ end }}{{ .Title }}
+        </h1>
+        <div class="{{ .Site.Params.copyClass }} mid-gray f5 f4-l">
+          {{ .Content }}
+        </div>
+      </article>
+
+      <div class="flex flex-wrap">
+        {{ $interior_classes := .Site.Params.flex_box_interior_classes }}
+        <section class="flex-ns flex-wrap justify-between w-100">
+          {{ range .Sections.ByWeight }}
+            <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight-{{ .Weight }}">
+              <div class="bg-white mb2 pa3 pa4-l gray">
+                {{ if eq .Section "news" }}
+                  <date class="f6 db" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                    {{ .Date.Format "January 2, 2006" }}
+                  </date>
+                {{ end }}
+            
+                <h1 class="near-black f3">
+                  <a href="{{ .URL }}" class="link primary-color dim">
+                  {{- if eq .Section "functions" -}}
+                    {{ .LinkTitle }}
+                  {{- else -}}
+                    {{ .Title }}
+                  {{- end -}}
+                  </a>
+                </h1>
+            
+                <div class="lh-copy links">
+                  {{ if .Params.description  }}
+                      {{ .Params.description | markdownify }}
+                    {{ else }}
+                      {{ .Summary  }}
+                  {{ end }}
+            
+                    <a href="{{ .RelPermalink }}" class="f6 mt2 db link primary-color dim">
+                      Read More &raquo;
+                    </a>          
+                </div>
+              </div>
+            </div>
+          {{ end }}
+        </section>
+      </div>
+
+      <section class="flex-ns flex-wrap justify-between w-100 w-80-nsTK v-top">
+        {{ range .Paginator.Pages }}
+        <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight-{{ .Weight }}">
+          <div class="bg-white mb2 pa3 pa4-l gray">
+            {{ if eq .Section "news" }}
+              <date class="f6 db" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                {{ .Date.Format "January 2, 2006" }}
+              </date>
+            {{ end }}
+        
+            <h1 class="near-black f3">
+              <a href="{{ .URL }}" class="link primary-color dim">
+              {{- if eq .Section "functions" -}}
+                {{ .LinkTitle }}
+              {{- else -}}
+                {{ .Title }}
+              {{- end -}}
+              </a>
+            </h1>
+        
+            <div class="lh-copy links">
+              {{ if .Params.description  }}
+                  {{ .Params.description | markdownify }}
+                {{ else }}
+                  {{ .Summary  }}
+              {{ end }}
+        
+                <a href="{{ .RelPermalink }}" class="f6 mt2 db link primary-color dim">
+                  Read More &raquo;
+                </a>          
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </section>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+{{ end }}

@@ -1,3 +1,31 @@
 baseURL = "https://robokiwi.com/"
 languageCode = "en-us"
 title = "RoboKiwi"
+
+pygmentsCodeFences = true
+pygmentsStyle="monokailight"
+
+[params]
+flex_box_interior_classes = "flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height"
+
+[[menu.global]]
+name = "Blog"
+weight = 1
+identifier = "blog"
+url = "/blog/"
+
+[[menu.global]]
+name = "Wiki"
+weight = 5
+identifier = "wiki"
+url = "/wiki/"
+
+# Anything with a weight > 100 gets an external icon
+
+[[menu.global]]
+name = "GitHub"
+weight = 200
+icon = true
+identifier = "github"
+post = "external"
+url = "https://github.com/davidmoore/"
