@@ -16,15 +16,15 @@ We’re switching our legacy C++ projects from Visual C++ 2010 to the Visual C++
 
 So that involves switching the Platform Target from v100:
 
-[<img title="image" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="image" src="http://www.sadrobot.co.nz/wp-content/uploads/2013/05/image_thumb.png" width="856" height="609" />](http://www.sadrobot.co.nz/wp-content/uploads/2013/05/image.png)
+[<img title="image" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="image" src="/wp-content/uploads/2013/05/image_thumb.png" width="856" height="609" />](/wp-content/uploads/2013/05/image.png)
 
 To v110_xp:
 
-[<img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="http://www.sadrobot.co.nz/wp-content/uploads/2013/05/image_thumb1.png" width="613" height="41" />](http://www.sadrobot.co.nz/wp-content/uploads/2013/05/image1.png)
+[<img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="/wp-content/uploads/2013/05/image_thumb1.png" width="613" height="41" />](/wp-content/uploads/2013/05/image1.png)
 
 Well upon compilation, I saw these errors for one particular project:
 
-[<img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="http://www.sadrobot.co.nz/wp-content/uploads/2013/05/image_thumb2.png" width="686" height="90" />](http://www.sadrobot.co.nz/wp-content/uploads/2013/05/image2.png)
+[<img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="/wp-content/uploads/2013/05/image_thumb2.png" width="686" height="90" />](/wp-content/uploads/2013/05/image2.png)
 
 The key error being **Error C2039: 'SetDefaultDllDirectories' : is not a member of '\`global namespace"** from line **638** in **atlcore.h**
 
@@ -55,6 +55,6 @@ So the fix is to include any existing pre-processor definitions (i.e. the Micros
 
 Otherwise, you can simply remove the PreprocessorDefinition element itself (if you have no defines of your own), or choose to inherit from the parent or project defaults from the project properties (which will essentially do the same thing):
 
-[<img title="image" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="image" src="http://www.sadrobot.co.nz/wp-content/uploads/2013/05/image_thumb3.png" width="697" height="233" />](http://www.sadrobot.co.nz/wp-content/uploads/2013/05/image3.png)
+[<img title="image" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="image" src="/wp-content/uploads/2013/05/image_thumb3.png" width="697" height="233" />](/wp-content/uploads/2013/05/image3.png)
 
 And now we recompile fine.

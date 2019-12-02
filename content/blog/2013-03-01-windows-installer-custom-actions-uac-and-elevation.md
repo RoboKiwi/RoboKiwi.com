@@ -47,7 +47,7 @@ The Type field is a field full of flags, and will show up as a decimal number e.
 
 If you open up Windows Calculator, switch to Programmer (View > Programmer or Alt+3), choose Decimal and enter the number, you can check the bit fields:
 
-[<img title="image" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="image" src="http://sadrobot.azurewebsites.net/wp-content/uploads/2013/03/image_thumb.png" width="244" height="225" />](http://sadrobot.azurewebsites.net/wp-content/uploads/2013/03/image.png)
+[<img title="image" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="image" src="/wp-content/uploads/2013/03/image_thumb.png" width="244" height="225" />](/wp-content/uploads/2013/03/image.png)
 
 The first bit is set to signify it as an In-Script Execution custom action (type 1).
 
@@ -57,7 +57,7 @@ The 12th bit (the one I’ve highlighted) is the one that turns off impersonatio
 
 Being the twelfth bit, that is a value of **2048**, so we can just add that to our value, giving us **3073**:
 
-[<img title="image" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="image" src="http://sadrobot.azurewebsites.net/wp-content/uploads/2013/03/image_thumb1.png" width="244" height="225" />](http://sadrobot.azurewebsites.net/wp-content/uploads/2013/03/image1.png)
+[<img title="image" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="image" src="/wp-content/uploads/2013/03/image_thumb1.png" width="244" height="225" />](/wp-content/uploads/2013/03/image1.png)
 
 You can see the No Impersonate bit is now flipped.
 

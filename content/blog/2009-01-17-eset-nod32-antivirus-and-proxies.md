@@ -29,7 +29,7 @@ I could see nothing in netstat, and I got to the point of shutting down all prog
 
 I loaded up <a title="TCPView" href="http://technet.microsoft.com/en-us/sysinternals/bb897437.aspx" target="_blank">TCPView</a> and watched it, and saw that an ekrn.exe was doing stuff when I tried to telnet to port 8080. � This is the ESET Service, part of <a title="ESET NOD32 Antivirus Home Page" href="http://www.eset.com/products/nod32.php" target="_blank">ESET NOD32 Antivirus</a>. I had already tried disabling NOD32 Antivirus while troubleshooting, but I went and inspected the options, and sure enough I saw this:
 
-<img class="size-full wp-image-71" title="ESET NOD32 Anti-Virus HTTP Options" src="http://www.sadrobot.co.nz/wp-content/uploads/2009/01/nod32.png" alt="ESET NOD32 Anti-Virus HTTP Options" width="729" height="527" />
+<img class="size-full wp-image-71" title="ESET NOD32 Anti-Virus HTTP Options" src="/wp-content/uploads/2009/01/nod32.png" alt="ESET NOD32 Anti-Virus HTTP Options" width="729" height="527" />
 
 To get the above options window, you need to open the main NOD32 window, click **Setup** from the left bar and click **Enter entire advanced setup tree&#8230;**
 

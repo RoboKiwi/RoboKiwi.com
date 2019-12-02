@@ -21,7 +21,7 @@ When you delete an item from TFS, it’s not actually permanently gone.
 
 You can view deleted items by going to **Tools** > **Options** > **Source Control** > **Visual Studio Team Foundation Server** and checking the **Show deleted items in the Source Control Explorer** option:
 
-[<img style="background-image: none; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" src="http://www.sadrobot.co.nz/wp-content/uploads/2011/08/image_thumb.png" border="0" alt="image" width="244" height="143" />](http://www.sadrobot.co.nz/wp-content/uploads/2011/08/image.png)
+[<img style="background-image: none; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border: 0px;" title="image" src="/wp-content/uploads/2011/08/image_thumb.png" border="0" alt="image" width="244" height="143" />](/wp-content/uploads/2011/08/image.png)
 
 You can then see folders and files that have been deleted, which allows you to right click on them to choose **Undelete** (or go to **File** > **Source Control** > **Undelete**).
 

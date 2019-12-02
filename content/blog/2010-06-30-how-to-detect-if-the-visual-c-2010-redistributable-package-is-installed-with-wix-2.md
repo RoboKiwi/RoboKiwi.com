@@ -41,7 +41,7 @@ Here's an example of using this in WiX, detecting the presence of the x86 versio
 
 When someone runs your installer and they don’t have this package installed, they will get something like this message box when the installer initializes:
 
-[<img style="display: inline; border: 0px;" title="image" src="http://www.sadrobot.co.nz/wp-content/uploads/2010/06/image_thumb.png" border="0" alt="image" width="244" height="115" />](http://www.sadrobot.co.nz/wp-content/uploads/2010/06/image.png)
+[<img style="display: inline; border: 0px;" title="image" src="/wp-content/uploads/2010/06/image_thumb.png" border="0" alt="image" width="244" height="115" />](/wp-content/uploads/2010/06/image.png)
 
 It’s a good idea to have a setup bootstrapper that automatically installs this package if it’s missing, but this WiX snippet is a good safe-guard for if someone directly runs your MSI.
 

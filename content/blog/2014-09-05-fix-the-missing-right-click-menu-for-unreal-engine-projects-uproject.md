@@ -17,11 +17,11 @@ aliases: /2014/09/05/fix-the-missing-right-click-menu-for-unreal-engine-projects
 
 When you right click on an Unreal Engine project file (.uproject), these is the kind of menu options you should see:
 
-<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="http://www.davidmoore.info/blog/wp-content/uploads/2014/09/image.png" alt="image" width="479" height="167" border="0" />
+<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2014/09/image.png" alt="image" width="479" height="167" border="0" />
 
 But what do you do if you only see this? :
 
-<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="http://www.davidmoore.info/blog/wp-content/uploads/2014/09/image1.png" alt="image" width="435" height="148" border="0" />
+<img style="background-image: none; padding-top: 0px; padding-left: 0px; display: inline; padding-right: 0px; border: 0px;" title="image" src="/wp-content/uploads/2014/09/image1.png" alt="image" width="435" height="148" border="0" />
 
 The right click context menu is set up via the Windows Registry.
 
@@ -34,7 +34,7 @@ I’ve created a Windows batch file instead which will:
 
 You need to make sure the batch file is run with administrator privileges, as it needs to write to HKLM.
 
-You can download the batch file (zipped up): [Unreal Project Menu Registration](http://www.davidmoore.info/blog/wp-content/uploads/2014/09/UnrealProjectMenuRegistration.zip).
+You can download the batch file (zipped up): [Unreal Project Menu Registration](/wp-content/uploads/2014/09/UnrealProjectMenuRegistration.zip).
 
 Here’s the source code:
 

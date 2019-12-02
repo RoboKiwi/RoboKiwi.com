@@ -37,7 +37,7 @@ If you then run msbuild /help, you should now see the documentation on the /debu
 
 Now you can pass the **/debug** option to MSBuild when running it. This will immediately break into the debugger, which will usually give you a prompt to select your JIT debugger:
 
-[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="image" src="http://www.sadrobot.co.nz/wp-content/uploads/2011/07/image_thumb1.png" border="0" alt="image" width="225" height="244" />](http://www.sadrobot.co.nz/wp-content/uploads/2011/07/image1.png)
+[<img style="background-image: none; padding-left: 0px; padding-right: 0px; display: inline; padding-top: 0px; border-width: 0px;" title="image" src="/wp-content/uploads/2011/07/image_thumb1.png" border="0" alt="image" width="225" height="244" />](/wp-content/uploads/2011/07/image1.png)
 
 The debug session will then start at the very top of the root MSBuild project file, and you can go from there.
 

@@ -16,7 +16,7 @@ Visual Studio 2010 and Team Foundation Server 2010 have been out for a while. Bu
 You can do so by updating the Team Foundation Build Service configuration to use the latest version of MSBuild that comes with the .NET Framework 4.0.
 
   1. Open up� **%Program Files%Microsoft Visual Studio 9.0Common7IDEPrivateAssembliestfsbuildservice.exe.config** in a text editor
-  2. Find the� **MSBuildPath** property, which will likely be empty, and enter the path to the .NET Framework 4.0 folder (C:WINDOWSMicrosoft.NETFrameworkv4.0.30319):<img title="tfsbuild" src="http://www.sadrobot.co.nz/wp-content/uploads/2010/06/tfsbuild.png" alt="" width="661" height="107" />
+  2. Find the� **MSBuildPath** property, which will likely be empty, and enter the path to the .NET Framework 4.0 folder (C:WINDOWSMicrosoft.NETFrameworkv4.0.30319):<img title="tfsbuild" src="/wp-content/uploads/2010/06/tfsbuild.png" alt="" width="661" height="107" />
   3. **Save** the file
   4. Restart the � **Visual Studio Team Foundation Build** service
 

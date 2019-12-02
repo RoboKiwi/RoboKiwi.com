@@ -162,7 +162,7 @@ Successfully added 'Microsoft.AspNet.WebApi.Client 5.2.2' to WinRTTest.
 
 So now we have our new references:
 
-![](http://www.davidmoore.info/blog/wp-content/uploads/2014/10/clip_image0084.png)
+![](/wp-content/uploads/2014/10/clip_image0084.png)
 
 ## The Code
 

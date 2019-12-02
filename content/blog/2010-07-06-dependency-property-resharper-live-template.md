@@ -14,7 +14,7 @@ url: /blog/2010/07/06/dependency-property-resharper-live-template/
 aliases: /2010/07/06/dependency-property-resharper-live-template/
 ---
 
-[Dependency Property ReSharper Live Template](http://www.sadrobot.co.nz/wp-content/uploads/2010/07/DependencyPropertyLiveTemplate.zip)
+[Dependency Property ReSharper Live Template](/wp-content/uploads/2010/07/DependencyPropertyLiveTemplate.zip)
 
 Don’t you love Dependency Properties?
 
@@ -26,24 +26,24 @@ I’ve set it up to use the dp keyword.
 
 Here it is in use. Typing dp first to pop up the template:
 
-[<img class="wlDisabledImage" style="margin: 0px; display: inline; border-width: 0px;" title="image" src="http://www.sadrobot.co.nz/wp-content/uploads/2010/07/image.png" border="0" alt="image" />](http://www.sadrobot.co.nz/wp-content/uploads/2010/07/image.png)
+[<img class="wlDisabledImage" style="margin: 0px; display: inline; border-width: 0px;" title="image" src="/wp-content/uploads/2010/07/image.png" border="0" alt="image" />](/wp-content/uploads/2010/07/image.png)
 
 Hitting **tab** or **enter** will run the template, with the name macro already selected:
 
-[<img class="wlDisabledImage" style="margin: 0px; display: inline; border-width: 0px;" title="image" src="http://www.sadrobot.co.nz/wp-content/uploads/2010/07/image1.png" border="0" alt="image" />](http://www.sadrobot.co.nz/wp-content/uploads/2010/07/image1.png)
+[<img class="wlDisabledImage" style="margin: 0px; display: inline; border-width: 0px;" title="image" src="/wp-content/uploads/2010/07/image1.png" border="0" alt="image" />](/wp-content/uploads/2010/07/image1.png)
 
 Type in the name of the property. This will set up the wrapper property with that name, and the dependency property’s name will be the name you chose, with “Property” added to the end.
 
 For example, I type in MyCaption as the property name:
 
-[<img class="wlDisabledImage" style="margin: 0px; display: inline; border-width: 0px;" title="image" src="http://www.sadrobot.co.nz/wp-content/uploads/2010/07/image2.png" border="0" alt="image" />](http://www.sadrobot.co.nz/wp-content/uploads/2010/07/image2.png)
+[<img class="wlDisabledImage" style="margin: 0px; display: inline; border-width: 0px;" title="image" src="/wp-content/uploads/2010/07/image2.png" border="0" alt="image" />](/wp-content/uploads/2010/07/image2.png)
 
 Hitting tab shifts me to the next macro, which is the **type** for the dependency property:
 
-[<img class="wlDisabledImage" style="display: inline; border-width: 0px;" title="image" src="http://www.sadrobot.co.nz/wp-content/uploads/2010/07/image3.png" border="0" alt="image" />](http://www.sadrobot.co.nz/wp-content/uploads/2010/07/image3.png)
+[<img class="wlDisabledImage" style="display: inline; border-width: 0px;" title="image" src="/wp-content/uploads/2010/07/image3.png" border="0" alt="image" />](/wp-content/uploads/2010/07/image3.png)
 
 My property will be of type **string**, so typing that in will bring up string in the suggestions. Hitting **tab** will select this; hitting **tab** again will confirm this as my type, and select the next and last macro, the owner type:
 
-[<img class="wlDisabledImage" style="margin: 0px; display: inline; border-width: 0px;" title="image" src="http://www.sadrobot.co.nz/wp-content/uploads/2010/07/image4.png" border="0" alt="image" />](http://www.sadrobot.co.nz/wp-content/uploads/2010/07/image4.png)
+[<img class="wlDisabledImage" style="margin: 0px; display: inline; border-width: 0px;" title="image" src="/wp-content/uploads/2010/07/image4.png" border="0" alt="image" />](/wp-content/uploads/2010/07/image4.png)
 
 This will automatically be set to the name of the containing type anyway, so you can normally leave this as is; hit **tab** one more time and you’re done.

@@ -32,7 +32,7 @@ Setx MsiBreak <strong>MyCustomActionName</p>
 <p></strong>`
   2. Run your installer
   3. At the point where your custom action is about to run, you should get this message box prompt: 
-    [<img class="alignnone size-full wp-image-294" title="Debugging Custom Actions" src="http://www.sadrobot.co.nz/wp-content/uploads/2010/06/debugging-custom-actions.png" alt="" width="478" height="169" />](http://www.sadrobot.co.nz/wp-content/uploads/2010/06/debugging-custom-actions.png)</li> 
+    [<img class="alignnone size-full wp-image-294" title="Debugging Custom Actions" src="/wp-content/uploads/2010/06/debugging-custom-actions.png" alt="" width="478" height="169" />](/wp-content/uploads/2010/06/debugging-custom-actions.png)</li> 
     
       * Now you can use Visual Studio or another debugger such as WinDBG to attach to the specified process.
       * Click OK on the message box

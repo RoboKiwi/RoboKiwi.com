@@ -23,7 +23,7 @@ In VB6, you can generate a Type Library (.tlb) file for an ActiveX component:
   3. Check **Remote Server Files**
   4. Click **OK** and build the project
 
-[<img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://www.sadrobot.co.nz/wp-content/uploads/2011/07/image_thumb.png" width="234" height="244" />](http://www.sadrobot.co.nz/wp-content/uploads/2011/07/image.png)
+[<img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="/wp-content/uploads/2011/07/image_thumb.png" width="234" height="244" />](/wp-content/uploads/2011/07/image.png)
 
 You should now see a **.tlb** and **.vbr** file next to your binary.
 

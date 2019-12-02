@@ -16,7 +16,7 @@ Unfortunately for VMWare, that can work against them rather than encourage me to
 
 I went to uninstall VMWare today but got this error:
 
-[<img title="image" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="image" src="http://www.sadrobot.co.nz/wp-content/uploads/2013/06/image_thumb.png" width="463" height="176" />](http://www.sadrobot.co.nz/wp-content/uploads/2013/06/image.png)
+[<img title="image" style="border-top: 0px; border-right: 0px; background-image: none; border-bottom: 0px; padding-top: 0px; padding-left: 0px; border-left: 0px; display: inline; padding-right: 0px" border="0" alt="image" src="/wp-content/uploads/2013/06/image_thumb.png" width="463" height="176" />](/wp-content/uploads/2013/06/image.png)
 
 Wow! Talk about pain in the ass.
 
