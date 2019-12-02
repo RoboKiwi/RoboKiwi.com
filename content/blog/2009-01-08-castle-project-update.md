@@ -7,7 +7,7 @@ guid: http://davidmoore.info/?p=64
 id: 64
 tags:
 - .net
-- c#
+- csharp
 - castle
 - Open Source
 - patch
