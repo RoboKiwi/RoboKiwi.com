@@ -9,7 +9,7 @@ guid: http://davidmoore.info/?p=76
 id: 76
 tags:
 - .net
-- c#
+- "c#"
 - crop
 - image
 - resize
