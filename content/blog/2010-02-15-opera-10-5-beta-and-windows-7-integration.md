@@ -16,7 +16,7 @@ url: /blog/2010/02/15/opera-10-5-beta-and-windows-7-integration/
 aliases: /2010/02/15/opera-10-5-beta-and-windows-7-integration/
 ---
 
-[Opera 10.5 Beta](http://www.opera.com/browser/next/) is out and it's very impressive, and looks pretty stunning due to its Windows 7 integration.
+[Opera 10.5 Beta](https://www.opera.com/browser/next/) is out and it's very impressive, and looks pretty stunning due to its Windows 7 integration.
 
 One thing I don't really like is how it shows all the tabs using Aero Peek when you click it in the Task Bar.
 

@@ -27,7 +27,7 @@ Perhaps the biggest trick is the simplest: if you **minimize Visual Studio**, it
 
 **Patch to SP1**
   
-Make sure <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=FBEE1648-7106-44A7-9649-6D9F6D58056E&displaylang=en" target="_blank">Visual Studio 2005 SP1</a> is installed, for the bug and performance fixes since release.
+Make sure <a href="https://www.microsoft.com/downloads/details.aspx?FamilyId=FBEE1648-7106-44A7-9649-6D9F6D58056E&displaylang=en" target="_blank">Visual Studio 2005 SP1</a> is installed, for the bug and performance fixes since release.
 
 **Turn off animation**
   

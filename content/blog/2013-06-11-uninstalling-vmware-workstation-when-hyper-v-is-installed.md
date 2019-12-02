@@ -22,6 +22,6 @@ Wow! Talk about pain in the ass.
 
 Fortunately a quick search later, Jussi Palo has a simple solution, altering the installer’s lua script to skip this check:
 
-<a title="Remove VMware Workstation or Player when Hyper-V is installed" href="http://blog.jussipalo.com/2012/06/remove-vmware-workstation-or-player.html" target="_blank">Remove VMware Workstation or Player when Hyper-V is installed</a>
+<a title="Remove VMware Workstation or Player when Hyper-V is installed" href="https://blog.jussipalo.com/2012/06/remove-vmware-workstation-or-player.html" target="_blank">Remove VMware Workstation or Player when Hyper-V is installed</a>
 
 And now I can uninstall.

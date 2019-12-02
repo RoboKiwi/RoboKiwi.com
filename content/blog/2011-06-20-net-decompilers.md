@@ -55,7 +55,7 @@ Red Gate backpedalled in April 2011 by saying that the final 6.8 version of Refl
   
   <tr>
     <td valign="top" width="126">
-      <a href="http://wiki.sharpdevelop.net/ilspy.ashx">ILSpy</a>
+      <a href="https://wiki.sharpdevelop.net/ilspy.ashx">ILSpy</a>
     </td>
     
     <td valign="top" width="119">
@@ -81,7 +81,7 @@ Red Gate backpedalled in April 2011 by saying that the final 6.8 version of Refl
   
   <tr>
     <td valign="top" width="131">
-      <a href="http://www.devextras.com/decompiler/">CodeReflect</a>
+      <a href="https://www.devextras.com/decompiler/">CodeReflect</a>
     </td>
     
     <td valign="top" width="123">
@@ -107,7 +107,7 @@ Red Gate backpedalled in April 2011 by saying that the final 6.8 version of Refl
   
   <tr>
     <td valign="top" width="133">
-      <a href="http://www.telerik.com/products/decompiling.aspx">JustDecompile</a>
+      <a href="https://www.telerik.com/products/decompiling.aspx">JustDecompile</a>
     </td>
     
     <td valign="top" width="125">
@@ -133,7 +133,7 @@ Red Gate backpedalled in April 2011 by saying that the final 6.8 version of Refl
   
   <tr>
     <td valign="top" width="138">
-      <a href="http://www.jetbrains.com/decompiler/">dotPeek</a>
+      <a href="https://www.jetbrains.com/decompiler/">dotPeek</a>
     </td>
     
     <td valign="top" width="125">
@@ -159,7 +159,7 @@ Red Gate backpedalled in April 2011 by saying that the final 6.8 version of Refl
   
   <tr>
     <td valign="top" width="140">
-      <a href="http://www.red-gate.com/MessageBoard/viewtopic.php?t=13307">Reflector 6.8</a>
+      <a href="https://www.red-gate.com/MessageBoard/viewtopic.php?t=13307">Reflector 6.8</a>
     </td>
     
     <td valign="top" width="125">

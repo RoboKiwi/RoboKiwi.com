@@ -16,15 +16,15 @@ aliases: /2014/07/19/using-msbuild-property-functions-and-inline-tasks-example-d
 
 ## The Problem
 
-User RandDavis on Reddit <a href="http://www.reddit.com/r/dotnet/comments/2at6q3/msbuild_elapsed_time/" target="_blank">asked a question</a> about capturing elapsed time of tasks in MSBuild:
+User RandDavis on Reddit <a href="https://www.reddit.com/r/dotnet/comments/2at6q3/msbuild_elapsed_time/" target="_blank">asked a question</a> about capturing elapsed time of tasks in MSBuild:
 
 > I'm using MSBuild 4.0 (I also have MSBuild.Community.Tasks available). Note that I'm new to the syntax involved. All I'm trying to do is this: **store the current time** to a property, **run a process**, and **determine the time that has elapsed**. I've managed to write System.DateTime.Now to a property, but I don't know how to do a simple datediff or construct a TimeSpan, so that I can get at what I'm looking for. I'd be utterly shamed if I had to resort to string comparisons or writing a custom task.
 
 ## Options
 
-The good thing is that he's using MSBuild 4.0, which means he can use any combination of <a title="MSBuild Property Functions" href="http://msdn.microsoft.com/en-us/library/dd633440.aspx" target="_blank">property functions</a> and <a title="MSBuild Inline Tasks" href="http://msdn.microsoft.com/en-us/library/dd722601.aspx" target="_blank">inline tasks</a> to achieve all he wants from within the MSBuild code, without having to compile and version custom MSBuild task assemblies, which can become a pain in the ass to move forwards with.
+The good thing is that he's using MSBuild 4.0, which means he can use any combination of <a title="MSBuild Property Functions" href="https://msdn.microsoft.com/en-us/library/dd633440.aspx" target="_blank">property functions</a> and <a title="MSBuild Inline Tasks" href="https://msdn.microsoft.com/en-us/library/dd722601.aspx" target="_blank">inline tasks</a> to achieve all he wants from within the MSBuild code, without having to compile and version custom MSBuild task assemblies, which can become a pain in the ass to move forwards with.
 
-When benchmarking from .NET, the best practice is to use the **Stopwatch** class in **System.Diagnostics**. Using DateTime functions is the natural but more inaccurate and naive way to benchmark. Eric Lippert of C# compiler fame did a good series on benchmarking mistakes, with Stopwatch mentioned in <a href="http://tech.pro/tutorial/1295/c-performance-benchmark-mistakes-part-two" target="_blank">part 2</a>.
+When benchmarking from .NET, the best practice is to use the **Stopwatch** class in **System.Diagnostics**. Using DateTime functions is the natural but more inaccurate and naive way to benchmark. Eric Lippert of C# compiler fame did a good series on benchmarking mistakes, with Stopwatch mentioned in <a href="https://tech.pro/tutorial/1295/c-performance-benchmark-mistakes-part-two" target="_blank">part 2</a>.
 
 In MSBuild, you’re limited to what classes you can use for property functions, so this means we have to resort to using inline tasks if we want to use Stopwatch. And because MSBuild is an imperative, XML-based language, we can’t really use Stopwatch in the normal way (get an instance, start and stop it, etc).
 
@@ -96,6 +96,6 @@ Would it be possible some way to return a Stopwatch object that could be started
 
 ### References:
 
-  * <a title="MSBuild Property Functions" href="http://msdn.microsoft.com/en-us/library/dd633440.aspx" target="_blank">MSBuild Property Functions Reference @ MSDN</a>
-  * <a title="MSBuild Inline Tasks" href="http://msdn.microsoft.com/en-us/library/dd722601.aspx" target="_blank">MSBuild Inline Tasks @ MSDN</a>
-  * <a title="C# Performance Benchmark Mistakes Part Two" href="http://tech.pro/tutorial/1295/c-performance-benchmark-mistakes-part-two" target="_blank">C# Performance Benchmark Mistakes Part Two� by Epic Lippert @ Tech.pro</a>
+  * <a title="MSBuild Property Functions" href="https://msdn.microsoft.com/en-us/library/dd633440.aspx" target="_blank">MSBuild Property Functions Reference @ MSDN</a>
+  * <a title="MSBuild Inline Tasks" href="https://msdn.microsoft.com/en-us/library/dd722601.aspx" target="_blank">MSBuild Inline Tasks @ MSDN</a>
+  * <a title="C# Performance Benchmark Mistakes Part Two" href="https://tech.pro/tutorial/1295/c-performance-benchmark-mistakes-part-two" target="_blank">C# Performance Benchmark Mistakes Part Two� by Epic Lippert @ Tech.pro</a>

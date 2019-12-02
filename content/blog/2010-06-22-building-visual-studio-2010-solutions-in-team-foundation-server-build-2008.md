@@ -20,4 +20,4 @@ You can do so by updating the Team Foundation Build Service configuration to use
   3. **Save** the file
   4. Restart the � **Visual Studio Team Foundation Build** service
 
-Reference: <http://blogs.msdn.com/b/jimlamb/archive/2009/11/03/upgrading-tfs-2008-build-definitions-to-tfs-2010.aspx>
+Reference: <https://blogs.msdn.com/b/jimlamb/archive/2009/11/03/upgrading-tfs-2008-build-definitions-to-tfs-2010.aspx>

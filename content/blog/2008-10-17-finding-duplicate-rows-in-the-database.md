@@ -16,7 +16,7 @@ aliases: /2008/10/17/finding-duplicate-rows-in-the-database/
 
 **NOTE**: This post has been re-visited in [Finding duplicated data across one or more columns in a database table](/2009/02/28/finding-duplicated-data-across-one-or-more-columns-in-a-database-table/)
 
-Information gleaned from Microsoft KB article: <a title="How to remove duplicate rows from a table in SQL Server" href="http://support.microsoft.com/default.aspx?scid=kb;en-us;139444" target="_blank">How to remove duplicate rows from a table in SQL Server</a>
+Information gleaned from Microsoft KB article: <a title="How to remove duplicate rows from a table in SQL Server" href="https://support.microsoft.com/default.aspx?scid=kb;en-us;139444" target="_blank">How to remove duplicate rows from a table in SQL Server</a>
 
 When you allow duplicated rows in a database that aren't expected and shouldn't be allowed, it's a flag saying that you need a unique index on the table to prevent duplicate rows to be added in the first place.
 

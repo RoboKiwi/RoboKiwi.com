@@ -20,6 +20,6 @@ Many software programs and games that need inward-bound internet connectivity ca
 
 If your programs are having trouble with UPnP, you can use the following links to troubleshoot, including a handy small program that will detect what steps you need to take to get UPnP going.
 
-<img class="alignnone" title="UPnP Test Program" src="http://fp.mgillespie.plus.com/upnphe3.jpg" alt="" width="542" height="278" />
+<img class="alignnone" title="UPnP Test Program" src="https://fp.mgillespie.plus.com/upnphe3.jpg" alt="" width="542" height="278" />
 
-<a href="http://fp.mgillespie.plus.com/upnphelp.htm" target="_blank">UPnP Troubleshooting Page<br /> </a><a href="http://www.junegillespie.plus.com/UPnPTest.exe" target="_blank">Download the UPnP Test Program</a>
+<a href="https://fp.mgillespie.plus.com/upnphelp.htm" target="_blank">UPnP Troubleshooting Page<br /> </a><a href="https://www.junegillespie.plus.com/UPnPTest.exe" target="_blank">Download the UPnP Test Program</a>

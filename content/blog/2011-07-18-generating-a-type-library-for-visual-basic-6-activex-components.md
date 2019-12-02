@@ -31,4 +31,4 @@ The .vbr file is a text file containing registry information, which will be very
 
 ## Reference
 
-[How To Make a Typelib (.TLB) File for ActiveX Components @ MSDN](http://support.microsoft.com/kb/161272)
+[How To Make a Typelib (.TLB) File for ActiveX Components @ MSDN](https://support.microsoft.com/kb/161272)

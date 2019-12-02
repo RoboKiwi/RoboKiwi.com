@@ -15,9 +15,9 @@ url: /blog/2008/10/12/digg-reel-presents-the-best-viral-videos-of-the-week/
 aliases: /2008/10/12/digg-reel-presents-the-best-viral-videos-of-the-week/
 ---
 
-[<img class="alignright" title="Digg Reel" src="http://bitcast-a.bitgravity.com/revision3/images/shows/diggreel/0040/diggreel--0040--geeklicious--medium.thumb.jpg" alt="" width="300" height="169" />](http://revision3.com/diggreel/)
+[<img class="alignright" title="Digg Reel" src="https://bitcast-a.bitgravity.com/revision3/images/shows/diggreel/0040/diggreel--0040--geeklicious--medium.thumb.jpg" alt="" width="300" height="169" />](https://revision3.com/diggreel/)
 
-<a title="The Digg Reel" href="http://revision3.com/diggreel/" target="_blank">The Digg Reel</a> is a show over at "Internet Television" site Revision 3.
+<a title="The Digg Reel" href="https://revision3.com/diggreel/" target="_blank">The Digg Reel</a> is a show over at "Internet Television" site Revision 3.
 
 They find the most popular videos posted on digg.com and package them together in a little hosted show. They even pick out some of the choicest user comments on the videos, reference other videos, and occasionally some pretty terrible but funny special effects and gags of their own.
 

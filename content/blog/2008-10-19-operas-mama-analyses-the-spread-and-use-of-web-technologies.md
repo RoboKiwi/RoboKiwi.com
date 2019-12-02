@@ -38,8 +38,8 @@ Some more findings:
   * A third of the URLs used Flash. The lowest regional use of Flash is 25%, meaning at least 1 in 4 pages use Flash.
   * Nearly 3/4 of the URLs used javascript in one form or another
 
-Main article: <a title="Main Article" href="http://dev.opera.com/articles/view/mama/" target="_blank">http://dev.opera.com/articles/view/mama/</a>
+Main article: <a title="Main Article" href="https://dev.opera.com/articles/view/mama/" target="_blank">https://dev.opera.com/articles/view/mama/</a>
   
-Key Findings: <a title="Key Findings" href="http://dev.opera.com/articles/view/mama-key-findings/" target="_blank">http://dev.opera.com/articles/view/mama-key-findings/</a>
+Key Findings: <a title="Key Findings" href="https://dev.opera.com/articles/view/mama-key-findings/" target="_blank">https://dev.opera.com/articles/view/mama-key-findings/</a>
   
-The average web page: <a title="The average web page" href="http://dev.opera.com/articles/view/mama-the-average-web-page/" target="_blank">http://dev.opera.com/articles/view/mama-the-average-web-page/</a>
+The average web page: <a title="The average web page" href="https://dev.opera.com/articles/view/mama-the-average-web-page/" target="_blank">https://dev.opera.com/articles/view/mama-the-average-web-page/</a>

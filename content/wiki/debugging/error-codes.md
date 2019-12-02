@@ -341,4 +341,4 @@ Here's how it looks defined in winerror.h:
 
 ## References
 
-[Online version of winerror.h @ msdn.microsoft.com](http://msdn.microsoft.com/en-us/library/ms819772.aspx) &#8211; Contains a bunch of error codes, from which you can get the constant name, and possibly some more information
+[Online version of winerror.h @ msdn.microsoft.com](https://msdn.microsoft.com/en-us/library/ms819772.aspx) &#8211; Contains a bunch of error codes, from which you can get the constant name, and possibly some more information

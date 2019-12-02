@@ -61,7 +61,7 @@ The **Server Name:** value is what you want and can be selected and copied to th
 
 Now you can run the command:
 
-> `tf destroy <strong>$/MyProject/Main/Bin</strong> /collection:http://servername:8080/tfs/myproject<br />
+> `tf destroy <strong>$/MyProject/Main/Bin</strong> /collection:https://servername:8080/tfs/myproject<br />
 Do you want to destroy $/MyProject/Main/Bin and all of its children? (Yes/No) y<br />
 Destroyed: $/MyProject/Main/Bin;X3601<br />
 Destroyed: $/MyProject/Main/Bin/Native;X3601`

@@ -65,6 +65,6 @@ You can now update the value in Orca and save the merge module (or create a tran
 
 ## References
 
-<a href="http://blogs.msdn.com/b/rflaming/archive/2006/09/23/768248.aspx" target="_blank">UAC in MSI Notes: The NoImpersonate Bit Mistake</a>&nbsp;
+<a href="https://blogs.msdn.com/b/rflaming/archive/2006/09/23/768248.aspx" target="_blank">UAC in MSI Notes: The NoImpersonate Bit Mistake</a>&nbsp;
 
-<a href="http://msdn.microsoft.com/en-us/library/windows/desktop/aa368069(v=vs.85).aspx" target="_blank">Custom Action In-Script Execution Options (Windows)</a>
+<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa368069(v=vs.85).aspx" target="_blank">Custom Action In-Script Execution Options (Windows)</a>

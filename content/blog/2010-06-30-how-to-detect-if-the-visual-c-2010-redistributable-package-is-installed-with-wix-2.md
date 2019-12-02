@@ -45,4 +45,4 @@ When someone runs your installer and they don’t have this package installed, t
 
 It’s a good idea to have a setup bootstrapper that automatically installs this package if it’s missing, but this WiX snippet is a good safe-guard for if someone directly runs your MSI.
 
-**Reference**: <http://blogs.msdn.com/b/astebner/archive/2010/05/05/10008146.aspx>
+**Reference**: <https://blogs.msdn.com/b/astebner/archive/2010/05/05/10008146.aspx>

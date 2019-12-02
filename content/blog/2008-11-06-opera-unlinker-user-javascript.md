@@ -19,7 +19,7 @@ It's quite common on many websites, particularly forums, to post links to images
 
 Unlinker is a very popular plugin for Firefox, which allows you to change the links to images in the page to in-line images.
 
-Opera doesn't have a fully-fledged plugin system like Firefox (which is a pro just as much as it is a con), but you can customize it using <a title="Opera User JavaScript" href="http://www.opera.com/support/tutorials/userjs/" target="_blank">User JavaScript</a>.
+Opera doesn't have a fully-fledged plugin system like Firefox (which is a pro just as much as it is a con), but you can customize it using <a title="Opera User JavaScript" href="https://www.opera.com/support/tutorials/userjs/" target="_blank">User JavaScript</a>.
 
 I've made a simple script to implement a very basic version of Unlinker. It will scan the page for links to images, and embed the image in the page under the link. It currently also scales the image down while maintaining aspect ratio if it exceeds 640&#215;480.
 

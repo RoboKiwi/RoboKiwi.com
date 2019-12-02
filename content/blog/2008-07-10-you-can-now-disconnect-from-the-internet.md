@@ -18,4 +18,4 @@ url: /blog/2008/07/10/you-can-now-disconnect-from-the-internet/
 aliases: /2008/07/10/you-can-now-disconnect-from-the-internet/
 ---
 
-![](http://i35.tinypic.com/sb0ifs.jpg)
+![](https://i35.tinypic.com/sb0ifs.jpg)

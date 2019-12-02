@@ -10,7 +10,7 @@ url: /blog/2008/06/09/hello-world-2/
 aliases: /2008/06/09/hello-world-2/
 ---
 
-<img class="alignleft" style="float: left;" src="http://icanhascheezburger.files.wordpress.com/2008/03/funny-pictures-oh-hai-bug.jpg" alt="Oh hai" />
+<img class="alignleft" style="float: left;" src="https://icanhascheezburger.files.wordpress.com/2008/03/funny-pictures-oh-hai-bug.jpg" alt="Oh hai" />
 
 It's been a while! The old blog is broken while I updated the software, but for now I've plumped for a good old WordPress install.
 

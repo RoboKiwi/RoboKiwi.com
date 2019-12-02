@@ -24,7 +24,7 @@ Note this will make it impossible to uninstall the service pack.
 
 This will clean up updates and service pack components, but mean you cannot uninstall Service Packs or installed Windows Updates.
 
-> Reference: http://blog.brankovucinec.com/2014/11/06/use-dism-to-cleanup-winsxs-after-windows-update/
+> Reference: https://blog.brankovucinec.com/2014/11/06/use-dism-to-cleanup-winsxs-after-windows-update/
 
 ### Disk maintenance
 

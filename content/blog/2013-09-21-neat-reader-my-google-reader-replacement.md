@@ -21,4 +21,4 @@ Only spending a few hours here and there over several months, I’ve personally 
 
 Only in the last few weeks has it been fit for human consumption (or even gotten a proper name).
 
-<a href="http://www.neatreader.com/" target="_blank">Neat Reader</a> has changed a lot already in the last few weeks, and there’s lots more to come.
+<a href="https://www.neatreader.com/" target="_blank">Neat Reader</a> has changed a lot already in the last few weeks, and there’s lots more to come.

@@ -16,7 +16,7 @@ aliases: /2008/06/13/baby-blacks-give-ireland-beating-david-moore-pinged-for-hig
 
 The New Zealand Under-20 rugby team is playing in the inaugural IRB Junior World Championship and just thrashed Ireland 65-10.
 
-I watched some of the coverage at the TVNZ site (they have full footage of both halves <a title="New Zealand Under 20 versus Ireland" href="http://tvnz.co.nz/view/page/536641/1841810" target="_blank">here</a>).
+I watched some of the coverage at the TVNZ site (they have full footage of both halves <a title="New Zealand Under 20 versus Ireland" href="https://tvnz.co.nz/view/page/536641/1841810" target="_blank">here</a>).
 
 There was a flanker playing for Ireland called David Moore. While I skipped through the video I managed to see him give away a couple of penalties, including for a blatant head-high clothes-hanger tackle. Good stuff, repping the David Moore name!
 

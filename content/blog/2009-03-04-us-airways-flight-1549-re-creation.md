@@ -24,4 +24,4 @@ url: /blog/2009/03/04/us-airways-flight-1549-re-creation/
 aliases: /2009/03/04/us-airways-flight-1549-re-creation/
 ---
 
-<p>A re-creation of the astounding ditching of an Airbus A320 in the Hudson River, with the audio of the actual incident over the top.</p> <p>If you don't know about this incident, <a title="Wikipedia: US Airways Flight 1549" href="http://en.wikipedia.org/wiki/US\_Airways\_Flight\_1549" target="\_blank">read up on it</a>!</p>
+<p>A re-creation of the astounding ditching of an Airbus A320 in the Hudson River, with the audio of the actual incident over the top.</p> <p>If you don't know about this incident, <a title="Wikipedia: US Airways Flight 1549" href="https://en.wikipedia.org/wiki/US\_Airways\_Flight\_1549" target="\_blank">read up on it</a>!</p>

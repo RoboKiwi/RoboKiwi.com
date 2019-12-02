@@ -16,6 +16,6 @@ aliases: /2009/01/08/lastfm-says-the-country-that-best-matches-my-musical-taste-
 
 Spain! With a 25% score.
 
-http://kobnet.net/~seod/CountryMatch/usermap.php?u=whup
+https://kobnet.net/~seod/CountryMatch/usermap.php?u=whup
 
 I'm not entirely sure what it's meant to represent. I'm guessing the percentage of users from that country that reasonably match my music tastes?

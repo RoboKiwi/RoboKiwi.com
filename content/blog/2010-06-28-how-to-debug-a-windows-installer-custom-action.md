@@ -42,4 +42,4 @@ Setx MsiBreak <strong>MyCustomActionName</p>
     
     ## References:
     
-    [Debugging Custom Actions](http://msdn.microsoft.com/en-us/library/aa368264(VS.85).aspx) @ msdn.microsoft.com
+    [Debugging Custom Actions](https://msdn.microsoft.com/en-us/library/aa368264(VS.85).aspx) @ msdn.microsoft.com

@@ -8,5 +8,5 @@ layout: page
 
 # References
 
-http://www.html5rocks.com/en/tutorials/es6/promises/
-http://www.infoq.com/news/2014/05/promises-javascript
+https://www.html5rocks.com/en/tutorials/es6/promises/
+https://www.infoq.com/news/2014/05/promises-javascript

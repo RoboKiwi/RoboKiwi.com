@@ -7,9 +7,9 @@ title: Cross-Origin Resource Sharing (CORS)
 
 For security reasons, browsers can't make cross-domain requests. They are limited to the same-origin.
 
-For example, website http://www.foo.com/ cannot access data from http://api.bar.com, because the origin differs (in this case, the domain name).
+For example, website https://www.foo.com/ cannot access data from https://api.bar.com, because the origin differs (in this case, the domain name).
 
-Neither can https://www.foo.com access data from http://www.foo.com, because the scheme differs. The same can be said of differ port e.g. http://www.foo.com and http://www.foo.com:8080.
+Neither can https://www.foo.com access data from https://www.foo.com, because the scheme differs. The same can be said of differ port e.g. https://www.foo.com and https://www.foo.com:8080.
 
 This is a big problem for a world where applications talk to internal and external APIs on different hosts.
 
@@ -61,7 +61,7 @@ Example:
 
 ```
 OPTIONS /cors HTTP/1.1
-Origin: http://api.bob.com
+Origin: https://api.bob.com
 Access-Control-Request-Method: PUT
 Access-Control-Request-Headers: X-Custom-Header
 Host: api.alice.com
@@ -83,7 +83,7 @@ Access-Control-Max-Age|Cacheable for x seconds|Allows the preflight response to 
 Example response:
 
 ```
-Access-Control-Allow-Origin: http://api.bob.com
+Access-Control-Allow-Origin: https://api.bob.com
 Access-Control-Allow-Methods: GET, POST, PUT
 Access-Control-Allow-Headers: X-Custom-Header
 Content-Type: text/html; charset=utf-8
@@ -91,10 +91,10 @@ Content-Type: text/html; charset=utf-8
 
 If the request is denied, then no CORS headers are sent back, and the browser will fail the request, resulting in an error like so:
 
-XMLHttpRequest cannot load http://api.beta.com. Origin http://api.alpha.com is not allowed by Access-Control-Allow-Origin.
+XMLHttpRequest cannot load https://api.beta.com. Origin https://api.alpha.com is not allowed by Access-Control-Allow-Origin.
 
 
 # References
 
-[CORS Tutorial @ HTML5 Rocks](http://www.html5rocks.com/en/tutorials/cors/)
-[CORS Spec @ w3.org](http://www.w3.org/TR/cors/)
+[CORS Tutorial @ HTML5 Rocks](https://www.html5rocks.com/en/tutorials/cors/)
+[CORS Spec @ w3.org](https://www.w3.org/TR/cors/)

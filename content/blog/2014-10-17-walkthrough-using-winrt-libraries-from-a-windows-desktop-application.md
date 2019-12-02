@@ -60,7 +60,7 @@ You might be surprised to know that WinRT can be used from Windows apps also, wi
 
 ## Why would you want to use WinRT?
 
-  * WinRT exposes some interesting APIs and libraries for things such as the accelerometer, web cam, geolocation, speech recognition and synthesis etc: <http://msdn.microsoft.com/en-us/library/windows/apps/br211377.aspx>
+  * WinRT exposes some interesting APIs and libraries for things such as the accelerometer, web cam, geolocation, speech recognition and synthesis etc: <https://msdn.microsoft.com/en-us/library/windows/apps/br211377.aspx>
 
 # Walk-through: Changing the Lock Screen
 
@@ -101,7 +101,7 @@ Checking the documentation as instructed, we read this:
      <TargetPlatformVersion>8.0</TargetPlatformVersion>
 </PropertyGroup>
 ```
-> From http://msdn.microsoft.com/en-us/library/hh708954.aspx
+> From https://msdn.microsoft.com/en-us/library/hh708954.aspx
 
 Great! So now we know we must specify our target platform as 8.0.
 
@@ -152,7 +152,7 @@ Attempting to resolve dependency 'Newtonsoft.Json (≥ 6.0.4)'.
 Installing 'Newtonsoft.Json 6.0.4'.
 Successfully installed 'Newtonsoft.Json 6.0.4'.
 Installing 'Microsoft.AspNet.WebApi.Client 5.2.2'.
-You are downloading Microsoft.AspNet.WebApi.Client from Microsoft, the license agreement to which is available at <a href="http://www.microsoft.com/web/webpi/eula/net_library_eula_ENU.htm">http://www.microsoft.com/web/webpi/eula/net_library_eula_ENU.htm</a>. Check the package for additional dependencies, which may come with their own license agreement(s). Your use of the package and dependencies constitutes your acceptance of their license agreements. If you do not accept the license agreement(s), then delete the relevant components from your device.
+You are downloading Microsoft.AspNet.WebApi.Client from Microsoft, the license agreement to which is available at <a href="https://www.microsoft.com/web/webpi/eula/net_library_eula_ENU.htm">https://www.microsoft.com/web/webpi/eula/net_library_eula_ENU.htm</a>. Check the package for additional dependencies, which may come with their own license agreement(s). Your use of the package and dependencies constitutes your acceptance of their license agreements. If you do not accept the license agreement(s), then delete the relevant components from your device.
 Successfully installed 'Microsoft.AspNet.WebApi.Client 5.2.2'.
 Adding 'Newtonsoft.Json 6.0.4' to WinRTTest.
 Successfully added 'Newtonsoft.Json 6.0.4' to WinRTTest.
@@ -187,7 +187,7 @@ If you paid close attention to the MSDN docs earlier, it referred us to another 
 
 > That said, _your desktop app can’t consume much of anything from the Windows Runtime until you prepare your project with one essential reference_. The Windows Runtime defines some standard classes and interfaces in System.Runtime, such as IEnumerable, that are used throughout the Windows Runtime libraries. By default, your managed desktop app won’t be able to find these types, and so **you must manually reference System.Runtime** before you can do anything meaningful with Windows Runtime classes.
 > 
-> From http://msdn.microsoft.com/en-us/library/windows/apps/jj856306.aspx#consuming_standard_windows_runtime_types
+> From https://msdn.microsoft.com/en-us/library/windows/apps/jj856306.aspx#consuming_standard_windows_runtime_types
 
 While we could browse around for files, I believe it's actually less error prone and simpler to reference the assembly name in our project file, and let Visual Studio do the rest. It also means you can prepare your project for WinRT in one edit of the project file (see the summary at the top of the article).
 
@@ -225,4 +225,4 @@ And it _should_ suddenly work!
 
 # Conclusion
 
-Now you can play around with some of the interesting WinRT libraries from your desktop applications, as well as exciting new WinRT extensions such as the Microsoft OCR Library: http://blogs.windows.com/buildingapps/2014/09/18/microsoft-ocr-library-for-windows-runtime/
+Now you can play around with some of the interesting WinRT libraries from your desktop applications, as well as exciting new WinRT extensions such as the Microsoft OCR Library: https://blogs.windows.com/buildingapps/2014/09/18/microsoft-ocr-library-for-windows-runtime/

@@ -18,7 +18,7 @@ I've never been one to pack a lunch for work, especially sandwiches (MEH @ sandw
 
 Someone's come up with a very simple but effective deterrant: a sealable lunch bag with a mould print on it.<figure style="width: 640px;" class="wp-caption alignnone">
 
-<img title="Before" src="http://www.skforlee.com/independent_work/images/moldy_bag_1.jpg" alt="Before" width="640" height="426" /><figcaption class="wp-caption-text">Before</figcaption></figure> <figure style="width: 640px;" class="wp-caption alignnone"><img title="After" src="http://www.skforlee.com/independent_work/images/moldy_bag_2.jpg" alt="After" width="640" height="426" /><figcaption class="wp-caption-text">After</figcaption></figure> 
+<img title="Before" src="https://www.skforlee.com/independent_work/images/moldy_bag_1.jpg" alt="Before" width="640" height="426" /><figcaption class="wp-caption-text">Before</figcaption></figure> <figure style="width: 640px;" class="wp-caption alignnone"><img title="After" src="https://www.skforlee.com/independent_work/images/moldy_bag_2.jpg" alt="After" width="640" height="426" /><figcaption class="wp-caption-text">After</figcaption></figure> 
 
 The makers seem to want to charge money for this, but you can probably make your own very easily.
 
