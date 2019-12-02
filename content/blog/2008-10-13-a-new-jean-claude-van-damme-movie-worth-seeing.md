@@ -4,7 +4,7 @@ categories:
 - Movies
 - Videos
 date: 2008-10-13T12:43:50Z
-guid: http://davidmoore.info/?p=26
+guid: https://davidmoore.info/?p=26
 id: 26
 tags:
 - jcvd

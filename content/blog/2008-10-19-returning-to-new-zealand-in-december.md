@@ -3,7 +3,7 @@ author: David
 categories:
 - Misc
 date: 2008-10-19T14:55:02Z
-guid: http://davidmoore.info/?p=35
+guid: https://davidmoore.info/?p=35
 id: 35
 tags:
 - Auckland

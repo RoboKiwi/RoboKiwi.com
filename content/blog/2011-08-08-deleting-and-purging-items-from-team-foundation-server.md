@@ -5,7 +5,7 @@ categories:
 - How To
 - Software Development
 date: 2011-08-08T11:32:00Z
-guid: http://www.davidmoore.info/2011/08/08/deleting-and-purging-items-from-team-foundation-server/
+guid: https://www.davidmoore.info/2011/08/08/deleting-and-purging-items-from-team-foundation-server/
 id: 454
 tags:
 - delete

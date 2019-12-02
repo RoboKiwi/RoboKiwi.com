@@ -3,7 +3,7 @@ author: David
 categories:
 - Music
 date: 2009-01-08T03:26:43Z
-guid: http://davidmoore.info/?p=68
+guid: https://davidmoore.info/?p=68
 id: 68
 tags:
 - last.fm

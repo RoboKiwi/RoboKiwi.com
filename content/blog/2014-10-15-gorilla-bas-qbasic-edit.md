@@ -3,7 +3,7 @@ author: David
 categories:
 - Uncategorized
 date: 2014-10-15T00:04:10Z
-guid: http://www.davidmoore.info/blog/?p=1571
+guid: https://www.davidmoore.info/blog/?p=1571
 id: 1571
 tags:
 - gorilla.bas

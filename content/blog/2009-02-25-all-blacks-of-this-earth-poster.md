@@ -6,7 +6,7 @@ date: 2009-02-25T09:17:34Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://davidmoore.info/?p=94
+guid: https://davidmoore.info/?p=94
 id: 94
 tags:
 - adidas

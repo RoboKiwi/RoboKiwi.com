@@ -6,7 +6,7 @@ date: 2009-04-17T21:55:37Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://www.davidmoore.info/?p=133
+guid: https://www.davidmoore.info/?p=133
 id: 133
 tags:
 - arnie

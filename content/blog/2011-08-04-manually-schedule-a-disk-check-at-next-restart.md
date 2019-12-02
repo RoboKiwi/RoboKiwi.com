@@ -3,7 +3,7 @@ author: David
 categories:
 - How To
 date: 2011-08-04T12:02:00Z
-guid: http://www.davidmoore.info/?p=445
+guid: https://www.davidmoore.info/?p=445
 id: 445
 tags:
 - check

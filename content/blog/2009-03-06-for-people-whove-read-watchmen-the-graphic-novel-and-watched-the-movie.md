@@ -7,7 +7,7 @@ date: 2009-03-06T00:31:38Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://www.davidmoore.info/?p=121
+guid: https://www.davidmoore.info/?p=121
 id: 1441
 tags:
 - downfall

@@ -3,7 +3,7 @@ author: David
 categories:
 - Entertainment
 date: 2008-12-12T09:36:00Z
-guid: http://davidmoore.info/?p=62
+guid: https://davidmoore.info/?p=62
 id: 62
 tags:
 - "2008"

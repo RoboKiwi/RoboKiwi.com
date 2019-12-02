@@ -7,7 +7,7 @@ date: 2009-09-30T12:03:22Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://www.davidmoore.info/?p=223
+guid: https://www.davidmoore.info/?p=223
 id: 223
 tags:
 - "2008"

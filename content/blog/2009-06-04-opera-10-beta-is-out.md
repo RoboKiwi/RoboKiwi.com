@@ -6,7 +6,7 @@ date: 2009-06-04T10:38:48Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://www.davidmoore.info/?p=187
+guid: https://www.davidmoore.info/?p=187
 id: 187
 tags:
 - Applications

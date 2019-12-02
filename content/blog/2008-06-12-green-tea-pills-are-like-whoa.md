@@ -3,7 +3,7 @@ author: David
 categories:
 - Misc
 date: 2008-06-12T22:20:50Z
-guid: http://davidmoore.info/?p=5
+guid: https://davidmoore.info/?p=5
 id: 5
 tags:
 - food

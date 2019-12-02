@@ -3,7 +3,7 @@ author: David
 categories:
 - Music
 date: 2008-06-19T16:48:28Z
-guid: http://davidmoore.info/?p=7
+guid: https://davidmoore.info/?p=7
 id: 7
 tags:
 - concert

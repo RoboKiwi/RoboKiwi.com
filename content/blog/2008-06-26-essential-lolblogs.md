@@ -3,7 +3,7 @@ author: David
 categories:
 - Entertainment
 date: 2008-06-26T14:00:12Z
-guid: http://davidmoore.info/?p=10
+guid: https://davidmoore.info/?p=10
 id: 10
 tags:
 - fail

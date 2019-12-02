@@ -7,7 +7,7 @@ date: 2009-02-25T09:09:41Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://davidmoore.info/?p=92
+guid: https://davidmoore.info/?p=92
 id: 92
 tags:
 - alternate ending

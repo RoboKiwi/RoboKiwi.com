@@ -6,7 +6,7 @@ date: 2009-12-06T15:32:38Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://www.davidmoore.info/2009/12/06/speccy-gives-you-detailed-system-info/
+guid: https://www.davidmoore.info/2009/12/06/speccy-gives-you-detailed-system-info/
 id: 242
 title: Speccy gives you detailed system info
 url: /blog/2009/12/06/speccy-gives-you-detailed-system-info/

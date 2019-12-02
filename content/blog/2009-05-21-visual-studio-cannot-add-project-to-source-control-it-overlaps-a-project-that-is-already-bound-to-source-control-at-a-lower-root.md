@@ -8,7 +8,7 @@ date: 2009-05-21T16:53:17Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://www.davidmoore.info/?p=138
+guid: https://www.davidmoore.info/?p=138
 id: 138
 tags:
 - bindings

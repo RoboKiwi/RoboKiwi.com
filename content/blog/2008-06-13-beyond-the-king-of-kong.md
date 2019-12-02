@@ -4,7 +4,7 @@ categories:
 - Movies
 - Videos
 date: 2008-06-13T10:17:34Z
-guid: http://davidmoore.info/?p=6
+guid: https://davidmoore.info/?p=6
 id: 6
 tags:
 - billy mitchell

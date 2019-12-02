@@ -6,7 +6,7 @@ date: 2009-04-15T21:38:56Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://www.davidmoore.info/?p=130
+guid: https://www.davidmoore.info/?p=130
 id: 130
 tags:
 - bouncer

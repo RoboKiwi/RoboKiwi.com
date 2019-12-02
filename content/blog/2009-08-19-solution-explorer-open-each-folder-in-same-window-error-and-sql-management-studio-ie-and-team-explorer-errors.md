@@ -7,7 +7,7 @@ date: 2009-08-19T20:45:01Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://www.davidmoore.info/?p=206
+guid: https://www.davidmoore.info/?p=206
 id: 206
 tags:
 - '{B8DA6310-E19B-11D0-933C-00A0C90DCAA9}'

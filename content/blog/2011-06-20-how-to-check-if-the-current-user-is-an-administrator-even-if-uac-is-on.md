@@ -3,7 +3,7 @@ author: David
 categories:
 - Entertainment
 date: 2011-06-20T11:23:47Z
-guid: http://www.davidmoore.info/2011/06/20/how-to-check-if-the-current-user-is-an-administrator-even-if-uac-is-on/
+guid: https://www.davidmoore.info/2011/06/20/how-to-check-if-the-current-user-is-an-administrator-even-if-uac-is-on/
 id: 415
 title: How to check if the current user is an Administrator (even if UAC is on)
 url: /blog/2011/06/20/how-to-check-if-the-current-user-is-an-administrator-even-if-uac-is-on/

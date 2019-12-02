@@ -3,7 +3,7 @@ author: David
 categories:
 - Entertainment
 date: 2008-09-21T19:42:39Z
-guid: http://davidmoore.info/?p=13
+guid: https://davidmoore.info/?p=13
 id: 13
 tags:
 - lunch

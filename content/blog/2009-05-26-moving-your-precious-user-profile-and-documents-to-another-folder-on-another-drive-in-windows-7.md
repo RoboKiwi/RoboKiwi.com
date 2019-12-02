@@ -7,7 +7,7 @@ date: 2009-05-26T00:42:10Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://www.davidmoore.info/?p=149
+guid: https://www.davidmoore.info/?p=149
 id: 149
 tags:
 - documents

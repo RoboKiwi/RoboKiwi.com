@@ -3,7 +3,7 @@ author: David
 categories:
 - C++
 date: 2013-05-27T13:26:20Z
-guid: http://www.sadrobot.co.nz/?p=641
+guid: https://www.sadrobot.co.nz/?p=641
 id: 641
 tags:
 - visual studio

@@ -3,7 +3,7 @@ author: David
 categories:
 - Software Development
 date: 2008-11-06T01:38:27Z
-guid: http://davidmoore.info/?p=49
+guid: https://davidmoore.info/?p=49
 id: 49
 tags:
 - Applications

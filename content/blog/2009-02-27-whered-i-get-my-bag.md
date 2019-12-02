@@ -6,7 +6,7 @@ date: 2009-02-27T13:08:02Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://davidmoore.info/?p=99
+guid: https://davidmoore.info/?p=99
 id: 99
 tags:
 - bag

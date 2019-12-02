@@ -3,7 +3,7 @@ author: David
 categories:
 - Software Development
 date: 2008-10-17T11:39:40Z
-guid: http://davidmoore.info/?p=32
+guid: https://davidmoore.info/?p=32
 id: 32
 tags:
 - database

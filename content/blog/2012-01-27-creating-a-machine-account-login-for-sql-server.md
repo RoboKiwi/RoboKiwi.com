@@ -3,7 +3,7 @@ author: David
 categories:
 - Entertainment
 date: 2012-01-27T09:49:25Z
-guid: http://www.davidmoore.info/2012/01/27/creating-a-machine-account-login-for-sql-server/
+guid: https://www.davidmoore.info/2012/01/27/creating-a-machine-account-login-for-sql-server/
 id: 520
 title: Creating a machine account login for SQL Server
 url: /blog/2012/01/27/creating-a-machine-account-login-for-sql-server/

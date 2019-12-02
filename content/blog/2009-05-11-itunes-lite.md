@@ -6,7 +6,7 @@ date: 2009-05-11T21:23:15Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://www.davidmoore.info/?p=136
+guid: https://www.davidmoore.info/?p=136
 id: 136
 tags:
 - alternative

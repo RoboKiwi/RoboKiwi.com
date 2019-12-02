@@ -3,7 +3,7 @@ author: David
 categories:
 - Misc
 date: 2008-06-09T02:12:26Z
-guid: http://davidmoore.info/?p=1
+guid: https://davidmoore.info/?p=1
 id: 321
 title: Oh hai
 url: /blog/2008/06/09/hello-world-2/

@@ -4,7 +4,7 @@ categories:
 - .net
 - How To
 date: 2010-12-17T09:38:31Z
-guid: http://www.davidmoore.info/?p=381
+guid: https://www.davidmoore.info/?p=381
 id: 391
 tags:
 - .net

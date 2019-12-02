@@ -7,7 +7,7 @@ date: 2009-02-28T14:04:39Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://davidmoore.info/?p=111
+guid: https://davidmoore.info/?p=111
 id: 1431
 tags:
 - firefox

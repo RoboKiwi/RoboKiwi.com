@@ -6,7 +6,7 @@ date: 2009-06-08T19:47:16Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://www.davidmoore.info/?p=193
+guid: https://www.davidmoore.info/?p=193
 id: 193
 tags:
 - dota

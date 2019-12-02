@@ -6,7 +6,7 @@ date: 2009-11-23T22:38:24Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://www.davidmoore.info/?p=229
+guid: https://www.davidmoore.info/?p=229
 id: 229
 tags:
 - anti virus

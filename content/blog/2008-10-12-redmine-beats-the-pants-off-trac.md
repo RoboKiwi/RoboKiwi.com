@@ -3,7 +3,7 @@ author: David
 categories:
 - Software Development
 date: 2008-10-12T22:29:35Z
-guid: http://davidmoore.info/?p=19
+guid: https://davidmoore.info/?p=19
 id: 19
 tags:
 - redmine

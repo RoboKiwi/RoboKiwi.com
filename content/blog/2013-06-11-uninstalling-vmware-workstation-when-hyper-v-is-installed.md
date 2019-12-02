@@ -3,7 +3,7 @@ author: David
 categories:
 - Uncategorized
 date: 2013-06-11T13:35:54Z
-guid: http://www.sadrobot.co.nz/?p=671
+guid: https://www.sadrobot.co.nz/?p=671
 id: 671
 title: Uninstalling VMWare Workstation when Hyper-V is installed
 url: /blog/2013/06/11/uninstalling-vmware-workstation-when-hyper-v-is-installed/

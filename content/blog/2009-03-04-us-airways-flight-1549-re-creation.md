@@ -6,7 +6,7 @@ date: 2009-03-04T00:15:08Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://www.davidmoore.info/?p=117
+guid: https://www.davidmoore.info/?p=117
 id: 117
 tags:
 - "1549"

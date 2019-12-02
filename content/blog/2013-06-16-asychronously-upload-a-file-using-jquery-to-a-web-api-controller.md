@@ -3,7 +3,7 @@ author: David
 categories:
 - Uncategorized
 date: 2013-06-16T20:30:35Z
-guid: http://www.sadrobot.co.nz/?p=691
+guid: https://www.sadrobot.co.nz/?p=691
 id: 691
 title: Asychronously upload a file using jQuery to a Web API controller
 url: /blog/2013/06/16/asychronously-upload-a-file-using-jquery-to-a-web-api-controller/

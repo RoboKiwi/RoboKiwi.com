@@ -3,7 +3,7 @@ author: David
 categories:
 - Software Development
 date: 2009-01-17T07:01:50Z
-guid: http://davidmoore.info/?p=70
+guid: https://davidmoore.info/?p=70
 id: 70
 tags:
 - "8080"

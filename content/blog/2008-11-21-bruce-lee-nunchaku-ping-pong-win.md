@@ -3,7 +3,7 @@ author: David
 categories:
 - Entertainment
 date: 2008-11-21T22:19:09Z
-guid: http://davidmoore.info/?p=52
+guid: https://davidmoore.info/?p=52
 id: 52
 tags:
 - bruce lee

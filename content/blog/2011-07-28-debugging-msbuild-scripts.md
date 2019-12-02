@@ -4,7 +4,7 @@ categories:
 - .net
 - Software Development
 date: 2011-07-28T14:20:40Z
-guid: http://www.davidmoore.info/2011/07/28/debugging-msbuild-scripts/
+guid: https://www.davidmoore.info/2011/07/28/debugging-msbuild-scripts/
 id: 435
 tags:
 - debug

@@ -6,7 +6,7 @@ date: 2008-11-06T01:24:47Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://davidmoore.info/?p=47
+guid: https://davidmoore.info/?p=47
 id: 1411
 tags:
 - elinor

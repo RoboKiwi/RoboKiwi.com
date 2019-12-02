@@ -7,7 +7,7 @@ date: 2009-12-02T11:16:27Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://www.davidmoore.info/?p=234
+guid: https://www.davidmoore.info/?p=234
 id: 234
 tags:
 - "64"

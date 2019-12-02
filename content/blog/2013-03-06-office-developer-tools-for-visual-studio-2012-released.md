@@ -3,7 +3,7 @@ author: David
 categories:
 - Office
 date: 2013-03-06T08:45:39Z
-guid: http://sadrobot.azurewebsites.net/?p=161
+guid: https://sadrobot.azurewebsites.net/?p=161
 id: 161
 tags:
 - office

@@ -6,7 +6,7 @@ date: 2009-04-15T18:24:10Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: http://www.davidmoore.info/?p=126
+guid: https://www.davidmoore.info/?p=126
 id: 126
 tags:
 - cat
