@@ -13,7 +13,7 @@ id: 153
 tags:
 - .net
 - assembly
-- "c#"
+- csharp
 - exception
 - failed
 - sn

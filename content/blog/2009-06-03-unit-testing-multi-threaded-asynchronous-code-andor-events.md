@@ -13,7 +13,7 @@ id: 1461
 tags:
 - .net
 - asynchronous
-- "c#"
+- csharp
 - events
 - mstest
 - nunit

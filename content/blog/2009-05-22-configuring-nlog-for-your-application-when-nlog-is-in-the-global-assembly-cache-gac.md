@@ -13,7 +13,7 @@ id: 140
 tags:
 - .net
 - assembly
-- "c#"
+- csharp
 - config
 - ConfigSectionHandler
 - gac
