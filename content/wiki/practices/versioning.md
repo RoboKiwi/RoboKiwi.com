@@ -1,3 +1,8 @@
+---
+title: Versioning
+description: Versioning recommendations
+---
+
 ## Windows Installer
 
 Product Version only allows 3 digits

@@ -1,4 +1,4 @@
 ---
-title: Databases
-description: Database technologies
+title: Data & Databases
+description: Data and Database technologies
 ---

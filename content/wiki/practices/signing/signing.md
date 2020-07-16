@@ -1,5 +1,6 @@
 ---
 title: Signing
+description: Authenticode signing practices
 ---
 
 # Authenticode
