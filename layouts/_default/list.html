@@ -46,7 +46,7 @@
           {{ range .Sections.ByWeight }}
             <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight-{{ .Weight }}">
               <div class="bg-white mb2 pa3 pa4-l gray">
-                {{ if eq .Section "news" }}
+                {{ if eq .Section "blog" }}
                   <date class="f6 db" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
                     {{ .Date.Format "January 2, 2006" }}
                   </date>
@@ -83,7 +83,7 @@
         {{ range .Paginator.Pages }}
         <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight-{{ .Weight }}">
           <div class="bg-white mb2 pa3 pa4-l gray">
-            {{ if eq .Section "news" }}
+            {{ if eq .Section "blog" }}
               <date class="f6 db" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
                 {{ .Date.Format "January 2, 2006" }}
               </date>
