@@ -5,6 +5,30 @@
 {{ define "main" }}
   <section class="w-100 ph4 ph5-ns pv4">
     
+    <div class="flex flex-wrap">
+      {{ $interior_classes := .Site.Params.flex_box_interior_classes }}
+      <section class="flex-ns flex-wrap justify-between w-100">
+        {{ range .Site.Data.projects.project }}
+          <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight-{{ .Weight }}">
+            <div class="bg-white mb2 pa3 pa4-l gray">              
+              <date class="f6 db" datetime="{{ dateFormat "2006-01-02T15:04:05Z07:00" .Date }}">
+                {{ dateFormat "January 2, 2006" .Date }}
+              </date>
+
+              <h1 class="near-black f3">
+                <a href="{{ .Url }}" class="link primary-color dim">{{ .Title }}</a>
+              </h1>
+          
+              <div class="lh-copy links">
+                  {{ .Description | markdownify }}
+                  <a href="{{ .Url }}" class="f6 mt2 db link primary-color dim">Read More &raquo;</a>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+      </section>
+    </div>
+
   </section>
 
 {{ end }}

@@ -1,0 +1,13 @@
+[[project]]
+  Title = "IPFilter"  
+  Description = "A free, Open Source utility to keep your Bit Torrent blocklist updated."
+  Date = "2017-07-22"
+  Url = "https://www.ipfilter.app/"
+  Weight = "10"
+
+[[project]]
+    Title = "ElvUI Updater"
+    Description = "Updates ElvUI for World of Warcraft"
+    Date = "2017-07-22"
+    Url = "https://github.com/DavidMoore/ElvUI"
+    Weight = 20
