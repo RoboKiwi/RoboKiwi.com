@@ -42,9 +42,7 @@ aliases: /2009/08/19/solution-explorer-open-each-folder-in-same-window-error-and
 
 Download the zip file, run the batch file inside **as Administrator**, then **reboot**, to fix the problem.
 
-You must run this batch file with administrative privileges (right click on the file and choose **Run as administrator**):
-
-![Run as Administrator](/wp-content/uploads/2009/08/RunAsAdministrator.png)
+{{<video "/wp-content/uploads/2009/12/RegisterActxPrxy.mp4">}}
 
 If you don't run the batch file as an administrator, you will get an error as pictured:
 
