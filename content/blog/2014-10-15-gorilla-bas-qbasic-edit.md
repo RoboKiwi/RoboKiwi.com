@@ -21,13 +21,13 @@ I spent hours and hours playing around with QBasic and <a href="https://en.wikip
 
 There was a game that came with QBasic and MS-DOS called <a href="https://en.wikipedia.org/wiki/Gorillas_%28video_game%29" target="_blank">Gorillas</a>, which was effectively like Worms and Scorched Earth.
 
-![](https://upload.wikimedia.org/wikipedia/en/2/2f/Gorillas_screenshot.png)
+![Gorillas.bas](/wp-content/uploads/2014/10/Gorillas_screenshot.png)
 
 Look at those mind-blowing graphics!
 
 Man, have editors and IDEs come a long way; but edit was a great editor for its time. What a twinge of nostalgia I feel when I see this screen:
 
-![https://www.computerhope.com/jargon/e/doseditwindow.jpg](https://www.computerhope.com/jargon/e/doseditwindow.jpg)
+![DOS Edit](/wp-content/uploads/2014/10/doseditwindow.jpg)
 
 Edit came along for the ride all the way to Windows 7; but sadly, it doesn’t come with any 64 bit OSes.
 
