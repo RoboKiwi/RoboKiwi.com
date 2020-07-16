@@ -15,7 +15,7 @@ tags:
 - sleep
 - sleepwalking
 - walk
-title: Sleep walking dog&#226;&#8364;&#166; or should that be sleep running?
+title: Sleep walking dog; or should that be sleep running?
 url: /blog/2009/02/28/sleep-walking-dog-or-should-that-be-sleep-running/
 aliases: /2009/02/28/sleep-walking-dog-or-should-that-be-sleep-running/
 ---

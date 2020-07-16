@@ -14,8 +14,8 @@ tags:
 - spoilers
 - squid
 - watchmen
-title: For people who&#226;&#8364;&#8482;ve read Watchmen the &#226;&#8364;&#339;graphic
-  novel&#226;&#8364; and watched the movie
+title: For people who've read Watchmen the graphic
+  novel and watched the movie
 url: /blog/2009/03/06/for-people-whove-read-watchmen-the-graphic-novel-and-watched-the-movie/
 aliases: /2009/03/06/for-people-whove-read-watchmen-the-graphic-novel-and-watched-the-movie/
 ---
