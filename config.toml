@@ -3,11 +3,12 @@ defaultContentLanguage = "en"
 enableEmoji = true
 languageCode = "en-us"
 title = "RoboKiwi"
-disqusShortname = "sadrobot"
+disqusShortname = "robokiwi"
 pluralizeListTitles = false
 disableAliases = false
 pygmentsCodeFences = true
 pygmentsStyle="monokailight"
+enableGitInfo = true
 
 [outputs]
 home = [ "HTML", "RSS"]

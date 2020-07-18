@@ -71,3 +71,5 @@
 .pagination li.active a:visited {
   background-color: #ddd;
 }
+
+.fill-current { fill: currentColor; }
