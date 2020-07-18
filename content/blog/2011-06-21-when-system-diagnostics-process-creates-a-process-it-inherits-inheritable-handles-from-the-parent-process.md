@@ -27,31 +27,22 @@ When you create a new process from a .NET application, you would use the classes
 
 These wrap the Windows API function [CreateProcess](https://msdn.microsoft.com/en-us/library/ms682425(v=vs.85).aspx) and its alternatives and supporting types.
 
-If we look at the CreateProcess definition, there’s a boolean argument in there called bInheritHandles:
+If we look at the `CreateProcess` definition, there’s a boolean argument in there called `bInheritHandles`:
 
-> BOOL WINAPI CreateProcess(
-  
-> _\_in\_opt� � � � LPCTSTR lpApplicationName,
-  
-> _\_inout\_opt� LPTSTR lpCommandLine,
-  
-> _\_in\_opt� � � � LPSECURITY_ATTRIBUTES lpProcessAttributes,
-  
-> _\_in\_opt� � � � LPSECURITY_ATTRIBUTES lpThreadAttributes,
-  
-> **__in� � � � � � � � BOOL bInheritHandles**,
-  
-> __in� � � � � � � � DWORD dwCreationFlags,
-  
-> _\_in\_opt� � � � LPVOID lpEnvironment,
-  
-> _\_in\_opt� � � � LPCTSTR lpCurrentDirectory,
-  
-> __in� � � � � � � � LPSTARTUPINFO lpStartupInfo,
-  
-> _\_out� � � � � � � LPPROCESS\_INFORMATION lpProcessInformation
-  
-> );
+```c
+BOOL CreateProcessA(
+  LPCSTR                lpApplicationName,
+  LPSTR                 lpCommandLine,
+  LPSECURITY_ATTRIBUTES lpProcessAttributes,
+  LPSECURITY_ATTRIBUTES lpThreadAttributes,
+  BOOL                  bInheritHandles,
+  DWORD                 dwCreationFlags,
+  LPVOID                lpEnvironment,
+  LPCSTR                lpCurrentDirectory,
+  LPSTARTUPINFOA        lpStartupInfo,
+  LPPROCESS_INFORMATION lpProcessInformation
+);
+```
 
 What does the Windows API documentation say about this?
 
@@ -63,173 +54,174 @@ Inheritable handles?
 > 
 > A child process can inherit handles from its parent process. An inherited handle is valid only in the context of the child process. To enable a child process to inherit open handles from its parent process, use the following steps.
 > 
->   1. Create the handle with the bInheritHandle member of the SECURITY_ATTRIBUTES structure set to TRUE.
->   2. Create the child process using the CreateProcess function, with the bInheritHandles parameter set to TRUE.
+>   1. Create the handle with the `bInheritHandle` member of the `SECURITY_ATTRIBUTES` structure set to `TRUE`.
+>   2. Create the child process using the `CreateProcess` function, with the `bInheritHandles` parameter set to `TRUE`.
 
-Well if we look at the internals of .NET, and look at how the Process class is calling CreateProcess, we find that it’s passing bInheritHandles as TRUE.
+Well if we look at the internals of .NET, and look at how the `Process` class is calling `CreateProcess`, we find that it’s passing **`bInheritHandles`** as **`TRUE`**.
 
-So this means if we start a process using the System.Diagnostics classes, the child process will inherit our inheritable handles.
+So this means if we start a process using the `System.Diagnostics` classes, the child process will inherit our inheritable handles.
 
 What was happening is the locked file handle to wsClient.exe was being inherited from the parent process to the Windows Installer, so the executable was remaining locked even when the parent process exited.
 
 ## Solution
 
-One solution is to avoid System.Diagnostics in this particular instance, and use CreateProcess manually when we launch our child process, to ensure it doesn’t inherit handles.
+One solution is to avoid `System.Diagnostics` in this particular instance, and use `CreateProcess` manually when we launch our child process, to ensure it doesn’t inherit handles.
 
-I would recommend you use the System.Diagnostics classes in any other case.
+I would recommend you use the `System.Diagnostics` classes in any other case.
 
 ## Code
 
-<pre style="padding-bottom: 0px; line-height: normal; width: auto; background: #fdf6e3; overflow: visible;"><span style="font-family: &amp;amp;"><strong><span><span style="color: #859900;">using</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">System</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-</span><span><span style="color: #859900;">using</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">System</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #00008b;">Runtime</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #00008b;">ConstrainedExecution</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-</span><span><span style="color: #859900;">using</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">System</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #00008b;">Runtime</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #00008b;">InteropServices</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-</span><span><span style="color: #859900;">using</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">System</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #00008b;">Security</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-</span><span><span style="color: #859900;">using</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">System</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #00008b;">Security</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #00008b;">Permissions</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-</span><span><span style="color: #859900;">using</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">System</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #00008b;">Text</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-</span><span><span style="color: #859900;">using</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">Microsoft</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #00008b;">Win32</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #00008b;">SafeHandles</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
+```csharp
+using System;
+using System.Runtime.ConstrainedExecution;
+using System.Runtime.InteropServices;
+using System.Security;
+using System.Security.Permissions;
+using System.Text;
+using Microsoft.Win32.SafeHandles;
 
-</span><span><span style="color: #859900;">namespace</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">CreateProcessTest</span></span>
-</strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">{
-    [</span><span><span style="color: #00008b;">StructLayout</span></span><span style="color: #586e75;">(</span><span><span style="color: #00008b;">LayoutKind</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Sequential</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">)]
-    </span><span><span style="color: #859900;">internal</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">class</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">ProcessInformation</span></span>
-</strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">    {
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">IntPtr</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">hProcess</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">IntPtr</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Zero</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">IntPtr</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">hThread</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">IntPtr</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Zero</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">int</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">dwProcessId</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">int</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">dwThreadId</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-    }
+namespace CreateProcessTest
+{
+    [StructLayout(LayoutKind.Sequential)]
+    internal class ProcessInformation
+    {
+         public IntPtr hProcess = IntPtr.Zero;
+         public IntPtr hThread = IntPtr.Zero;
+         public int dwProcessId;
+         public int dwThreadId;
+    }
 
-    [</span><span><span style="color: #00008b;">StructLayout</span></span><span style="color: #586e75;">(</span><span><span style="color: #00008b;">LayoutKind</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Sequential</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">)]
-    </span><span><span style="color: #859900;">internal</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">class</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">StartupInfo</span></span>
-</strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">    {
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">int</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">cb</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">IntPtr</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">lpReserved</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">IntPtr</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Zero</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">IntPtr</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">lpDesktop</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">IntPtr</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Zero</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">IntPtr</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">lpTitle</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">IntPtr</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Zero</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">int</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">dwX</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">int</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">dwY</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">int</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">dwXSize</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">int</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">dwYSize</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">int</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">dwXCountChars</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">int</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">dwYCountChars</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">int</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">dwFillAttribute</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">int</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">dwFlags</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">short</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">wShowWindow</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">short</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">cbReserved2</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">IntPtr</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">lpReserved2</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">IntPtr</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Zero</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">SafeFileHandle</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">hStdInput</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">new</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">SafeFileHandle</span></span><span style="color: #586e75;">(</span><span><span style="color: #00008b;">IntPtr</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Zero</span></span><span style="color: #586e75;">, </span><span><span style="color: #859900;">false</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">);
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">SafeFileHandle</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">hStdOutput</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">new</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">SafeFileHandle</span></span><span style="color: #586e75;">(</span><span><span style="color: #00008b;">IntPtr</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Zero</span></span><span style="color: #586e75;">, </span><span><span style="color: #859900;">false</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">);
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">SafeFileHandle</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">hStdError</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">new</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">SafeFileHandle</span></span><span style="color: #586e75;">(</span><span><span style="color: #00008b;">IntPtr</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Zero</span></span><span style="color: #586e75;">, </span><span><span style="color: #859900;">false</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">);
+    [StructLayout(LayoutKind.Sequential)]
+    internal class StartupInfo
+    {
+         public int cb;
+         public IntPtr lpReserved = IntPtr.Zero;
+         public IntPtr lpDesktop = IntPtr.Zero;
+         public IntPtr lpTitle = IntPtr.Zero;
+         public int dwX;
+         public int dwY;
+         public int dwXSize;
+         public int dwYSize;
+         public int dwXCountChars;
+         public int dwYCountChars;
+         public int dwFillAttribute;
+         public int dwFlags;
+         public short wShowWindow;
+         public short cbReserved2;
+         public IntPtr lpReserved2 = IntPtr.Zero;
+         public SafeFileHandle hStdInput = new SafeFileHandle(IntPtr.Zero, false);
+         public SafeFileHandle hStdOutput = new SafeFileHandle(IntPtr.Zero, false);
+         public SafeFileHandle hStdError = new SafeFileHandle(IntPtr.Zero, false);
 
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">StartupInfo</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">()
-         {
-             </span><span><span style="color: #800080;">dwY</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #2aa198;"></span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-             </span><span><span style="color: #800080;">cb</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">Marshal</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #008b8b;">SizeOf</span></span><span style="color: #586e75;">(</span><span><span style="color: #859900;">this</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">);
-         }
+         public StartupInfo()
+         {
+             dwY = ;
+             cb = Marshal.SizeOf(this);
+         }
 
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">void</span></span><span style="color: #586e75;"> </span><span><span style="color: #008b8b;">Dispose</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">()
-         {
-             </span><span><span style="color: #93a1a1;">// close the handles created for child process</span></span>
-<span style="color: #586e75;">            </span><span><span style="color: #859900;"> if</span></span><span style="color: #586e75;"> (</span><span><span style="color: #800080;">hStdInput</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">!=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">null</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">&&</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">!</span></span><span><span style="color: #800080;">hStdInput</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">IsInvalid</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">)
-             {
-                 </span><span><span style="color: #800080;">hStdInput</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #008b8b;">Close</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">();
-                 </span><span><span style="color: #800080;">hStdInput</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">null</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-             }
+         public void Dispose()
+         {
+             // close the handles created for child process
+             if (hStdInput != null && !hStdInput.IsInvalid)
+             {
+                 hStdInput.Close();
+                 hStdInput = null;
+             }
 
-             </span><span><span style="color: #859900;">if</span></span><span style="color: #586e75;"> (</span><span><span style="color: #800080;">hStdOutput</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">!=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">null</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">&&</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">!</span></span><span><span style="color: #800080;">hStdOutput</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">IsInvalid</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">)
-             {
-                 </span><span><span style="color: #800080;">hStdOutput</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #008b8b;">Close</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">();
-                 </span><span><span style="color: #800080;">hStdOutput</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">null</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-             }
+             if (hStdOutput != null && !hStdOutput.IsInvalid)
+             {
+                 hStdOutput.Close();
+                 hStdOutput = null;
+             }
 
-             </span><span><span style="color: #859900;">if</span></span><span style="color: #586e75;"> (</span><span><span style="color: #800080;">hStdError</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">==</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">null</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">||</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">hStdError</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">IsInvalid</span></span><span style="color: #586e75;">) </span><span><span style="color: #859900;">return</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
+             if (hStdError == null || hStdError.IsInvalid) return;
 
-             </span><span><span style="color: #800080;">hStdError</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #008b8b;">Close</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">();
-             </span><span><span style="color: #800080;">hStdError</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">null</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         }
-     }
+             hStdError.Close();
+             hStdError = null;
+         }
+     }
 
-     [</span><span><span style="color: #00008b;">StructLayout</span></span><span style="color: #586e75;">(</span><span><span style="color: #00008b;">LayoutKind</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Sequential</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">)]
-     </span><span><span style="color: #859900;">internal</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">class</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">SecurityAttributes</span></span>
-</strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">     {
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">int</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">nLength</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #2aa198;">12</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">SafeLocalMemHandle</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">lpSecurityDescriptor</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">new</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">SafeLocalMemHandle</span></span><span style="color: #586e75;">(</span><span><span style="color: #00008b;">IntPtr</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Zero</span></span><span style="color: #586e75;">, </span><span><span style="color: #859900;">false</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">);
-         </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">bool</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">bInheritHandle</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-     }
+     [StructLayout(LayoutKind.Sequential)]
+     internal class SecurityAttributes
+     {
+         public int nLength = 12;
+         public SafeLocalMemHandle lpSecurityDescriptor = new SafeLocalMemHandle(IntPtr.Zero, false);
+         public bool bInheritHandle;
+     }
 
-     [</span><span><span style="color: #00008b;">SuppressUnmanagedCodeSecurity</span></span><span style="color: #586e75;">, </span><span><span style="color: #00008b;">HostProtection</span></span><span style="color: #586e75;">(</span><span><span style="color: #00008b;">SecurityAction</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">LinkDemand</span></span><span style="color: #586e75;">, </span><span><span style="color: #800080;">MayLeakOnAbort</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">true</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">)]
-     </span><span><span style="color: #859900;">internal</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">sealed</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">class</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">SafeLocalMemHandle</span></span><span style="color: #586e75;"> : </span><span><span style="color: #00008b;">SafeHandleZeroOrMinusOneIsInvalid</span></span>
-</strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">     {
-         </span><span><span style="color: #859900;">internal</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">SafeLocalMemHandle</span></span><span style="color: #586e75;">() : </span><span><span style="color: #00008b;">base</span></span><span style="color: #586e75;">(</span><span><span style="color: #859900;">true</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">) { }
+     [SuppressUnmanagedCodeSecurity, HostProtection(SecurityAction.LinkDemand, MayLeakOnAbort = true)]
+     internal sealed class SafeLocalMemHandle : SafeHandleZeroOrMinusOneIsInvalid
+     {
+         internal SafeLocalMemHandle() : base(true) { }
 
-         [</span><span><span style="color: #00008b;">SecurityPermission</span></span><span style="color: #586e75;">(</span><span><span style="color: #00008b;">SecurityAction</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">LinkDemand</span></span><span style="color: #586e75;">, </span><span><span style="color: #800080;">UnmanagedCode</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">true</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">)]
-         </span><span><span style="color: #859900;">internal</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">SafeLocalMemHandle</span></span><span style="color: #586e75;">(</span><span><span style="color: #00008b;">IntPtr</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">existingHandle</span></span><span style="color: #586e75;">, </span><span><span style="color: #859900;">bool</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">ownsHandle</span></span><span style="color: #586e75;">) : </span><span><span style="color: #00008b;">base</span></span><span style="color: #586e75;">(</span><span><span style="color: #657b83;">ownsHandle</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">)
-         {
-             </span><span><span style="color: #008b8b;">SetHandle</span></span><span style="color: #586e75;">(</span><span><span style="color: #657b83;">existingHandle</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">);
-         }
+         [SecurityPermission(SecurityAction.LinkDemand, UnmanagedCode = true)]
+         internal SafeLocalMemHandle(IntPtr existingHandle, bool ownsHandle) : base(ownsHandle)
+         {
+             SetHandle(existingHandle);
+         }
 
-         [</span><span><span style="color: #00008b;">DllImport</span></span><span style="color: #586e75;">(</span><span><span style="color: #2aa198;">"advapi32.dll"</span></span><span style="color: #586e75;">, </span><span><span style="color: #800080;">CharSet</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">CharSet</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Auto</span></span><span style="color: #586e75;">, </span><span><span style="color: #800080;">SetLastError</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">true</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">)]
-         </span><span><span style="color: #859900;">internal</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">static</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">extern</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">bool</span></span><span style="color: #586e75;"> </span><span><span style="color: #008b8b;">ConvertStringSecurityDescriptorToSecurityDescriptor</span></span><span style="color: #586e75;">(</span><span><span style="color: #859900;">string</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">stringSecurityDescriptor</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">,
-             </span><span><span style="color: #859900;">int</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">stringSDRevision</span></span><span style="color: #586e75;">, </span><span><span style="color: #859900;">out</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">SafeLocalMemHandle</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">pSecurityDescriptor</span></span><span style="color: #586e75;">, </span><span><span style="color: #00008b;">IntPtr</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">securityDescriptorSize</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">);
+         [DllImport("advapi32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+         internal static extern bool ConvertStringSecurityDescriptorToSecurityDescriptor(string stringSecurityDescriptor,
+             int stringSDRevision, out SafeLocalMemHandle pSecurityDescriptor, IntPtr securityDescriptorSize);
 
-         [</span><span><span style="color: #00008b;">ReliabilityContract</span></span><span style="color: #586e75;">(</span><span><span style="color: #00008b;">Consistency</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">WillNotCorruptState</span></span><span style="color: #586e75;">, </span><span><span style="color: #00008b;">Cer</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Success</span></span><span style="color: #586e75;">), </span><span><span style="color: #00008b;">DllImport</span></span><span style="color: #586e75;">(</span><span><span style="color: #2aa198;">"kernel32.dll"</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">)]
-         </span><span><span style="color: #859900;">private</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">static</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">extern</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">IntPtr</span></span><span style="color: #586e75;"> </span><span><span style="color: #008b8b;">LocalFree</span></span><span style="color: #586e75;">(</span><span><span style="color: #00008b;">IntPtr</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">hMem</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">);
+         [ReliabilityContract(Consistency.WillNotCorruptState, Cer.Success), DllImport("kernel32.dll")]
+         private static extern IntPtr LocalFree(IntPtr hMem);
 
-         </span><span><span style="color: #859900;">protected</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">override</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">bool</span></span><span style="color: #586e75;"> </span><span><span style="color: #008b8b;">ReleaseHandle</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">()
-         {
-             </span><span><span style="color: #859900;">return</span></span><span style="color: #586e75;"> (</span><span><span style="color: #008b8b;">LocalFree</span></span><span style="color: #586e75;">(</span><span><span style="color: #800080;">handle</span></span><span style="color: #586e75;">) </span><span><span style="color: #008b8b;">==</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">IntPtr</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Zero</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">);
-         }
-     }
+         protected override bool ReleaseHandle()
+         {
+             return (LocalFree(handle) == IntPtr.Zero);
+         }
+     }
 
-     </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">static</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">class</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">Test</span></span>
-</strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">     {
-         </span><span><span style="color: #859900;">const</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">int</span></span><span style="color: #586e75;"> </span><span><span style="color: #800080;">normalPriorityClass</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #2aa198;">0x0020</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
+     public static class Test
+     {
+         const int normalPriorityClass = 0x0020;
 
-         [</span><span><span style="color: #00008b;">DllImport</span></span><span style="color: #586e75;">(</span><span><span style="color: #2aa198;">"Kernel32"</span></span><span style="color: #586e75;">, </span><span><span style="color: #800080;">CharSet</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">CharSet</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Auto</span></span><span style="color: #586e75;">, </span><span><span style="color: #800080;">SetLastError</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">true</span></span><span style="color: #586e75;">, </span><span><span style="color: #800080;">BestFitMapping</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">false</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">)]
-         </span><span><span style="color: #859900;">internal</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">static</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">extern</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">bool</span></span><span style="color: #586e75;"> </span><span><span style="color: #008b8b;">CreateProcess</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">(
-             [</span><span><span style="color: #00008b;">MarshalAs</span></span><span style="color: #586e75;">(</span><span><span style="color: #00008b;">UnmanagedType</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">LPTStr</span></span><span style="color: #586e75;">)]</span><span><span style="color: #859900;">string</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">applicationName</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">,
-             </span><span><span style="color: #00008b;">StringBuilder</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">commandLine</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">,
-             </span><span><span style="color: #00008b;">SecurityAttributes</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">processAttributes</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">,
-             </span><span><span style="color: #00008b;">SecurityAttributes</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">threadAttributes</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">,
-             </span><span><span style="color: #859900;">bool</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">inheritHandles</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">,
-             </span><span><span style="color: #859900;">int</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">creationFlags</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">,
-             </span><span><span style="color: #00008b;">IntPtr</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">environment</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">,
-             [</span><span><span style="color: #00008b;">MarshalAs</span></span><span style="color: #586e75;">(</span><span><span style="color: #00008b;">UnmanagedType</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">LPTStr</span></span><span style="color: #586e75;">)]</span><span><span style="color: #859900;">string</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">currentDirectory</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">,
-             </span><span><span style="color: #00008b;">StartupInfo</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">startupInfo</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">,
-             </span><span><span style="color: #00008b;">ProcessInformation</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">processInformation</span></span>
-</strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">        );
+         [DllImport("Kernel32", CharSet = CharSet.Auto, SetLastError = true, BestFitMapping = false)]
+         internal static extern bool CreateProcess(
+             [MarshalAs(UnmanagedType.LPTStr)]string applicationName,
+             StringBuilder commandLine,
+             SecurityAttributes processAttributes,
+             SecurityAttributes threadAttributes,
+             bool inheritHandles,
+             int creationFlags,
+             IntPtr environment,
+             [MarshalAs(UnmanagedType.LPTStr)]string currentDirectory,
+             StartupInfo startupInfo,
+             ProcessInformation processInformation
+        );
 
-        </span><span><span style="color: #859900;">public</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">static</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">void</span></span><span style="color: #586e75;"> </span><span><span style="color: #008b8b;">Main</span></span><span style="color: #586e75;">(</span><span><span style="color: #859900;">string</span></span><span style="color: #586e75;">[] </span><span><span style="color: #657b83;">args</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">)
-        {
-            </span><span><span style="color: #93a1a1;">// We can use the string builder to build up our full command line, including arguments</span></span>
-<span style="color: #586e75;">            </span><span><span style="color: #859900;">var</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">sb</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">new</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">StringBuilder</span></span><span style="color: #586e75;">(</span><span><span style="color: #2aa198;">"notepad.exe"</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">);
-            </span><span><span style="color: #859900;">var</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">processInformation</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">new</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">ProcessInformation</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">();
-            </span><span><span style="color: #859900;">var</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">startupInfo</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">new</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">StartupInfo</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">();
-            </span><span><span style="color: #859900;">var</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">processSecurity</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">new</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">SecurityAttributes</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">();
-            </span><span><span style="color: #859900;">var</span></span><span style="color: #586e75;"> </span><span><span style="color: #657b83;">threadSecurity</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #859900;">new</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">SecurityAttributes</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">();
+        public static void Main(string[] args)
+        {
+            // We can use the string builder to build up our full command line, including arguments
+            var sb = new StringBuilder("notepad.exe");
+            var processInformation = new ProcessInformation();
+            var startupInfo = new StartupInfo();
+            var processSecurity = new SecurityAttributes();
+            var threadSecurity = new SecurityAttributes();
 
-            </span><span><span style="color: #657b83;">processSecurity</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">nLength</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">Marshal</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #008b8b;">SizeOf</span></span><span style="color: #586e75;">(</span><span><span style="color: #657b83;">processSecurity</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">);
-            </span><span><span style="color: #657b83;">threadSecurity</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">nLength</span></span><span style="color: #586e75;"> </span><span><span style="color: #d33682;">=</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">Marshal</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #008b8b;">SizeOf</span></span><span style="color: #586e75;">(</span><span><span style="color: #657b83;">threadSecurity</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">);
+            processSecurity.nLength = Marshal.SizeOf(processSecurity);
+            threadSecurity.nLength = Marshal.SizeOf(threadSecurity);
 
-            </span><span><span style="color: #859900;">if</span></span><span style="color: #586e75;"> (</span><span><span style="color: #008b8b;">CreateProcess</span></span><span style="color: #586e75;">(</span><span><span style="color: #859900;">null</span></span><span style="color: #586e75;">, </span><span><span style="color: #657b83;">sb</span></span><span style="color: #586e75;">, </span><span><span style="color: #657b83;">processSecurity</span></span><span style="color: #586e75;">, </span><span><span style="color: #657b83;">threadSecurity</span></span><span style="color: #586e75;">, </span><span><span style="color: #859900;">false</span></span><span style="color: #586e75;">, </span><span><span style="color: #800080;">normalPriorityClass</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">,
-                 </span><span><span style="color: #00008b;">IntPtr</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #800080;">Zero</span></span><span style="color: #586e75;">, </span><span><span style="color: #859900;">null</span></span><span style="color: #586e75;">, </span><span><span style="color: #657b83;">startupInfo</span></span><span style="color: #586e75;">, </span><span><span style="color: #657b83;">processInformation</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">))
-            {
-                </span><span><span style="color: #93a1a1;">// Process was created successfully</span></span>
-<span style="color: #586e75;">                </span><span><span style="color: #859900;">return</span></span></strong></span><span style="font-family: &amp;amp;"><strong><span style="color: #586e75;">;
-            }
+            if (CreateProcess(null, sb, processSecurity, threadSecurity, false, normalPriorityClass,
+                 IntPtr.Zero, null, startupInfo, processInformation))
+            {
+                // Process was created successfully
+                return;
+            }
 
-            </span><span><span style="color: #93a1a1;">// We couldn't create the process, so raise an exception with the details.</span></span>
-<span style="color: #586e75;">            </span><span><span style="color: #859900;">throw</span></span><span style="color: #586e75;"> </span><span><span style="color: #00008b;">Marshal</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #008b8b;">GetExceptionForHR</span></span><span style="color: #586e75;">(</span><span><span style="color: #00008b;">Marshal</span></span><span><span style="color: #d33682;">.</span></span><span><span style="color: #008b8b;">GetHRForLastWin32Error</span></span></strong><span style="color: #586e75;"><strong>());
-         }
-     }
-}</strong></span></span></pre>
+            // We couldn't create the process, so raise an exception with the details.
+            throw Marshal.GetExceptionForHR(Marshal.GetHRForLastWin32Error());
+         }
+     }
+}
+```
 
 ## Utilities
 
-I used the invaluable [SysInternals](https://technet.microsoft.com/en-nz/sysinternals/bb842062) tools Process Monitor, Process Explorer and Handle to diagnose what was going on.
+I used the invaluable [SysInternals](https://technet.microsoft.com/en-nz/sysinternals/bb842062) tools **Process Monitor**, **Process Explorer** and **Handle** to diagnose what was going on.
 
 ## References
 
-[Handle Inheritance @ MSDN](https://msdn.microsoft.com/en-us/library/ms724466(v=vs.85).aspx)
-
-[Child process keeps parent’s socket open – Diagnostics.Process and Net.TcpListene @ social.msdn.microsoft.com](https://social.msdn.microsoft.com/Forums/en-US/netfxbcl/thread/94ba760c-7080-4614-8a56-15582c48f900/)
+* [Handle Inheritance @ MSDN](https://msdn.microsoft.com/en-us/library/ms724466(v=vs.85).aspx)
+* [Child process keeps parent’s socket open – Diagnostics.Process and Net.TcpListene @ social.msdn.microsoft.com](https://social.msdn.microsoft.com/Forums/en-US/netfxbcl/thread/94ba760c-7080-4614-8a56-15582c48f900/)

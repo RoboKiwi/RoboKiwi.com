@@ -12,22 +12,21 @@ aliases: /2013/06/16/asychronously-upload-a-file-using-jquery-to-a-web-api-contr
 
 Here’s the code for the HTML5 form:
 
-{{< highlight html >}}
-<pre><code class="language-markup">&lt;form id="upload"&gt;
-    &lt;div&gt;
-        &lt;label for="myFile"&gt;&lt;/label&gt;
-        &lt;div&gt;
-            &lt;input type="file" id="myFile" /&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;button type="submit"&gt;Upload&lt;/button&gt;
-&lt;/form&gt;</code></pre>
-{{< /highlight >}}
+```html
+<form id="upload">
+    <div>
+        <label for="myFile"></label>
+        <div>
+            <input type="file" id="myFile" />
+        </div>
+    </div>
+    <button type="submit">Upload</button>
+</form>
+```
 
 We need to use jQuery to handle when the user submits the upload, to make sure it gets handled asynchronously and posted to our Web API controller:
-  
 
-{{< highlight javascript >}}
+```javascript
 // Hook into the form's submit event.
 $('#upload').submit(function () {
 
@@ -66,11 +65,12 @@ $('#upload').submit(function () {
     // bubbling and re-posting the form (synchronously).
     return false;
 });
-{{< /highlight >}}
+```
   
 Ok and now in our controller, we can deal with the uploaded file(s):
 
-<pre><code class="language-csharp">    using System;
+```csharp
+    using System;
     using System.IO;
     using System.Net;
     using System.Net.Http;
@@ -90,7 +90,7 @@ Ok and now in our controller, we can deal with the uploaded file(s):
             var streamProvider = new MultipartFormDataStreamProvider(HttpContext.Current.Server.MapPath("~/App_Data/Uploads/"));
 
             // Once the files have been written out, we can then process them.
-            await Request.Content.ReadAsMultipartAsync(streamProvider).ContinueWith(t =&gt;
+            await Request.Content.ReadAsMultipartAsync(streamProvider).ContinueWith(t =>
             {
                 if (t.IsFaulted || t.IsCanceled)
                 {
@@ -110,4 +110,5 @@ Ok and now in our controller, we can deal with the uploaded file(s):
                 }
             });
         }
-    }</code></pre>
+    }
+```

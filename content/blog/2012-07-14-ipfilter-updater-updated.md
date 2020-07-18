@@ -9,7 +9,7 @@ tags:
 - ipfilter
 - updater
 - utorrent
-title: IPFilter Updater&#8230; Updated!
+title: IPFilter Updater Updated!
 url: /blog/2012/07/14/ipfilter-updater-updated/
 aliases: /2012/07/14/ipfilter-updater-updated/
 ---

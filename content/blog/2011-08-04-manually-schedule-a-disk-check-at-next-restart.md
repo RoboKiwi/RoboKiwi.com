@@ -22,12 +22,18 @@ You do this by setting the "dirty" flag for a drive, which marks the drive for a
 
 Usage:
 
-> <pre>fsutil dirty query &lt;volume pathname&gt;</pre>
+```cmd
+fsutil dirty query <volume pathname>
+```
 
 e.g.
 
-> <pre>fsutil dirty set <strong>C:</strong></pre>
+```cmd
+fsutil dirty set C:
+```
 
 You can check if a drive has been marked as dirty by using the query command:
 
-> <pre>fsutil dirty query &lt;volume pathname&gt;</pre>
+```cmd
+fsutil dirty query <volume pathname>
+```
