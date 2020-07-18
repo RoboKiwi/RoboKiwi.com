@@ -25,21 +25,22 @@ aliases: /2010/06/28/how-to-debug-a-windows-installer-custom-action/
 
 ## Steps
 
-  1. Set the MsiBreak environment variable (user or system) to the name of the custom action. For example:
+1. Set the MsiBreak environment variable (user or system) to the name of the custom action. For example, if your custom action is called MyCustomAction:
   
-    `<br />
-Setx MsiBreak <strong>MyCustomActionName</p>
-<p></strong>`
-  2. Run your installer
-  3. At the point where your custom action is about to run, you should get this message box prompt: 
-    [<img class="alignnone size-full wp-image-294" title="Debugging Custom Actions" src="/wp-content/uploads/2010/06/debugging-custom-actions.png" alt="" width="478" height="169" />](/wp-content/uploads/2010/06/debugging-custom-actions.png)</li> 
-    
-      * Now you can use Visual Studio or another debugger such as WinDBG to attach to the specified process.
-      * Click OK on the message box
-      * This should break into your debugger. This is a good time to set your breakpoints in your custom action code.
-      * When ready, run/continue the debug session.
-      * Your custom action should run and your breakpoint(s) will be hit.</ol> 
-    
-    ## References:
-    
-    [Debugging Custom Actions](https://msdn.microsoft.com/en-us/library/aa368264(VS.85).aspx) @ msdn.microsoft.com
+```cmd
+    Setx MsiBreak MyCustomAction
+```
+
+2. Run your installer and wait for the message box prompt
+
+### Details
+
+When your custom action is about to execute, you should get this message box prompt:
+
+![Debugging Custom Actions](/wp-content/uploads/2010/06/debugging-custom-actions.png)
+
+Now you can use Visual Studio or another debugger such as WinDBG to attach to the specified process.
+
+## References:
+
+[Debugging Custom Actions](https://msdn.microsoft.com/en-us/library/aa368264(VS.85).aspx) @ msdn.microsoft.com

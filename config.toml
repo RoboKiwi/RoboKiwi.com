@@ -9,6 +9,7 @@ disableAliases = false
 pygmentsCodeFences = true
 pygmentsStyle="monokailight"
 enableGitInfo = true
+paginate =  20
 
 [outputs]
 home = [ "HTML", "RSS"]

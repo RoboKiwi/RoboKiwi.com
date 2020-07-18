@@ -1,3 +1,7 @@
+---
+title: Registration-Free COM
+---
+
 # Registration-Free COM
 
 ## Troubleshooting
@@ -8,8 +12,8 @@ When launching the application, you may see a dialog stating **The application h
 
 You can create a batch file to make it easier to run, parse and view the SxSTrace:
 
-``
+```cmd
 sxstrace.exe Trace -logfile:"%~dp0SxsTrace.trace"
 sxstrace.exe Parse -logfile:"%~dp0SxsTrace.trace" -outfile:"%~dp0SxsTrace.txt"
 start %~dp0SxsTrace.txt
-``
+```

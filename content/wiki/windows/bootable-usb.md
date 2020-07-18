@@ -1,4 +1,6 @@
-# Making a Windows Bootable USB Drive
+---
+title: Make a bootable Windows USB Drive
+---
 
 ## Format the USB drive and make it bootable
 

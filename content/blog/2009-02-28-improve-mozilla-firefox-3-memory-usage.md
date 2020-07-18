@@ -21,4 +21,14 @@ url: /blog/2009/02/28/improve-mozilla-firefox-3-memory-usage/
 aliases: /2009/02/28/improve-mozilla-firefox-3-memory-usage/
 ---
 
-Firefox still tends to be a bit of a memory hog over <em>an extended period of time</em>, even though the latest major version (3) has made massive memory usage improvements over previous versions. This tweak will make sure Firefox behaves more like standard Windows applications when it comes to being minimized, as in freeing up the memory it's using for Windows. The down-side to this is that when restored or maximized again, there will be a delay as the application shifts chunks from slow virtual memory to system memory. <ul> <li>Go to <strong>about:config</strong></li> <li>Right click anywhere in the list and choose<strong> New > Boolean</strong></li> <li>Call the entry <strong>config.trim\_on\_minimize</strong> and set it to <strong>true</strong></li> <li>Restart Firefox</li> <li>You might want to go to about:config to confirm the change took effect</li> </ul>
+Firefox still tends to be a bit of a memory hog over *an extended period of time*, even though the latest major version (3) has made massive memory usage improvements over previous versions.
+
+This tweak will make sure Firefox behaves more like standard Windows applications when it comes to being minimized, as in freeing up the memory it's using for Windows.
+
+The down-side to this is that when restored or maximized again, there will be a delay as the application shifts chunks from slow virtual memory to system memory.
+
+* Go to **about:config**
+* Right click anywhere in the list and choose **New** > **Boolean**
+* Call the entry **`config.trim_on_minimize`** and set it to **`true`**
+* Restart Firefox
+* You might want to go to about:config to confirm the change took effect
