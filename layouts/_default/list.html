@@ -76,7 +76,7 @@
         <ul class="pagination">
             {{ with $pag.First }}
             <li class="page-item">
-                <a href="{{.RelPermalink}}" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+                <a href="{{.URL}}" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
             </li>
             {{ end }}
             <li class="page-item{{ if not $pag.HasPrev }} disabled{{ end }}">
@@ -96,7 +96,7 @@
                 {{ $ellipsed = true }}
             {{ end }}
             {{ if $showNumber }}
-            <li class="page-item{{ if eq . $pag }} active{{ end }}"><a class="page-link" href="{{.RelPermalink}}">{{ .PageNumber }}</a></li>
+            <li class="page-item{{ if eq . $pag }} active{{ end }}"><a class="page-link" href="{{.URL}}">{{ .PageNumber }}</a></li>
             {{ else if $shouldEllipse }}
             <li class="page-item disabled"><span aria-hidden="true">&nbsp;&hellip;&nbsp;</span></li>
             {{ end }}
@@ -106,7 +106,7 @@
             </li>
             {{ with $pag.Last }}
             <li class="page-item">
-                <a href="{{.RelPermalink}}" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+                <a href="{{.URL}}" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
             </li>
             {{ end }}
         </ul>
