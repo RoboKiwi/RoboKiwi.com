@@ -52,9 +52,7 @@ weight = 5
 identifier = "wiki"
 url = "/wiki/"
 
-# Anything with a weight > 100 gets an external icon
-
-[[menu.global]]
+[[menu.external]]
 name = "GitHub"
 weight = 200
 icon = true
