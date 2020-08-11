@@ -16,7 +16,7 @@ select partition 1
 active
 format fs=ntfs quick label="Windows Setup"
 exit
-```
+``` 
 
 
 ## Make it boot Windows 10 Installer
@@ -41,3 +41,23 @@ Target volumes will be updated with BOOTMGR compatible bootcode.
 
 Bootcode was successfully updated on all targeted volumes.
 ```
+
+# Optional: Show an icon for your USB drive
+
+You can configure an icon to display for your USB Drive to show in Windows Explorer, which can help easily identifying the drive.
+
+Find an .ico file you'd like to use, or create one yourself.
+
+Rename the file e.g. `autorun.ico`
+
+In the root of the USB drive, create a new text file called autorun.inf and add the contents:
+
+```
+[AutoRun.Amd64]
+icon=autorun.ico
+
+[AutoRun]
+icon=autorun.ico
+```
+
+Your drive should now display an icon in Windows Explorer.

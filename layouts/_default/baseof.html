@@ -76,7 +76,7 @@
         <ul class="flex-ns list ma0 pa0 dn dib-l">
           {{ range .Site.Menus.external }}
             <li class="f5 dib mr4" role="menuitem">
-              <a href="{{.URL}}" class="dim link{{ if eq $currentPage.Section .Identifier }} primary-color {{else}} light-silver{{ end }}" target="_blank">
+              <a href="{{.URL}}" class="dim link light-silver" target="_blank">
                 {{ .Name }}<span class="pl1">{{ partial "svg/link-ext.svg" (dict "size" "10") }}</span>
               </a>
             </li>
