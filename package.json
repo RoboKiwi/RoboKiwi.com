@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "RoboKiwi.com",
   "main": "index.js",
+  "private": true,
   "devDependencies": {
     "@babel/core": "^7.7.0",
     "@babel/preset-env": "^7.7.1",
