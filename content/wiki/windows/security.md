@@ -38,3 +38,10 @@ Or use it just to clean a directory:
 ```cmd
 sdelete -p <passes> -s <path>
 ```
+
+# Hardening
+
+Remove SMB 1.0 that has vulnerabilities (SMB 3.0 is still fine)
+
+`Remove-WindowsFeature -Name FS-SMB1`
+
