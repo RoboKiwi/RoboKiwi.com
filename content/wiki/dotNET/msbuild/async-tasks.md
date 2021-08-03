@@ -6,7 +6,7 @@ description: Using async code in custom MSBuild tasks
 
 You can use async in MSBuild tasks using a pattern like this:
 
-```
+```csharp
 public class MyCustomTask : Task {
 
     public override bool Execute()

@@ -2,7 +2,7 @@
 title: Setting up Powershell environment
 ---
 
-# Terminal: Windows Terminal
+## Terminal: Windows Terminal
 
 [Install from Windows Store](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701) (auto-updating) or:
 
@@ -10,12 +10,12 @@ title: Setting up Powershell environment
 winget install --id=Microsoft.WindowsTerminal -e
 ```
 
-# Shell: PowerShell Core
+## Shell: PowerShell Core
 
 * Install latest stable Powershell Core from https://github.com/PowerShell/PowerShell/releases/latest
 * Configure Powershell Core as your default shell in Windows Terminal by going to `Settings` or hitting `ctrl+,` and ensure the default profile GUID matches the Powershell GUID (not the *Windows* Powershell GUID)
 
-# Font: Cascadia Code
+## Font: Cascadia Code
 
 This is a new monospaced font from Microsoft developed for Windows Terminal, to be used for command-line apps and text editors.
 
@@ -38,18 +38,18 @@ Set this in your Windows Terminal settings e.g.
     ],
 ```
 
-## Visual Studio Code (VSCode)
+### Visual Studio Code (VSCode)
 
 In `File` > `Preferences` > `Settings`, search for `terminal font` and set `Terminal` > `Integrated:` `Font Family` to `Cascadia Code PL`
 
-## Visual Studio
+### Visual Studio
 
 1. Open `Tools` > `Options`
 2. `Environment` > `Font and Colors`
 3. Under the `Show settings for:` dropdown, select `Terminal`
 4. Set the `Font` to `Cascadia Code PL`
 
-# PSReadLine
+## PSReadLine
 
 Install the official [improved PowerShell command-line editing](https://github.com/PowerShell/PSReadLine) 
 
@@ -66,7 +66,7 @@ if ($host.Name -eq 'ConsoleHost')
 }
 ```
 
-## Updating PSReadLine
+### Updating PSReadLine
 
 If you need to update PSReadLine, you should close down all open PowerShell sessions and run from `Win+R`:
 
@@ -74,7 +74,7 @@ If you need to update PSReadLine, you should close down all open PowerShell sess
 pwsh.exe -noprofile -command "Install-Module PSReadLine -Force -SkipPublisherCheck -AllowPrerelease"
 ```
 
-# PowerShell theming: Oh-My-Posh
+## PowerShell theming: Oh-My-Posh
 
 * Install [Oh-My-Posh](https://github.com/JanDeDobbeleer/oh-my-posh) for console theming and coloured indicators
 * Install [Posh-Git]() for git status indicators
@@ -93,9 +93,9 @@ Set-PoshPrompt -Theme paradox
 
 > Themes other than Paradox can be seen at https://github.com/JanDeDobbeleer/oh-my-posh#themes
 
-# Auto-completion
+## Auto-completion
 
-## dotnet
+### dotnet
 
 Enable [dotnet auto-completion](https://docs.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete) by adding the following to your `$profile`:
 
@@ -109,7 +109,7 @@ Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
  }
 ```
 
-## WinGet
+### WinGet
 
 Add [WinGet auto-completion](https://github.com/microsoft/winget-cli/blob/master/doc/Completion.md) by adding the following to your `$profile`:
 
@@ -125,6 +125,6 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 }
 ```
 
-# References
+## References
 
 [Tutorial: Set up Powerline in Windows Terminal @ docs.microsoft.com](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup)
