@@ -5,7 +5,28 @@ description: Recommendations for applications and tools
 
 * Git for Windows
 
-## Editors and IDEs
+# Editors and IDEs
+
+* Visual Studio
+    * JetBrains ReSharper
+* JetBrains Rider
+* IntelliJ IDEA
+* LINQPad
+* Tizen Studio
+* Visual Studio Code
+
+# Profiling & Debugging
+
+* JetBrains dotTrace
+* JetBrains dotPeek
+* JetBrains dotMemory
+* Debug Diagnostics
+* MSBuild Structured Log Viewer
+* PerfView
+
+# Testing
+
+* JetBrains dotCover
 
 ## Visual Studio Code
 
@@ -35,3 +56,82 @@ YouTube-DL
     Extract audio as mp3: `youtube-dl <url> -x --audio-format mp3`
     Show available formats: -F
     Download specific format: -f <formatcode>
+
+# Design & Creative
+
+Affinity Suite
+    Affinity Designer
+    Affinity Photo
+    Affinity Publisher
+GIMP
+Blackmagic Design DaVinci Resolve
+Clip Studio Paint (formerly Manga Studio)
+Blender
+Inkspace
+Paint.NET
+Krita
+MediBang https://medibangpaint.com/en/
+
+# Misc
+
+* 7-Zip
+* Araxis Merge
+* GitKraken
+* Chrome Remote Desktop
+* Discord
+* Docker Desktop
+* Voidtools Everything
+* Git for Windows
+* KeePassXC
+* Libby
+* NodeJS
+
+* OBS Studio
+* Streamlabs OBS
+* VB Audio Voicemeeter & Voicemeeter Banana
+
+* OpenSSL
+* OpenVPN Connect
+* Parsec
+* qBitTorrent
+* VLC Player
+* Media Player Classic Home Cinema (MPC-HC)
+* VisualSVN
+* WiX, Orca
+* Mozilla Thunderbird
+* Postman
+* Slack
+* WinDirStat
+* Microsoft Teams
+* Skype
+* Zoom
+* Signal
+* Sumatra PDF
+* Thunderbird
+
+# Utils
+
+SharpKeys
+
+# Azure
+
+Azure Portal
+CosmosDB Emulator
+    DocumentDBImporter
+    DocumentDBStudio
+
+Azure Storage Emulator
+Azure Compute Emulator
+Azerite
+Microsoft Azure Storage Explorer
+
+# Hosting
+
+Namecheap
+
+# Databases & Data
+
+Azure Data Studio (formerly SQL Operations Studio)
+JetBrains DataGrip
+SSMS & SQL Server Profiler
+SQLiteBrowser

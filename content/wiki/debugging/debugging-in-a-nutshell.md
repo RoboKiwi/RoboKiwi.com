@@ -34,7 +34,11 @@ set _NT_SYMBOL_PATH=SRV*%TEMP%\SymbolCache*http://msdl.microsoft.com/download/sy
 ## WinDBG
 
 
+## Debug Diagnostics
 
+Debug Diagnostic Tool v2 Update 3.1 in the latest version, available to download from Microsoft:
+
+https://www.microsoft.com/en-us/download/details.aspx?id=102635
 
 
 # C/C++ Code
@@ -46,6 +50,11 @@ Debugging optimized Visual C++ code was difficult to impossible in some cases, e
 Visual C++ 2012: Undocumented compiler flag `/d2Zi+`
 
 Visual Studio 2013 Update 3 or higher: Officially supported flag: `/Zo` (zed-oh) [^1]
+
+# .NET
+
+`CLI_DEBUG=1`
+
 
 # Footnotes
 

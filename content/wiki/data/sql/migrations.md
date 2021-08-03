@@ -22,6 +22,10 @@ You should be able to force re-running of migrations.
 
 Concept of environments? Test, Prod etc? So migration or chunk of migration can run (or not run) in a particular environment.
 
+Allow the app to start even if the migrations fail
+
+Automatically expose the API and web interface (similar to the Swashbuckle Swagger endpoints)
+
 # Migration libraries and approaches
 
 ## .NET

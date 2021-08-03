@@ -13,8 +13,11 @@ git checkout -b <branch>
 ## Delete branch locally and remotely
 
 ```bash
-git branch -d <branch>
-git push -d <remote> <branch>
+git branch -d <branch> # Delete local branch
+git push -d <remote> <branch> # Delete remote branch
+git branch -dr <remote>/<branch> # Delete local remote-tracking branch
+
+git fetch <remote> -p # Delete all local remote-tracking branches (--prune)
 ```
 
 ## Create an empty branch
@@ -28,6 +31,16 @@ git reset --hard
 
 ```bash
 git rm --cached -rf .
+```
+
+# Import local git repository to GitHub
+
+* Create new empty repository in GitHub, simultaneously renaming `master` to `main`
+
+```bash
+git remote add origin https://github.com/username/Repo.git
+git branch -M main
+git push -u origin main
 ```
 
 ## Git policies
