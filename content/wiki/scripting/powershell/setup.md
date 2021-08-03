@@ -38,6 +38,17 @@ Set this in your Windows Terminal settings e.g.
     ],
 ```
 
+## Visual Studio Code (VSCode)
+
+In `File` > `Preferences` > `Settings`, search for `terminal font` and set `Terminal` > `Integrated:` `Font Family` to `Cascadia Code PL`
+
+## Visual Studio
+
+1. Open `Tools` > `Options`
+2. `Environment` > `Font and Colors`
+3. Under the `Show settings for:` dropdown, select `Terminal`
+4. Set the `Font` to `Cascadia Code PL`
+
 # PSReadLine
 
 Install the official [improved PowerShell command-line editing](https://github.com/PowerShell/PSReadLine) 
@@ -77,7 +88,7 @@ Add to your `$profile`:
 ```powershell
 Import-Module posh-git
 Import-Module oh-my-posh
-Set-Theme paradox
+Set-PoshPrompt -Theme paradox
 ```
 
 > Themes other than Paradox can be seen at https://github.com/JanDeDobbeleer/oh-my-posh#themes
@@ -113,3 +124,7 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
         }
 }
 ```
+
+# References
+
+[Tutorial: Set up Powerline in Windows Terminal @ docs.microsoft.com](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup)
