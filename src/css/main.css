@@ -8,7 +8,6 @@
 .sticky {
     position: fixed;
     top:100px;
-    right:0;
   }
 
   .prose table {
@@ -38,6 +37,13 @@
       border-right: 1px solid var(--light-gray);
     }
 
+}
+
+.sticky-r {
+  right:0;
+}
+.sticky-l {
+  left: 2em;
 }
 
 .prose table tr:nth-child(even) {
@@ -73,3 +79,7 @@
 }
 
 .fill-current { fill: currentColor; }
+
+div.highlight pre {
+  padding: 1em;
+}
