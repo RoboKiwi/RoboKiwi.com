@@ -2,11 +2,11 @@
     <nav role="navigation sticky sticky-l" class="sticky sticky-l">
       <ul class="list pa0 nl2">
         {{ range .FirstSection.Sections.ByWeight }}
-          <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw6">
+          <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw5">
             <a href="{{.RelPermalink}}" class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2">{{ .Name }}</a>
             <ul class="desktopmenu animated fadeIn list pl0 bg-light-gray">
               {{- range .Sections }}
-              <li class="f6 fw4">
+              <li class="f6 fw2">
                 <a href="{{.RelPermalink}}" class="db link hover-bg-gray hover-white pl3 pr2 pv2">
                   {{ .Name }}
                 </a>

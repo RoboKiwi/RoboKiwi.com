@@ -3,19 +3,32 @@ title: Recommendations
 description: Recommendations for applications and tools
 ---
 
+This page contains recommendations for applications and tools favouring free and Open Source alternatives.
+
+## Development Staples
+
 * Git for Windows
 
-# Editors and IDEs
+## Editors
+
+* LINQPad
+* Visual Studio Code
+
+## Security & Password Management
+
+* Microsoft Authenticator
+* Firefox Lockwise
+
+## Integrated Development Environment (IDE)
 
 * Visual Studio
-    * JetBrains ReSharper
+  * JetBrains ReSharper
 * JetBrains Rider
 * IntelliJ IDEA
-* LINQPad
 * Tizen Studio
 * Visual Studio Code
 
-# Profiling & Debugging
+## Profiling & Debugging
 
 * JetBrains dotTrace
 * JetBrains dotPeek
@@ -24,55 +37,48 @@ description: Recommendations for applications and tools
 * MSBuild Structured Log Viewer
 * PerfView
 
-# Testing
+## Testing
 
 * JetBrains dotCover
 
 ## Visual Studio Code
 
-Configure to use Cascadia Code PowerLine font: `"terminal.integrated.fontFamily": "Cascadia Code PL"`
-
 # Shell and terminal
 
 * Windows Terminal + PowerShell Core
 
-# References
-
-https://docs.microsoft.com/en-nz/windows/terminal/tutorials/powerline-setup
-https://www.hanselman.com/blog/you-should-be-customizing-your-powershell-prompt-with-psreadline
-
 # Browsers & Internet
 
 * [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/)
-    * [uBlock Origin Ad-blocker](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
-    * [Panorama Tab Groups](https://addons.mozilla.org/en-US/firefox/addon/panorama-tab-groups/), [Source Code](https://github.com/projectdelphai/panorama-tab-groups)
-    * [Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
-    * [Facebook Container](https://addons.mozilla.org/en-US/firefox/addon/facebook-container/)
-    * [Foxy Gestures](https://addons.mozilla.org/en-US/firefox/addon/foxy-gestures/)
-    * [React Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+  * [uBlock Origin Ad-blocker](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/)
+  * [Panorama Tab Groups](https://addons.mozilla.org/en-US/firefox/addon/panorama-tab-groups/), [Source Code](https://github.com/projectdelphai/panorama-tab-groups)
+  * [Firefox Multi-Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/)
+  * [Facebook Container](https://addons.mozilla.org/en-US/firefox/addon/facebook-container/)
+  * [Foxy Gestures](https://addons.mozilla.org/en-US/firefox/addon/foxy-gestures/)
+  * [React Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
+* YouTube-DL
+  * `choco install youtube-dl`
+  * Extract audio as mp3: `youtube-dl <url> -x --audio-format mp3`
+  * Show available formats: `-F`
+  * Download specific format: `-f <formatcode>`
 
-YouTube-DL
-    choco install youtube-dl
-    Extract audio as mp3: `youtube-dl <url> -x --audio-format mp3`
-    Show available formats: -F
-    Download specific format: -f <formatcode>
+## Design & Creative
 
-# Design & Creative
+| Application                               | Company | License | Comments |
+|-------------------------------------------|---------|---------|----------|
+| Affinity Designer                         |         |         |          |
+| Affinity Photo                            |         |         |          |
+| Clip Studio Paint (formerly Manga Studio) |         |         |          |
+| Krita                                     |         |         |          |
+| [MediBang](https://medibangpaint.com/en/) |         |         |          |
+| Affinity Publisher                        |         |         |          |
+| Paint.NET                                 |         |         |          |
+| Inkspace                                  |         |         |          |
+| Blender                                   |         |         |          |
+| Blackmagic Design DaVinci Resolve         |         |         |          |
+| GIMP                                      |         |         |          |
 
-Affinity Suite
-    Affinity Designer
-    Affinity Photo
-    Affinity Publisher
-GIMP
-Blackmagic Design DaVinci Resolve
-Clip Studio Paint (formerly Manga Studio)
-Blender
-Inkspace
-Paint.NET
-Krita
-MediBang https://medibangpaint.com/en/
-
-# Misc
+## Misc
 
 * 7-Zip
 * Araxis Merge
@@ -85,11 +91,9 @@ MediBang https://medibangpaint.com/en/
 * KeePassXC
 * Libby
 * NodeJS
-
 * OBS Studio
 * Streamlabs OBS
 * VB Audio Voicemeeter & Voicemeeter Banana
-
 * OpenSSL
 * OpenVPN Connect
 * Parsec
@@ -109,11 +113,11 @@ MediBang https://medibangpaint.com/en/
 * Sumatra PDF
 * Thunderbird
 
-# Utils
+## Utils
 
 SharpKeys
 
-# Azure
+## Azure
 
 Azure Portal
 CosmosDB Emulator
@@ -125,13 +129,13 @@ Azure Compute Emulator
 Azerite
 Microsoft Azure Storage Explorer
 
-# Hosting
+## Hosting
 
 Namecheap
 
-# Databases & Data
+## Databases & Data
 
-Azure Data Studio (formerly SQL Operations Studio)
-JetBrains DataGrip
-SSMS & SQL Server Profiler
-SQLiteBrowser
+* Azure Data Studio (formerly SQL Operations Studio)
+* JetBrains DataGrip
+* SSMS & SQL Server Profiler
+* SQLiteBrowser

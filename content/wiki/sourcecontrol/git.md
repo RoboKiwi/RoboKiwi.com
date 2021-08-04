@@ -2,7 +2,6 @@
 title: Git
 description: Git recipes and tricks
 ---
-# Git
 
 ## Create and checkout a new branch
 
@@ -33,7 +32,7 @@ git reset --hard
 git rm --cached -rf .
 ```
 
-# Import local git repository to GitHub
+## Import local git repository to GitHub
 
 * Create new empty repository in GitHub, simultaneously renaming `master` to `main`
 

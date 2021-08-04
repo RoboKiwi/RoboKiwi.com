@@ -5,7 +5,7 @@ description: "Guidance on the Object Relational Model (ORM) in .NET"
 menu:
     wiki:
         name: "ORM"
-        parent: "net"
+        parent: "dotnet"
         weight: 30
 ---
 
