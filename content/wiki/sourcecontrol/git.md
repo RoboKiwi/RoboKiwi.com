@@ -42,6 +42,20 @@ git branch -M main
 git push -u origin main
 ```
 
+## Create a tag
+
+```bash
+git tag -a v1.5 -m "Tag description"
+```
+
+## Push tags
+
+When you create a local tag, it isn't pushed by default, so use --tags:
+
+```bash
+git push origin --tags
+```
+
 ## Git policies
 
 GitFlow: https://nvie.com/posts/a-successful-git-branching-model/

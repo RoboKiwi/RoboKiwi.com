@@ -2,6 +2,12 @@
 title: Powershell Snippets
 ---
 
+# List all environment variables
+
+```powershell
+dir env:
+```
+
 # Stop and disable services in one line
 
 ```powershell
