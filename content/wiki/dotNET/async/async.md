@@ -10,7 +10,7 @@ menu:
         weight: 10
 ---
 
-# Asynchronous Programming Model (APM): C# 1.0 /  .NET 1.0 Style
+## Asynchronous Programming Model (APM): C# 1.0 /  .NET 1.0 Style
 
 Legacy model using the `IAsyncResult` pattern.
 
@@ -24,11 +24,11 @@ public class MyClass
 }
 ```
 
-## Exception handling
+### Exception handling
 
 Exceptions can be thrown from BeginRead (such as trying to read from a stream that has already been closed). Unexpected errors occurring during the async request (e.g. I/O error when reading a file), occur on the thread pool thread and will throw an exception when calling EndRead.
 
-# Event-based Asynchronous Pattern (EAP): C#2.0 / .NET 2.0 Style
+## Event-based Asynchronous Pattern (EAP): C#2.0 / .NET 2.0 Style
 
 ```CSharp
 public class MyClass  
@@ -38,7 +38,7 @@ public class MyClass
 }
 ```
 
-# Task-based Asynchronous Pattern (TAP): .NET 4.0 onwards
+## Task-based Asynchronous Pattern (TAP): .NET 4.0 onwards
 
 The modern recommended asynchronous programming model, wrapping asynchronous operations in a single approach, and adding first-class async keywords ``async`` and ``await`` to the language.
 
@@ -49,7 +49,6 @@ public class MyClass
 }
 ```
 
+## References
 
-# References
-
-[Asynchronous programming patterns @ MSDN](https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/index)
+[Asynchronous programming patterns @ MSDN](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/index)
