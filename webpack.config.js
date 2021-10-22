@@ -1,11 +1,15 @@
 var path = require("path");
 var webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+//const { HotModuleReplacementPlugin } = require("webpack");
 
 module.exports = {
   entry: {
     app: "./src/index.js"
   },
+  // experiments: {
+  //   futureDefaults: true,
+  // },
   module: {
     rules: [
       {
@@ -27,8 +31,8 @@ module.exports = {
             //loader: "css-loader",
             loader: MiniCssExtractPlugin.loader,
             options: { 
-				importLoaders: 1,
-				hmr: process.env.NODE_ENV === 'development',
+				//importLoaders: 1,
+				//hmr: process.env.NODE_ENV === 'development',
 			}
 		  },
 		  "css-loader",
@@ -40,7 +44,8 @@ module.exports = {
 
   output: {
     path: path.join(__dirname, "./assets"),
-    filename: "[name].js"
+    filename: "[name].js",
+    hashFunction: 'xxhash64'
   },
 
   resolve: {
@@ -56,6 +61,7 @@ module.exports = {
       filename: "[name].css",
       chunkFilename: "[id].css",
       ignoreOrder: false // Enable to remove warnings about conflicting order
-    })
+    }),
+    //new HotModuleReplacementPlugin({})
   ]
 };
