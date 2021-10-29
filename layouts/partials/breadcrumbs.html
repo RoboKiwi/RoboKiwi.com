@@ -7,8 +7,8 @@
         {{if not .p1.IsHome }}<span class="mr3">/</span>{{ end }}
     {{ end }}
     {{if eq .p1 .p2}}
-        <span class="link dim gray f4 f5-ns dib mr3 active" title="{{ .p1.Title }}">{{ .p1.Title }}</span>
+        <span class="gray f4 f5-ns dib mr3 active" title="{{ .p1.Title }}">{{ .p1.Title }}</span>
     {{else}}
-        <a class="link dim gray f4 f5-ns dib mr3" href="{{ .p1.Permalink }}" title="{{ .p1.Title }}">{{ .p1.Title }}</a>
+        <a class="link dim f4 f5-ns dib mr3" href="{{ .p1.Permalink }}" title="{{ .p1.Title }}">{{ .p1.Title }}</a>
     {{end}}
 {{ end }}

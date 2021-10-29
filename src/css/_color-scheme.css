@@ -30,9 +30,11 @@
 .divider-color         {color: var(--divider-color)}
 .warn-color            {color: var(--warn-color)}
 
-
 .nested-links a {
   color: var(--primary-color);
   text-decoration: none;
+}
 
+nav .link {
+  color: var(--primary-color);
 }
