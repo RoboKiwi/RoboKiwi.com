@@ -25,10 +25,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run build:webpack && npm run build:hugo",
     "build:hugo": "hugo",
-    "build:webpack": "webpack",
+    "build:webpack": "webpack --mode production",
     "start": "run-p start:**",
     "start:hugo": "hugo serve",
-    "start:webpack": "webpack --progress --color --watch"
+    "start:webpack": "webpack --progress --color --watch --mode development"
   },
   "keywords": [],
   "author": "David Moore",
