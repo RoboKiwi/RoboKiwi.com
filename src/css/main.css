@@ -82,4 +82,6 @@
 
 div.highlight pre {
   padding: 1em;
+  overflow-wrap: break-word;
+  overflow: auto;
 }
