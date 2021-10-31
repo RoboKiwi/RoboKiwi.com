@@ -33,7 +33,7 @@
           {{ partial "breadcrumbs.html" . }}
         {{ end }}
 
-        <div class="documentation-copy nested-links">
+        <div class="documentation-copy">
           <div id="readout" class="fixed right-0 bottom-0"></div>
           
           <header class="flex-none w-100">
@@ -54,7 +54,7 @@
 
             {{ if .Params.categories }}
               {{ range .Params.categories }}
-                <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" class="f6 fw8 mb0 link mid-gray dim mr3">
+                <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" class="f6 mb0 ph1 link dim mr3 ba br3 pill">
                   {{ humanize  . | lower }}
                 </a>
               {{ end }}
@@ -62,7 +62,7 @@
 
           </header>
           
-          <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+          <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100 nested-links">
             {{ with .Params.description }}
               <div class="f4 fw4 lh-copy">
                 {{ . | markdownify }}
@@ -74,7 +74,7 @@
             <img src="{{ . }}" alt="Featured Image for {{ $.Title }}" class="mw-100">
           {{ end }}
           
-          <div class="prose" id="prose">
+          <div class="prose nested-links" id="prose">
             {{ .Content }}
           </div>
 

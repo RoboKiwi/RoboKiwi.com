@@ -35,6 +35,11 @@
   text-decoration: none;
 }
 
-nav .link {
-  color: var(--primary-color);
+a.pill {
+  background-color: var(--accent-color-dark);
+  color: var(--text-on-primary-color);
 }
+
+/* nav .link {
+  color: var(--primary-color);
+} */
