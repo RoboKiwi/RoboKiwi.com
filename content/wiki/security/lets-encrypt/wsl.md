@@ -78,7 +78,7 @@ sudo certbot certonly --manual --preferred-challenges dns -d "$AZURE_DNSNAME.$AZ
 
 You should see a response stating the validation value and prompting you to hit `ENTER` to continue:
 
-```bash
+```txt
 Please deploy a DNS TXT record under the name:
 
 _acme-challenge.<your domain>.

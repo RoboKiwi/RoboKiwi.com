@@ -1,24 +1,21 @@
 ---
 title: Overview
-description: 'JavaScript: what is it? How does it relate to ECMAScript, Java and TypeScript?'
+description: "JavaScript: what is it? How does it relate to ECMAScript, Java and TypeScript?"
 ---
 
 ## ECMAScript, JavaScript, Java, asm.js
 
 ECMAScript is the standardized, versioned spec of JavaScript.
 
-
 ## ECMAScript Support
 
 The ES6 spec is expected to be finalized and implemented by the various browser vendors sometime mid / late 2015.
 
-================= === ====================================
-Browser           ES5 ECMAScript 2015  (ES6) (in progress)
-================= === ====================================
-Chrome            23+ Evergreen
-Internet Explorer 9+  12+
-Firefox           21+ Evergreen
-================= === ====================================
+| Browser           | ES5 | ECMAScript 2015 (ES6) (in progress) |
+|-------------------|-----|-------------------------------------|
+| Chrome            | 23+ | Evergreen                           |
+| Internet Explorer | 9+  | 12+                                 |
+| Firefox           | 21+ | Evergreen                           |
 
 Evergreen browsers automatically update to the latest version.
 

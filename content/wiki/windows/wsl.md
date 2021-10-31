@@ -15,7 +15,7 @@ Open an elevated terminal / command prompt
 
 ### Update WSL2
 
-```bash
+```txt
 ❯ wsl --update
 Checking for updates...
 Downloading updates...
