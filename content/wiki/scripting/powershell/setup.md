@@ -12,14 +12,14 @@ winget install --id=Microsoft.WindowsTerminal -e
 
 ## Shell: PowerShell Core
 
-* Install latest stable Powershell Core from https://github.com/PowerShell/PowerShell/releases/latest
+* Install latest stable Powershell Core from <https://github.com/PowerShell/PowerShell/releases/latest>
 * Configure Powershell Core as your default shell in Windows Terminal by going to `Settings` or hitting `ctrl+,` and ensure the default profile GUID matches the Powershell GUID (not the *Windows* Powershell GUID)
 
 ## Font: Cascadia Code
 
 This is a new monospaced font from Microsoft developed for Windows Terminal, to be used for command-line apps and text editors.
 
-* Download latest release from https://github.com/microsoft/cascadia-code/releases
+* Download latest release from <https://github.com/microsoft/cascadia-code/releases>
 * Extract the zip, right click the TTF files and choose *Install for all users*
 * Recommended: Cascadia Code PL (includes ligatures, and Powerline symbols)
 
@@ -51,7 +51,7 @@ In `File` > `Preferences` > `Settings`, search for `terminal font` and set `Term
 
 ## PSReadLine
 
-Install the official [improved PowerShell command-line editing](https://github.com/PowerShell/PSReadLine) 
+Install the official [improved PowerShell command-line editing](https://github.com/PowerShell/PSReadLine)
 
 ```powershell
 Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
@@ -80,9 +80,17 @@ pwsh.exe -noprofile -command "Install-Module PSReadLine -Force -SkipPublisherChe
 * Install [Posh-Git]() for git status indicators
 
 ```powershell
-Install-Module posh-git -Scope CurrentUser
-Install-Module oh-my-posh -Scope CurrentUser
+Install-Module posh-git -Scope CurrentUser -Force
+Install-Module oh-my-posh -Scope CurrentUser -Force
 ```
+
+or to update:
+
+```powershell
+Update-Module posh-git
+Update-Module oh-my-posh
+``
+
 Add to your `$profile`:
 
 ```powershell

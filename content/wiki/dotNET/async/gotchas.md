@@ -4,7 +4,7 @@ description: "Do's and don'ts when working with async"
 toc: true
 ---
 
-# Async / Await Gotchas
+## Async / Await Gotchas
 
 Spot the bug:
 
@@ -31,3 +31,23 @@ Solution:
         }
     }
 ```
+
+## ConfigureAwait
+
+`ConfigureAwait` is used to manage the `SynchronizationContext` in async / await.
+
+### Recommendations
+
+Use `ConfigureAwait(false)` in non-UI code (i.e. libraries, general purpose code). Ugly, yes, but this will help mitigate threading and deadlocking issues, while also improving performance.
+
+### ReSharper Support
+
+ReSharper can help you with `ConfigureAwait` analysis by adding to your [.editorconfig](/wiki/practices/editorconfig/):
+
+```ini
+configure_await_analysis_mode = <library|ui>
+```
+
+## Further Reading
+
+* [ConfigureAwait FAQ @ MSDN](https://devblogs.microsoft.com/dotnet/configureawait-faq/)

@@ -42,7 +42,7 @@ public class MyClass
 
 The modern recommended asynchronous programming model, wrapping asynchronous operations in a single approach, and adding first-class async keywords ``async`` and ``await`` to the language.
 
-```
+```csharp
 public class MyClass  
 {  
     public Task<int> ReadAsync(byte [] buffer, int offset, int count);  

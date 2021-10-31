@@ -5,7 +5,7 @@ toc: true
 weight: 10
 menu:
     wiki:
-        identifier: "net"
+        identifier: "code-coverage"
         weight: 40
 ---
 

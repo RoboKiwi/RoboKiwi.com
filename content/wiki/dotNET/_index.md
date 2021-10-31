@@ -2,7 +2,7 @@
 title: ".NET"
 description: ".NET"
 toc: true
-weight: 10
+weight: 5
 menu:
     wiki:
         identifier: "net"

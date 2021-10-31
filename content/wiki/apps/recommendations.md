@@ -8,6 +8,7 @@ This page contains recommendations for applications and tools favouring free and
 ## Development Staples
 
 * Git for Windows
+* NodeJS
 
 ## Editors
 
@@ -40,6 +41,10 @@ This page contains recommendations for applications and tools favouring free and
 ## Testing
 
 * JetBrains dotCover
+
+## Misc
+
+* [RegExr](https://regexr.com/) is an online tool to learn, build, & test Regular Expressions
 
 ## Visual Studio Code
 
