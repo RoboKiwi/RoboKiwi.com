@@ -1,6 +1,5 @@
 ---
 title: JavaScript Patterns
-layout: page
 ---
 # JavaScript Patterns
 
