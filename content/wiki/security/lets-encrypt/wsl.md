@@ -2,12 +2,10 @@
 title: Let's Encrypt Certbot on WSL
 description: Let's Encrypt using Certbot on Windows Subsystem for Linux (WSL)
 toc: true
-weight: 10
 menu:
     wiki:
         identifier: "certbot-wsl"
-        weight: 10
-        parent: "certbot"
+        parent: "lets-encrypt"
 ---
 
 ## Prerequisites
