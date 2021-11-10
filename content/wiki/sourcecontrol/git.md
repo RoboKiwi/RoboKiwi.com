@@ -3,6 +3,38 @@ title: Git
 description: Git recipes and tricks
 ---
 
+## Enforce `LF` for line endings
+
+Using `LF` for line endings, even if you might develop on Windows, will support easy cross-platform, cross-IDE development. This can help in particular when you're using WSL on Windows.
+
+Global git setting `git config --global core.autocrlf input` or edit `%USERPROFILE%\.gifconfig`:
+
+```ini
+[core]
+	autocrlf = input
+```
+
+If you want to force LF line endings for other users of your repository, create a `.gitattributes` file in your repository base:
+
+```ini
+* text=auto eol=lf
+```
+
+As a one-time conversion, you can normalize line endings for files that have already been committed previously:
+
+```bash
+$ git add --renormalize .
+$ git commit -m "Normalize all the line endings"
+```
+
+Optional: Create an `.editorconfig` file:
+
+```ini
+[*]
+end_of_line = lf
+insert_final_newline = true
+```
+
 ## Create and checkout a new branch
 
 ```bash
@@ -54,6 +86,12 @@ When you create a local tag, it isn't pushed by default, so use --tags:
 
 ```bash
 git push origin --tags
+```
+
+## Fetch latest version of branch without checking out
+
+```bash
+git fetch <upstream> <branch>:<branch>
 ```
 
 ## Git policies

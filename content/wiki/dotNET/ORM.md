@@ -25,6 +25,10 @@ From Martin Fowler's definition: https://martinfowler.com/eaaCatalog/unitOfWork.
 You can change the database with each change to your object model, but this can lead to lots of very small database calls, which ends up being very slow. Furthermore it requires you to have a transaction open for the whole interaction, which is impractical if you have a business transaction that spans multiple requests. The situation is even worse if you need to keep track of the objects you've read so you can avoid inconsistent reads.  
 A Unit of Work keeps track of everything you do during a business transaction that can affect the database. When you're done, it figures out everything that needs to be done to alter the database as a result of your work.
 
+## Advantages
+
+* The ORM pattern can save you from the complexity of managing CRuD operations and the relationships between your entities
+
 ## Unit of Work and Repository
 
 Repository: Queries & CRUD operations on a single type of entity.
@@ -55,6 +59,7 @@ This becomes very apparent when you start having to do more complex queries that
 
 ## Recommendations
 
+* The ORM can't save you from bad underlying database schemas
 * A UnitOfWork class should be disposable, and use a configured UnitOfWorkFactory for implementation details.
 * Favour extension methods on IUnitOfWork, IRepository and IQueryable for your queries, rather than cluttering your interfaces and implementations, which can make your code harder to mock or test.
 * Repositories should get the unit of work injected. This may seem circular and counter-intuitive but is a necessity for things like joins, fetching etc. This will make your code less cluttered, as you won't find yourself polluted with mass dependency injection of repositories.
