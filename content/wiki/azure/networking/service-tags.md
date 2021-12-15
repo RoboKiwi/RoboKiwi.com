@@ -48,6 +48,8 @@ $storage.Properties.AddressPrefixes
 
 ```bash
 az network list-service-tags --location eastus2
+
+az network list-service-tags --location australiaeast --query "[?name=='DataFactory']"
 ```
 
 ## See also

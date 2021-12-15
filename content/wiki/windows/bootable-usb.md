@@ -63,4 +63,4 @@ Your drive should now display an icon in Windows Explorer.
 
 ## See Also
 
-* Windows Media Creation Tool @ [Windows 11 Download](https://www.microsoft.com/software-download/windows11)
+* [Windows Media Creation Tool](https://www.microsoft.com/software-download/windows11)

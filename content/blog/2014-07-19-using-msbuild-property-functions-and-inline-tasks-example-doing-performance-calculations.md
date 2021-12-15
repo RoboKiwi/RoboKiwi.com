@@ -22,7 +22,7 @@ User RandDavis on Reddit <a href="https://www.reddit.com/r/dotnet/comments/2at6q
 
 # Options
 
-The good thing is that he's using MSBuild 4.0, which means he can use any combination of <a title="MSBuild Property Functions" href="https://msdn.microsoft.com/en-us/library/dd633440.aspx" target="_blank">property functions</a> and <a title="MSBuild Inline Tasks" href="https://msdn.microsoft.com/en-us/library/dd722601.aspx" target="_blank">inline tasks</a> to achieve all he wants from within the MSBuild code, without having to compile and version custom MSBuild task assemblies, which can become a pain in the ass to move forwards with.
+The good thing is that he's using MSBuild 4.0, which means he can use any combination of <a title="MSBuild Property Functions" href="https://msdn.microsoft.com/library/dd633440.aspx" target="_blank">property functions</a> and <a title="MSBuild Inline Tasks" href="https://msdn.microsoft.com/library/dd722601.aspx" target="_blank">inline tasks</a> to achieve all he wants from within the MSBuild code, without having to compile and version custom MSBuild task assemblies, which can become a pain in the ass to move forwards with.
 
 When benchmarking from .NET, the best practice is to use the **Stopwatch** class in **System.Diagnostics**. Using DateTime functions is the natural but more inaccurate and naive way to benchmark. Eric Lippert of C# compiler fame did a good series on benchmarking mistakes, with Stopwatch mentioned in <a href="https://tech.pro/tutorial/1295/c-performance-benchmark-mistakes-part-two" target="_blank">part 2</a>.
 
@@ -97,6 +97,6 @@ Would it be possible some way to return a Stopwatch object that could be started
 
 ### References
 
-  * [MSBuild Property Functions](https://msdn.microsoft.com/en-us/library/dd633440.aspx "MSBuild Property Functions Reference @ MSDN")
-  * [MSBuild Inline Tasks](https://msdn.microsoft.com/en-us/library/dd722601.aspx "MSBuild Inline Tasks @ MSDN")
-  * [C# Performance Benchmark Mistakes Part Two](https://tech.pro/tutorial/1295/c-performance-benchmark-mistakes-part-two "C# Performance Benchmark Mistakes Part Two by Epic Lippert @ Tech.pro")
+* [MSBuild Property Functions](https://msdn.microsoft.com/library/dd633440.aspx "MSBuild Property Functions Reference")
+* [MSBuild Inline Tasks](https://msdn.microsoft.com/library/dd722601.aspx "MSBuild Inline Tasks")
+* [C# Performance Benchmark Mistakes Part Two](https://tech.pro/tutorial/1295/c-performance-benchmark-mistakes-part-two "C# Performance Benchmark Mistakes Part Two by Epic Lippert")

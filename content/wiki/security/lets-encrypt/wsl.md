@@ -20,7 +20,7 @@ Open a new Ubuntu shell in Windows Terminal.
 
 Snap currently isn't working properly in WSL2 though it's the recommended installation method for Certbot: `sudo snap install --classic certbot`
 
-Instead, we will use Python's PIP using the instructions @ [Certbot install via pip](https://certbot.eff.org/lets-encrypt/pip-other)
+Instead, we will use Python's PIP using the instructions [Certbot install via pip](https://certbot.eff.org/lets-encrypt/pip-other)
 
 ```bash
 # Get updated list of packages

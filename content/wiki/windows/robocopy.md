@@ -16,7 +16,6 @@ Retries files that can't be accessed up to 5 times, waiting for 10 seconds betwe
 
 Writes to robocopy.log, and also to the console.
 
-
 ```
 RoboCopy E: F: /e /MT:16 /r:5 /w:10 /log:robocopy.log /tee /e /purge
 ```
@@ -25,4 +24,4 @@ Additionally, removes directories and files from the destination if they don't e
 
 ## References
 
-https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy
+https://docs.microsoft.com/windows-server/administration/windows-commands/robocopy

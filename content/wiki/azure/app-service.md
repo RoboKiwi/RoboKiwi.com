@@ -13,10 +13,10 @@ The images used to build the hosting containers are built from here: https://git
 
 ## App Service on Linux
 
-https://docs.microsoft.com/en-us/azure/app-service/faq-app-service-linux
+https://docs.microsoft.com/azure/app-service/faq-app-service-linux
 
 ## Performance
 
 ### Scaling
 
-https://docs.microsoft.com/en-us/azure/app-service/manage-scale-per-app
+https://docs.microsoft.com/azure/app-service/manage-scale-per-app

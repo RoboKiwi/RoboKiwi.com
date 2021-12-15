@@ -38,7 +38,7 @@ set _NT_SYMBOL_PATH=SRV*%TEMP%\SymbolCache*http://msdl.microsoft.com/download/sy
 
 Debug Diagnostic Tool v2 Update 3.1 in the latest version, available to download from Microsoft:
 
-https://www.microsoft.com/en-us/download/details.aspx?id=102635
+https://www.microsoft.com/download/details.aspx?id=102635
 
 
 # C/C++ Code

@@ -22,7 +22,7 @@ So how can we check if the user is an admin or not?
 
 ## In VB6, C++ etc
 
-There is a Windows API function you can use very easily to see if the current user is an admin: [IsUserAnAdmin](https://msdn.microsoft.com/en-us/library/bb776463(v=vs.85).aspx).
+There is a Windows API function you can use very easily to see if the current user is an admin: [IsUserAnAdmin](https://msdn.microsoft.com/library/bb776463(v=vs.85).aspx).
 
 > BOOL IsUserAnAdmin(void);
 
@@ -30,7 +30,7 @@ There is a Windows API function you can use very easily to see if the current us
 
 > <span style="font-family: &amp;quot;"><span style="line-height: 12pt;"><span style="color: #00007f;"><span style="font-size: 10pt;">Private</span></span></span><span style="font-size: 10pt;"><span style="line-height: 12pt;"> </span><span style="line-height: 12pt;"><span style="color: #00007f;">Declare</span></span><span style="line-height: 12pt;"> </span><span style="line-height: 12pt;"><span style="color: #00007f;">Function</span></span><span style="line-height: 12pt;"> IsUserAnAdmin </span><span style="line-height: 12pt;"><span style="color: #00007f;">Lib</span></span><span style="line-height: 12pt;"> </span><span style="line-height: 12pt;"><span style="color: #7f007f;">"Shell32&#8243;</span></span><span style="line-height: 12pt;"> </span><span style="line-height: 12pt;"><span style="color: #00007f;">Alias</span></span><span style="line-height: 12pt;"> </span><span style="line-height: 12pt;"><span style="color: #7f007f;">"#680&#8243;</span></span><span style="line-height: 12pt;"> () </span><span style="line-height: 12pt;"><span style="color: #00007f;">As</span></span><span style="line-height: 12pt;"> </span></span><span style="line-height: 12pt;"><span style="font-size: 10pt; color: #00007f;">Integer</span></span></span>
 
-While you can still use this, it is actually deprecated, and the documentation recommends you call the [CheckTokenMembership](https://msdn.microsoft.com/en-us/library/aa376389(v=vs.85).aspx) function instead (which IsUserAnAdmin is a wrapper for).
+While you can still use this, it is actually deprecated, and the documentation recommends you call the [CheckTokenMembership](https://msdn.microsoft.com/library/aa376389(v=vs.85).aspx) function instead (which IsUserAnAdmin is a wrapper for).
 
 ## .NET
 
@@ -52,7 +52,7 @@ A problem arises when you use any of the above code on a machine that has UAC en
 
 While the user may be an administrator, when the process is not elevated yet, the user has a split token &#8211; which doesn’t have the administrator privileges.
 
-A way around this is to use the [GetTokenInformation](https://msdn.microsoft.com/en-us/library/aa446671(v=VS.85).aspx) API call to inspect the token to see if it’s a split token. In _most_ cases this will mean that UAC is on and the current user is an administrator.
+A way around this is to use the [GetTokenInformation](https://msdn.microsoft.com/library/aa446671(v=VS.85).aspx) API call to inspect the token to see if it’s a split token. In _most_ cases this will mean that UAC is on and the current user is an administrator.
 
 _This is not 100% reliable_ (see References) but it’s probably the best we can do for now.
 

@@ -23,9 +23,9 @@ So what was happening?
 
 ## System.Diagnostics.Process
 
-When you create a new process from a .NET application, you would use the classes in the [System.Diagnostics](https://msdn.microsoft.com/en-us/library/system.diagnostics.aspx) namespace. Specifically, [Process](https://msdn.microsoft.com/en-us/library/system.diagnostics.process.aspx) and [ProcessStartInfo](https://msdn.microsoft.com/en-us/library/system.diagnostics.processstartinfo.aspx). As we were in this case.
+When you create a new process from a .NET application, you would use the classes in the [System.Diagnostics](https://msdn.microsoft.com/library/system.diagnostics.aspx) namespace. Specifically, [Process](https://msdn.microsoft.com/library/system.diagnostics.process.aspx) and [ProcessStartInfo](https://msdn.microsoft.com/library/system.diagnostics.processstartinfo.aspx). As we were in this case.
 
-These wrap the Windows API function [CreateProcess](https://msdn.microsoft.com/en-us/library/ms682425(v=vs.85).aspx) and its alternatives and supporting types.
+These wrap the Windows API function [CreateProcess](https://msdn.microsoft.com/library/ms682425(v=vs.85).aspx) and its alternatives and supporting types.
 
 If we look at the `CreateProcess` definition, there’s a boolean argument in there called `bInheritHandles`:
 
@@ -50,7 +50,7 @@ What does the Windows API documentation say about this?
 
 Inheritable handles?
 
-> [Handle Inheritance](https://msdn.microsoft.com/en-us/library/ms724466(v=vs.85).aspx "Handle Inheritance")
+> [Handle Inheritance](https://msdn.microsoft.com/library/ms724466(v=vs.85).aspx "Handle Inheritance")
 > 
 > A child process can inherit handles from its parent process. An inherited handle is valid only in the context of the child process. To enable a child process to inherit open handles from its parent process, use the following steps.
 > 
@@ -223,5 +223,5 @@ I used the invaluable [SysInternals](https://technet.microsoft.com/en-nz/sysinte
 
 ## References
 
-* [Handle Inheritance @ MSDN](https://msdn.microsoft.com/en-us/library/ms724466(v=vs.85).aspx)
+* [Handle Inheritance @ MSDN](https://msdn.microsoft.com/library/ms724466(v=vs.85).aspx)
 * [Child process keeps parent’s socket open – Diagnostics.Process and Net.TcpListene @ social.msdn.microsoft.com](https://social.msdn.microsoft.com/Forums/en-US/netfxbcl/thread/94ba760c-7080-4614-8a56-15582c48f900/)

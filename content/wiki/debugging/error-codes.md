@@ -54,7 +54,7 @@ The HRESULT numbering space has the following internal structure. Any protocol t
 
 ## References
 
-* [System Error Codes @ docs.microsoft.com](https://docs.microsoft.com/en-us/windows/win32/debug/system-error-codes)
-* [HRESULT docs @ msdn](https://msdn.microsoft.com/en-us/library/cc231198.aspx)
-* [List of HRESULT error codes @ docs.microsoft.com](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-erref/705fb797-2175-4a90-b5a3-3918024b10b8)
-* [List of Win32 error codes @ docs.microsoft.com](https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-erref/18d8fbe8-a967-4f1c-ae50-99ca8e491d2d)
+* [System Error Codes](https://docs.microsoft.com/windows/win32/debug/system-error-codes)
+* [HRESULT docs](https://msdn.microsoft.com/library/cc231198.aspx)
+* [List of HRESULT error codes](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/705fb797-2175-4a90-b5a3-3918024b10b8)
+* [List of Win32 error codes](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/18d8fbe8-a967-4f1c-ae50-99ca8e491d2d)

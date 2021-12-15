@@ -19,6 +19,6 @@ SQL Server Management Studio aka SSMS is available to download and use for free 
 
 The latest version of SSMS, and future versions, are available from here:
 
-[https://msdn.microsoft.com/en-us/library/mt238290.aspx](https://msdn.microsoft.com/en-us/library/mt238290.aspx "https://msdn.microsoft.com/en-us/library/mt238290.aspx")
+[https://msdn.microsoft.com/library/mt238290.aspx](https://msdn.microsoft.com/library/mt238290.aspx "https://msdn.microsoft.com/library/mt238290.aspx")
 
 This makes this easier for developers and DBAs that want to work with SQL Server, without having to acquire and install a full, licensed SQL Server ISO.

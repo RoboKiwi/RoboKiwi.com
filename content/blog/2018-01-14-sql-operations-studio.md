@@ -23,5 +23,5 @@ There is also a connection manager that handles Azure connection. You can also s
 
 I can absolutely see myself using this more often than SQL Management Studio.
 
-* Download link: https://docs.microsoft.com/en-us/sql/sql-operations-studio/download
+* Download link: https://docs.microsoft.com/sql/sql-operations-studio/download
 * Source code: https://github.com/Microsoft/sqlopsstudio

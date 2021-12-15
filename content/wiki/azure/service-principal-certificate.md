@@ -38,4 +38,4 @@ Connect-AzAccount -CertificateThumbprint '<certhumbprint>' -ApplicationId '<guid
 
 ## References & Further Reading
 
-<https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-authenticate-service-principal-powershell>
+<https://docs.microsoft.com/azure/active-directory/develop/howto-authenticate-service-principal-powershell>

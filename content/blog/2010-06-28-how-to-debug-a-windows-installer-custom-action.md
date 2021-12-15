@@ -43,4 +43,4 @@ Now you can use Visual Studio or another debugger such as WinDBG to attach to th
 
 ## References:
 
-[Debugging Custom Actions](https://msdn.microsoft.com/en-us/library/aa368264(VS.85).aspx) @ msdn.microsoft.com
+[Debugging Custom Actions](https://msdn.microsoft.com/library/aa368264(VS.85).aspx) @ msdn.microsoft.com

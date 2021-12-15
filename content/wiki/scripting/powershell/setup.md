@@ -4,7 +4,7 @@ title: Setting up Powershell environment
 
 ## Terminal: Windows Terminal
 
-[Install from Windows Store](https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701) (auto-updating) or:
+[Install from Windows Store](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701) (auto-updating) or:
 
 ```powershell
 winget install --id=Microsoft.WindowsTerminal -e
@@ -105,7 +105,7 @@ Set-PoshPrompt -Theme paradox
 
 ### dotnet
 
-Enable [dotnet auto-completion](https://docs.microsoft.com/en-us/dotnet/core/tools/enable-tab-autocomplete) by adding the following to your `$profile`:
+Enable [dotnet auto-completion](https://docs.microsoft.com/dotnet/core/tools/enable-tab-autocomplete) by adding the following to your `$profile`:
 
 ```powershell
 # PowerShell parameter completion shim for the dotnet CLI
@@ -135,4 +135,4 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 
 ## References
 
-[Tutorial: Set up Powerline in Windows Terminal @ docs.microsoft.com](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup)
+[Tutorial: Set up Powerline in Windows Terminal](https://docs.microsoft.com/windows/terminal/tutorials/powerline-setup)

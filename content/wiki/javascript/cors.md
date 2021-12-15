@@ -95,5 +95,5 @@ If the request is denied, then no CORS headers are sent back, and the browser wi
 
 ## Further Reading
 
-* [CORS Tutorial @ HTML5 Rocks](https://www.html5rocks.com/en/tutorials/cors/)
-* [CORS Spec @ w3.org](https://www.w3.org/TR/cors/)
+* [CORS Tutorial](https://www.html5rocks.com/en/tutorials/cors/)
+* [CORS Spec](https://www.w3.org/TR/cors/)

@@ -111,12 +111,12 @@ This is an XML configuration file, and there is no longer built-in support for e
 
 # References
 
-* [Use code coverage to determine how much code is being tested @ docs.microsoft.com](https://docs.microsoft.com/en-us/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested)
-* [VSTest Platform @ GitHub](https://github.com/microsoft/vstest/)
-* [dotnet test @ docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test)
+* [Use code coverage to determine how much code is being tested](https://docs.microsoft.com/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested)
+* [VSTest Platform](https://github.com/microsoft/vstest/)
+* [dotnet test](https://docs.microsoft.com/dotnet/core/tools/dotnet-test)
 * https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md
 * https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/GlobalTool.md
-* https://docs.microsoft.com/en-us/azure/devops/pipelines/test/review-code-coverage-results?view=azure-devops
+* https://docs.microsoft.com/azure/devops/pipelines/test/review-code-coverage-results?view=azure-devops
 * https://github.com/danielpalme/ReportGenerator/wiki/Integration
-* https://docs.microsoft.com/en-us/visualstudio/test/vstest-console-options
-* Default configuration @ https://github.com/microsoft/vstest/blob/master/test/Microsoft.TestPlatform.Utilities.UnitTests/DefaultCodeCoverageConfig.xml
+* https://docs.microsoft.com/visualstudio/test/vstest-console-options
+* [Default configuration](https://github.com/microsoft/vstest/blob/master/test/Microsoft.TestPlatform.Utilities.UnitTests/DefaultCodeCoverageConfig.xml)

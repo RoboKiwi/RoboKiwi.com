@@ -50,4 +50,4 @@ configure_await_analysis_mode = <library|ui>
 
 ## Further Reading
 
-* [ConfigureAwait FAQ @ MSDN](https://devblogs.microsoft.com/dotnet/configureawait-faq/)
+* [ConfigureAwait FAQ](https://devblogs.microsoft.com/dotnet/configureawait-faq/)

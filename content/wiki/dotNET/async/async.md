@@ -51,4 +51,4 @@ public class MyClass
 
 ## References
 
-[Asynchronous programming patterns @ MSDN](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/index)
+[Asynchronous programming patterns](https://docs.microsoft.com/dotnet/standard/asynchronous-programming-patterns/index)

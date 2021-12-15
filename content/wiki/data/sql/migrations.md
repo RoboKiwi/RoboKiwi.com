@@ -30,8 +30,8 @@ Automatically expose the API and web interface (similar to the Swashbuckle Swagg
 
 ## .NET
 
-* [FluentMigrator @ GitHub](https://github.com/fluentmigrator/fluentmigrator)
-* [Entity Framework Core Migrations](https://docs.microsoft.com/en-us/ef/core/managing-schemas/migrations)
+* [FluentMigrator](https://github.com/fluentmigrator/fluentmigrator)
+* [Entity Framework Core Migrations](https://docs.microsoft.com/ef/core/managing-schemas/migrations)
 
 ## Java
 

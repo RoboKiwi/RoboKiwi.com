@@ -36,7 +36,7 @@ The first interesting thing here is that the assembly named in the error message
 
 In my case the exception isn't a surprise because of what's being done to the assembly. But until I resolve that, how can I get around this for now?
 
-You can exclude an assembly from strong name validation for development purposes using the <a title="Strong Name Tool" href="https://msdn.microsoft.com/en-us/library/k5b5tt23(VS.71).aspx">Microsoft (R) .NET Framework Strong Name Tool</a> aka `sn.exe`:
+You can exclude an assembly from strong name validation for development purposes using the <a title="Strong Name Tool" href="https://msdn.microsoft.com/library/k5b5tt23(VS.71).aspx">Microsoft (R) .NET Framework Strong Name Tool</a> aka `sn.exe`:
 
 ```batch
 "%ProgramFiles%\Microsoft SDKs\Windows\v6.0A\bin\sn.exe" -Vr "C:\Path\To\Assembly.dll"

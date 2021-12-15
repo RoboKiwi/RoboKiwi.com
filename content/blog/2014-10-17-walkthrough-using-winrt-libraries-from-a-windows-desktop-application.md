@@ -60,7 +60,7 @@ You might be surprised to know that WinRT can be used from Windows apps also, wi
 
 ## Why would you want to use WinRT?
 
-  * WinRT exposes some interesting APIs and libraries for things such as the accelerometer, web cam, geolocation, speech recognition and synthesis etc: <https://msdn.microsoft.com/en-us/library/windows/apps/br211377.aspx>
+  * WinRT exposes some interesting APIs and libraries for things such as the accelerometer, web cam, geolocation, speech recognition and synthesis etc: <https://msdn.microsoft.com/library/windows/apps/br211377.aspx>
 
 # Walk-through: Changing the Lock Screen
 
@@ -101,7 +101,7 @@ Checking the documentation as instructed, we read this:
      <TargetPlatformVersion>8.0</TargetPlatformVersion>
 </PropertyGroup>
 ```
-> From https://msdn.microsoft.com/en-us/library/hh708954.aspx
+> From https://msdn.microsoft.com/library/hh708954.aspx
 
 Great! So now we know we must specify our target platform as 8.0.
 
@@ -187,7 +187,7 @@ If you paid close attention to the MSDN docs earlier, it referred us to another 
 
 > That said, _your desktop app can’t consume much of anything from the Windows Runtime until you prepare your project with one essential reference_. The Windows Runtime defines some standard classes and interfaces in System.Runtime, such as IEnumerable, that are used throughout the Windows Runtime libraries. By default, your managed desktop app won’t be able to find these types, and so **you must manually reference System.Runtime** before you can do anything meaningful with Windows Runtime classes.
 > 
-> From https://msdn.microsoft.com/en-us/library/windows/apps/jj856306.aspx#consuming_standard_windows_runtime_types
+> From https://msdn.microsoft.com/library/windows/apps/jj856306.aspx#consuming_standard_windows_runtime_types
 
 While we could browse around for files, I believe it's actually less error prone and simpler to reference the assembly name in our project file, and let Visual Studio do the rest. It also means you can prepare your project for WinRT in one edit of the project file (see the summary at the top of the article).
 

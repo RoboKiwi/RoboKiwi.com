@@ -60,6 +60,6 @@ You will need to enable the legacy activation to allow these to be loaded also:
 
 ### References
 
-* [`<startup>` Element @ MSDN](https://msdn.microsoft.com/en-us/library/bbx34a2h.aspx)
-* [`<supportedRuntime>` Element @ MSDN](https://msdn.microsoft.com/en-us/library/w4atty68.aspx)
-* [`<NetFx40_LegacySecurityPolicy>` Element @ MSDN](https://msdn.microsoft.com/en-us/library/dd409253.aspx)
+* [`<startup>` Element @ MSDN](https://msdn.microsoft.com/library/bbx34a2h.aspx)
+* [`<supportedRuntime>` Element @ MSDN](https://msdn.microsoft.com/library/w4atty68.aspx)
+* [`<NetFx40_LegacySecurityPolicy>` Element @ MSDN](https://msdn.microsoft.com/library/dd409253.aspx)
