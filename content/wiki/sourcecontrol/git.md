@@ -74,6 +74,12 @@ git branch -M main
 git push -u origin main
 ```
 
+## Reset last commit
+
+```bash
+git reset --hard HEAD^
+```
+
 ## Create a tag
 
 ```bash

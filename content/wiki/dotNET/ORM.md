@@ -2,6 +2,7 @@
 title: "ORM"
 toc: true
 description: "Guidance on the Object Relational Model (ORM) in .NET"
+draft: true
 menu:
     wiki:
         name: "ORM"
