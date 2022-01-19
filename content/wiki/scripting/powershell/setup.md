@@ -19,6 +19,8 @@ winget install --id=Microsoft.WindowsTerminal -e
 
 This is a new monospaced font from Microsoft developed for Windows Terminal, to be used for command-line apps and text editors.
 
+> If you have Windows 11 or Visual Studio 2022, Cascadia Code will be installed, but you may still want to download the latest full release which includes Powerline and ligatures
+
 * Download latest release from <https://github.com/microsoft/cascadia-code/releases>
 * Extract the zip, right click the TTF files and choose *Install for all users*
 * Recommended: Cascadia Code PL (includes ligatures, and Powerline symbols)

@@ -7,11 +7,25 @@ Open an elevated terminal / command prompt
 
 ### Enable WSL Feature
 
-`dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
+Enable WSL:
+
+DISM: `dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
+Powershell: `Enable-WindowsOptionalFeature -Online -NoRestart -All -FeatureName Microsoft-Windows-Subsystem-Linux`
+
+> You can query if the state of the optional WSL feature is enabled or disabled:
+> DISM: `dism.exe /online /get-featureinfo /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
+> Powershell: `Get-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux`
 
 ### Enable Virtual Machine Platform
 
-`dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart`
+Powershell: `Enable-WindowsOptionalFeature -Online -NoRestart -All -FeatureName VirtualMachinePlatform`
+DISM: `dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart`
+
+> Powershell: `Get-WindowsOptionalFeature -Online -FeatureName VirtualMachinePlatform`
+
+## Restart
+
+If you saw restart was needed when you ran either of the previous commands, restart the machine, or do so now to be safe.
 
 ### Update WSL2
 

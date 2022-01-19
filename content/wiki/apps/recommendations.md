@@ -110,7 +110,7 @@ This page contains recommendations for applications and tools favouring free and
 * Mozilla Thunderbird
 * Postman
 * Slack
-* WinDirStat
+* [WizTree](https://www.diskanalyzer.com/) ~~WinDirStat~~
 * Microsoft Teams
 * Skype
 * Zoom

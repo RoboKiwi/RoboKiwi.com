@@ -16,3 +16,5 @@ Let's Encrypt makes this possible by offering free SSL certificates to any domai
 
 Let's Encrypt uses the ACME protocol for automating the certificate management workflow. Their server-side implementation Boulder is written in Python,
 while the defacto default ACME client is Certbot, written in Python.
+
+Certificates issued by Let's Encrypt last for 90 days, with the recommendation to renew your certificates every 60 days.

@@ -35,6 +35,17 @@ JavaScript:
 var value = getPossiblyNullValue() || "Default value";
 ```
 
+# Keywords
+
+## Modifiers
+
+`const` is JavaScript is equivalent to `readonly` in C#, not C#'s constant modifier `const`. It simply prevents re-assignment of the variable; the reference is still mutable.
+
+`Object.freeze()` in JavaScript makes the object immutable. It will throw an exception if you try to change the frozen object (or its prototype!). However it is shallow and
+only applies to the object's immediate properties; to make an object immutable at every level, you would have to recursively freeze all of its properties.
+
+`Object.seal()` prevents new properties from being added to an object (i.e. it can't be extended). Existing properties can still be modified.
+
 ## Globals
 
 Anything not defined within a function or using the var keyword, will be set on the global `window` object.
@@ -145,6 +156,7 @@ var value = `First line
 Second line
 Third line`;
 ```
+
 ## Anonymous functions
 
 ## Lambdas

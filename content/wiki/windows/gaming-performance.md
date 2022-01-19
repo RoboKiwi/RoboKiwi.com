@@ -23,9 +23,16 @@ If you want to use more efficient power settings, you can disable the core parki
 
 ## Mouse
 
-Logitech:
+In Logitech G-HUB:
 
 * Set max polling rate to 1000Hz
+
+In Windows:
+
+* Bluetooth & Devices > Mouse
+* Set Mouse pointer speed to 8
+* Click Additional Mouse Settings to open the Mouse control panel
+* Go to Pointer Options and un-check Enhance pointer precision
 
 ## Keyboard
 
@@ -33,19 +40,15 @@ If you wish to remap keys or shortcuts, you can use Keyboard Manager from [Micro
 
 ### Disable CAPS LOCK
 
-You can manually disable the `CAPS LOCK` key with a registry change:
+You can manually disable the `CAPS LOCK` key with a registry command, run from an elevated terminal:
 
-```ini
-Windows Registry Editor Version 5.00
-
-[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
-"Scancode Map"=hex:00,00,00,00,00,00,00,00,02,00,00,00,00,00,3a,00,00,00,00,00
-
+```bash
+reg add 'HKLM\SYSTEM\CurrentControlSet\Control\Keyboard Layout' /f /t REG_BINARY /v 'Scancode Map' /d '00000000000000000200000000003A0000000000'
 ```
 
 Or you can manually open `regedit` and edit the `Scancode Map` value under `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout`:
 
-```
+```txt
 00 00 00 00 00 00 00 00
 02 00 00 00 00 00 3A 00
 00 00 00 00
@@ -54,7 +57,6 @@ Or you can manually open `regedit` and edit the `Scancode Map` value under `HKEY
 Alternatively if you're uncomfortable with editing the registry, you can use [SharpKeys](https://github.com/randyrants/sharpkeys) to remap through the UI.
 
 * `Special: Caps Lock` map to `Turn Key off` then click `Write to Registry`
-
 
 ## References
 
