@@ -2,3 +2,4 @@ node_modules/
 public/
 backup/
 assets/
+.hugo_build.lock
