@@ -23,7 +23,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build:webpack && npm run build:hugo && git status",
+    "build": "npm run build:webpack && npm run build:hugo && git log -2",
     "build:hugo": "hugo",
     "build:webpack": "webpack --mode production",
     "start": "run-p start:**",
