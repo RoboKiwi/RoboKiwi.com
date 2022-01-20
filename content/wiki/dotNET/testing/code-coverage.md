@@ -13,7 +13,7 @@ menu:
 
 You collect code coverage by passing `--collect "Code coverage"` to your `dotnet test` command line, e.g.:
 
-```
+```powershell
 dotnet test .\MyProject.UnitTests\MyProject.UnitTests.csproj --collect "Code coverage"
 ```
 
@@ -48,35 +48,35 @@ This is an XML configuration file, and there is no longer built-in support for e
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <RunSettings>
-	<RunConfiguration>
-		<ResultsDirectory>.\TestResults</ResultsDirectory>
-		<EnvironmentVariables>
-			<!-- List of environment variables we want to set-->
-			<!-- <DOTNET_ROOT>C:\ProgramFiles\dotnet</DOTNET_ROOT> -->
-		</EnvironmentVariables>
-	</RunConfiguration>
-	<DataCollectionRunSettings>
-		<DataCollectors>
-			<DataCollector friendlyName="Code Coverage" uri="datacollector://Microsoft/CodeCoverage/2.0">
-				<Configuration>
-					<CodeCoverage>
-						<ModulePaths mergeDefaults="false">
-              				<Include>
-								<ModulePath>.*MyProject.*\.dll$</ModulePath>
-								<ModulePath>.*\.exe$</ModulePath>
-							</Include>
-							<Exclude>
-								<ModulePath>.*TestAdapter.*</ModulePath>
-								<ModulePath>.*NUnit.*</ModulePath>
-								<ModulePath>.*\\moq\.dll$</ModulePath>
-								<ModulePath>.*\\fluentvalidation\.dll$</ModulePath>
-								<ModulePath>.*\\MyCompany\.MyProject\.unittests\.dll</ModulePath>
-								<ModulePath>.*(unit|integration)tests\.dll</ModulePath>
-								<ModulePath>.*CodeCoverage.exe$</ModulePath>
-								<ModulePath>.*\Coverlet.Collector.dll$</ModulePath>
-								<ModulePath>.*\Coverlet.Core.dll$</ModulePath>
-							</Exclude>
-						</ModulePaths>
+    <RunConfiguration>
+        <ResultsDirectory>.\TestResults</ResultsDirectory>
+        <EnvironmentVariables>
+            <!-- List of environment variables we want to set-->
+            <!-- <DOTNET_ROOT>C:\ProgramFiles\dotnet</DOTNET_ROOT> -->
+        </EnvironmentVariables>
+    </RunConfiguration>
+    <DataCollectionRunSettings>
+        <DataCollectors>
+            <DataCollector friendlyName="Code Coverage" uri="datacollector://Microsoft/CodeCoverage/2.0">
+                <Configuration>
+                    <CodeCoverage>
+                        <ModulePaths mergeDefaults="false">
+                              <Include>
+                                <ModulePath>.*MyProject.*\.dll$</ModulePath>
+                                <ModulePath>.*\.exe$</ModulePath>
+                            </Include>
+                            <Exclude>
+                                <ModulePath>.*TestAdapter.*</ModulePath>
+                                <ModulePath>.*NUnit.*</ModulePath>
+                                <ModulePath>.*\\moq\.dll$</ModulePath>
+                                <ModulePath>.*\\fluentvalidation\.dll$</ModulePath>
+                                <ModulePath>.*\\MyCompany\.MyProject\.unittests\.dll</ModulePath>
+                                <ModulePath>.*(unit|integration)tests\.dll</ModulePath>
+                                <ModulePath>.*CodeCoverage.exe$</ModulePath>
+                                <ModulePath>.*\Coverlet.Collector.dll$</ModulePath>
+                                <ModulePath>.*\Coverlet.Core.dll$</ModulePath>
+                            </Exclude>
+                        </ModulePaths>
             <Sources>
               <Exclude>
                 <Source>.*\\Program.cs$</Source>
@@ -85,27 +85,27 @@ This is an XML configuration file, and there is no longer built-in support for e
               </Exclude>
             </Sources>
             <UseVerifiableInstrumentation>True</UseVerifiableInstrumentation>
-			<AllowLowIntegrityProcesses>True</AllowLowIntegrityProcesses>
-			<CollectFromChildProcesses>True</CollectFromChildProcesses>
-			<CollectAspDotNet>false</CollectAspDotNet>
+            <AllowLowIntegrityProcesses>True</AllowLowIntegrityProcesses>
+            <CollectFromChildProcesses>True</CollectFromChildProcesses>
+            <CollectAspDotNet>false</CollectAspDotNet>
           </CodeCoverage>
-				</Configuration>
-			</DataCollector>
-			<!-- Configuration for blame data collector -->
-			<DataCollector friendlyName="blame" enabled="True">
-			</DataCollector>
-		</DataCollectors>
-	</DataCollectionRunSettings>
-	<LoggerRunSettings>
-		<Loggers>
-			<Logger friendlyName="console" enabled="True">
-				<Configuration>
-					<Verbosity>quiet</Verbosity>
-				</Configuration>
-			</Logger>
-			<Logger friendlyName="trx" enabled="True"/>
-		</Loggers>
-	</LoggerRunSettings>
+                </Configuration>
+            </DataCollector>
+            <!-- Configuration for blame data collector -->
+            <DataCollector friendlyName="blame" enabled="True">
+            </DataCollector>
+        </DataCollectors>
+    </DataCollectionRunSettings>
+    <LoggerRunSettings>
+        <Loggers>
+            <Logger friendlyName="console" enabled="True">
+                <Configuration>
+                    <Verbosity>quiet</Verbosity>
+                </Configuration>
+            </Logger>
+            <Logger friendlyName="trx" enabled="True"/>
+        </Loggers>
+    </LoggerRunSettings>
 </RunSettings>
 ```
 
@@ -114,9 +114,9 @@ This is an XML configuration file, and there is no longer built-in support for e
 * [Use code coverage to determine how much code is being tested](https://docs.microsoft.com/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested)
 * [VSTest Platform](https://github.com/microsoft/vstest/)
 * [dotnet test](https://docs.microsoft.com/dotnet/core/tools/dotnet-test)
-* https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md
-* https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/GlobalTool.md
-* https://docs.microsoft.com/azure/devops/pipelines/test/review-code-coverage-results?view=azure-devops
-* https://github.com/danielpalme/ReportGenerator/wiki/Integration
-* https://docs.microsoft.com/visualstudio/test/vstest-console-options
+* [RunSettings arguments](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md)
+* [Coverlet coverage tool](https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/GlobalTool.md)
+* [Reviewing code coverage results in Azure DevOps](https://docs.microsoft.com/azure/devops/pipelines/test/review-code-coverage-results?view=azure-devops)
+* [ReportGenerator Integration](https://github.com/danielpalme/ReportGenerator/wiki/Integration)
+* [VSTest Console Options](https://docs.microsoft.com/visualstudio/test/vstest-console-options)
 * [Default configuration](https://github.com/microsoft/vstest/blob/master/test/Microsoft.TestPlatform.Utilities.UnitTests/DefaultCodeCoverageConfig.xml)
