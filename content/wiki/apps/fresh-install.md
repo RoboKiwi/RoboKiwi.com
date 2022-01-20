@@ -18,10 +18,10 @@ description: Notes on install order and apps after a fresh install of Windows
 
 ## Management & Scripting
 
-* Install latest Powershell
+* Install latest PowerShell
 * Install latest Cascadia Code
 * Install Chocolatey
-* Install Powershell modules:
+* Install PowerShell modules:
 
 ```powershell
 Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
@@ -29,7 +29,7 @@ Install-Module posh-git -Scope CurrentUser -Force
 Install-Module oh-my-posh -Scope CurrentUser -Force
 ```
 
-* Set your Powershell profile `notepad $profile`
+* Set your PowerShell profile `notepad $profile`
 
 ```powershell
 if ($host.Name -eq 'ConsoleHost')

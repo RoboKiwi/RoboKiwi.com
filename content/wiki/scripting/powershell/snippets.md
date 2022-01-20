@@ -1,20 +1,20 @@
 ---
-title: Powershell Snippets
+title: PowerShell Snippets
 ---
 
-# List all environment variables
+## List all environment variables
 
 ```powershell
 dir env:
 ```
 
-# Stop and disable services in one line
+## Stop and disable services in one line
 
 ```powershell
 Get-Service -name "*SERVICENAME*" | Stop-Service -passthru | Set-Service -startmode disabled
 ```
 
-# List Remote Desktop settings
+## List Remote Desktop settings
 
 ```powershell
 $RDPTCPpath = 'HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\Winstations\RDP-Tcp'

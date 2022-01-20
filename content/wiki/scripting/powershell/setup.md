@@ -1,5 +1,5 @@
 ---
-title: Setting up Powershell environment
+title: Setting up PowerShell environment
 ---
 
 ## Terminal: Windows Terminal
@@ -12,8 +12,8 @@ winget install --id=Microsoft.WindowsTerminal -e
 
 ## Shell: PowerShell Core
 
-* Install latest stable Powershell Core from <https://github.com/PowerShell/PowerShell/releases/latest>
-* Configure Powershell Core as your default shell in Windows Terminal by going to `Settings` or hitting `ctrl+,` and ensure the default profile GUID matches the Powershell GUID (not the *Windows* Powershell GUID)
+* Install latest stable PowerShell Core from <https://github.com/PowerShell/PowerShell/releases/latest>
+* Configure PowerShell Core as your default shell in Windows Terminal by going to `Settings` or hitting `ctrl+,` and ensure the default profile GUID matches the PowerShell GUID (not the *Windows* PowerShell GUID)
 
 ## Font: Cascadia Code
 
@@ -34,7 +34,7 @@ Set this in your Windows Terminal settings e.g.
             "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
             "hidden": false,
             "name": "PowerShell",
-            "source": "Windows.Terminal.PowershellCore",
+            "source": "Windows.Terminal.PowerShellCore",
             "fontFace": "Cascadia Code PL"
         }
     ],

@@ -77,7 +77,7 @@ The log file will get added to each time you run the tool, so once you've finish
 
 Applications such as Adobe XD (formerly Spark) are installed as Store / Windows / AppX apps.
 
-Open up an elevated Powershell and you can check using `Get-AppxPackage -AllUsers Adobe.*`:
+Open up an elevated PowerShell and you can check using `Get-AppxPackage -AllUsers Adobe.*`:
 
 ```
 PS C:\users\david\Downloads> Get-AppxPackage -AllUsers Adobe.*
