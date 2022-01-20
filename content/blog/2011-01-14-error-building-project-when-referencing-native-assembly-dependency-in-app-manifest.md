@@ -5,7 +5,7 @@ categories:
 - How To
 - Software Development
 date: 2011-01-14T08:45:38Z
-guid: /?p=404
+guid: https://www.robokiwi.com/?p=404
 id: 404
 tags:
 - manifest
