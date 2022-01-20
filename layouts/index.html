@@ -6,7 +6,7 @@
   {{ $interior_classes := .Site.Params.flex_box_interior_classes }}
 
   <section class="relative w-100 bg-black white"><div class="flex flex-wrap w-90-l center center mw9">
-    {{ range (first 4 (where .Site.RegularPages.ByLastmod "Section" "blog")) }}
+    {{ range (first 4 (where .Site.RegularPages.ByLastmod.Reverse "Section" "blog")) }}
     <a href="{{.Permalink}}" class="link lh-copy light-gray f6 w-100 w-50-m w-25-l bg-animate hover-bg-primary-color-dark hover-white pv3 ph3 dib"><span class="f6 gray pb1 db">{{ dateFormat "January 2, 2006" .Date }}</span>
       {{ .Name }}</a>
     {{ end }}
@@ -33,7 +33,7 @@
     <h1>Recent Updates</h1>
     <div class="flex flex-wrap">          
       <section class="flex-ns flex-wrap justify-between w-100">
-        {{ range (first 10 (where .Site.RegularPages.ByLastmod "Section" "wiki")) }}
+        {{ range (first 10 (where .Site.RegularPages.ByLastmod.Reverse "Section" "wiki")) }}
           <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight-{{ .Weight }}">
             <div class="bg-white mb2 pa3 pa4-l gray">              
               <date class="f6 db" datetime="{{ dateFormat "2006-01-02T15:04:05Z07:00" .Date }}">
