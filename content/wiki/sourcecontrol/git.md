@@ -64,9 +64,17 @@ git reset --hard
 git rm --cached -rf .
 ```
 
+## Rename `master` to `main`
+
+```bash
+git branch -M main
+```
+
 ## Import local git repository to GitHub
 
-* Create new empty repository in GitHub, simultaneously renaming `master` to `main`
+Create new, empty repository in GitHub e.g. `https://github.com/username/Repo.git`
+
+> Line 2 simultaneously renames `master` to `main` to follow new best practices
 
 ```bash
 git remote add origin https://github.com/username/Repo.git
@@ -88,7 +96,7 @@ git tag -a v1.5 -m "Tag description"
 
 ## Push tags
 
-When you create a local tag, it isn't pushed by default, so use --tags:
+When you create a local tag, it isn't pushed by default, so use `--tags`:
 
 ```bash
 git push origin --tags
@@ -102,10 +110,7 @@ git fetch <upstream> <branch>:<branch>
 
 ## Git policies
 
-GitFlow: https://nvie.com/posts/a-successful-git-branching-model/
-
-GitHub Flow: https://guides.github.com/introduction/flow/
-
-OneFlow: https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow (https://www.endoflineblog.com/gitflow-considered-harmful)
-
-Azure SDK policies: https://azure.github.io/azure-sdk/policies_repobranching.html#release-branches
+* [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/)
+* [GitHub Flow](https://guides.github.com/introduction/flow/)
+* [OneFlow](https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow) and (https://www.endoflineblog.com/gitflow-considered-harmful)
+* [Azure SDK policies](https://azure.github.io/azure-sdk/policies_repobranching.html#release-branches)

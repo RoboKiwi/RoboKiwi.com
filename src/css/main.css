@@ -98,3 +98,36 @@ code:not([data-lang]) {
   background-color: #ddd;
   border-radius: 6px;
 }
+
+blockquote {
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-color: var(--primary-color);
+  border-radius: 8px;
+  padding: 0 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  overflow-x: auto;
+  background-color: rgba(0,0,0,5%);
+}
+
+.note, .warning {
+  border-left-width: 4px;
+  border-left-style: solid;
+  position: relative;
+  border-color: var(--primary-color);
+  display: block;
+}
+
+.warning {
+  border-color: var(--accent-color)
+}
+
+.admonition-content {
+  display: block;
+  padding: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  overflow-x: auto;
+  background-color: rgba(0,0,0,5%);
+}

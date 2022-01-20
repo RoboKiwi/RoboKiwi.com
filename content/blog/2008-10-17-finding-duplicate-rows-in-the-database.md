@@ -14,7 +14,7 @@ url: /blog/2008/10/17/finding-duplicate-rows-in-the-database/
 aliases: /2008/10/17/finding-duplicate-rows-in-the-database/
 ---
 
-**NOTE**: This post has been re-visited in [Finding duplicated data across one or more columns in a database table](/2009/02/28/finding-duplicated-data-across-one-or-more-columns-in-a-database-table/)
+{{<warning>}}This post has been re-visited in [Finding duplicated data across one or more columns in a database table](/2009/02/28/finding-duplicated-data-across-one-or-more-columns-in-a-database-table/){{</warning>}}
 
 Information gleaned from Microsoft KB article: <a title="How to remove duplicate rows from a table in SQL Server" href="https://support.microsoft.com/default.aspx?scid=kb;en-us;139444" target="_blank">How to remove duplicate rows from a table in SQL Server</a>
 
