@@ -6,7 +6,7 @@
   {{ $interior_classes := .Site.Params.flex_box_interior_classes }}
 
   <section class="relative w-100 bg-black white"><div class="flex flex-wrap w-90-l center center mw9">
-    {{ range (first 4 (where .Site.RegularPages.ByLastmod.Reverse "Section" "blog")) }}
+    {{ range (first 4 (where .Site.RegularPages.ByPublishDate.Reverse "Section" "blog")) }}
     <a href="{{.Permalink}}" class="link lh-copy light-gray f6 w-100 w-50-m w-25-l bg-animate hover-bg-primary-color-dark hover-white pv3 ph3 dib"><span class="f6 gray pb1 db">{{ dateFormat "January 2, 2006" .Date }}</span>
       {{ .Name }}</a>
     {{ end }}
