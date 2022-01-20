@@ -72,7 +72,7 @@ if ($host.Name -eq 'ConsoleHost')
 
 If you need to update PSReadLine, you should close down all open PowerShell sessions and run from `Win+R`:
 
-```
+```powershell
 pwsh.exe -noprofile -command "Install-Module PSReadLine -Force -SkipPublisherCheck -AllowPrerelease"
 ```
 
@@ -91,7 +91,7 @@ or to update:
 ```powershell
 Update-Module posh-git
 Update-Module oh-my-posh
-``
+```
 
 Add to your `$profile`:
 

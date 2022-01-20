@@ -23,37 +23,35 @@ In almost all cases the browser will add this automatically. Some browsers will 
 
 ## CORS Response
 
-The CORS response will come with one or more Access-Control-* header(s).
+The CORS response will come with one or more `Access-Control-*` header(s):
 
 | Header | Value | Description |
 |------- |-------|------|
-| `Access-Control-Allow-Origin` | `*` to allow all, or the Origin from the request | Required |
+| `Access-Control-Allow-Origin` | `*` to allow all, or the Origin from the request | Required. |
 `Access-Control-Allow-Credentials` | `true` | Set if cookies should be included. |
-`Access-Control-Expose-Headers` | Comma-separated list of allowed headers | Lists headers the client has access to over the base headers |
+`Access-Control-Expose-Headers` | Comma-separated list of allowed headers | Lists headers the client has access to over the base headers. |
 
 ### Base headers
 
-The requesting client automatically have access to the following headers, regardless of the `Access-Control-Expose-Headers` setting:
+The requesting client automatically has access to the following headers, regardless of the `Access-Control-Expose-Headers` setting:
 
-```http
-Cache-Control
-Content-Language
-Content-Type
-Expires
-Last-Modified
-Pragma
-```
+* `Cache-Control`
+* `Content-Language`
+* `Content-Type`
+* `Expires`
+* `Last-Modified`
+* `Pragma`
 
 ## Preflight Request
 
-Outside the simplest or cross-origin requests, the browser will transparently issue a preflight request to the server to check if it's allowed to make the request it's intending.
+Outside the simplest or cross-origin requests, the browser will silently issue a preflight request to the server to check if it's allowed to make the request it intends.
 
-This is by making an OPTIONS request to the server. If the server responds allowing the requested options, then the originally intended request will then be passed through.
+This is done by making an `OPTIONS` request to the server. If the server responds allowing the requested options, then the originally intended request will then be sent.
 
 Header|Value|Description
 -|-|-
-Access-Control-Request-Method|Requested method|e.g. GET, POST, PUT, DELETE, HEAD, PATCH|
-Access-Control-Request-Headers|List of request headers|Comma-separated list of non-standard headers to be included in the request
+`Access-Control-Request-Method`|Requested method|e.g. `GET`, `POST`, `PUT`, `DELETE`, `HEAD`, `PATCH`|
+`Access-Control-Request-Headers`|List of request headers|Comma-separated list of non-standard headers to be included in the request
 
 The server response can be cached, so that preflight requests aren't required for each subsequent request.
 
@@ -74,11 +72,11 @@ User-Agent: Mozilla/5.0...
 
 Header|Value|Description
 -|-|-
-Access-Control-Allow-Origin|* or the requesting Origin|Required
-Access-Control-Allow-Methods|Allowed methods|A list of allowed methods
-Access-Control-Allow-Headers|Allowed headers|List of allowed headers (not just limited just to the headers in the Access-Control-Request-Headers request)
-Access-Control-Allow-Credentials||
-Access-Control-Max-Age|Cacheable for x seconds|Allows the preflight response to be cached
+`Access-Control-Allow-Origin`|* or the requesting Origin|Required
+`Access-Control-Allow-Methods`|Allowed methods|A list of allowed methods
+`Access-Control-Allow-Headers`|Allowed headers|List of allowed headers (not just limited just to the headers in the `Access-Control-Request-Headers` request)
+`Access-Control-Allow-Credentials`||
+`Access-Control-Max-Age`|Cacheable for x seconds|Allows the preflight response to be cached
 
 Example response:
 

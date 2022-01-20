@@ -3,9 +3,9 @@ title: Recommendations
 description: Recommendations for applications and tools
 ---
 
-This page contains recommendations for applications and tools favouring free and Open Source alternatives.
+This page contains recommendations for applications and tools, favouring free and Open Source alternatives.
 
-## Development Staples
+# Development Staples
 
 * Git for Windows
 * NodeJS
@@ -15,15 +15,9 @@ This page contains recommendations for applications and tools favouring free and
 * LINQPad
 * Visual Studio Code
 
-## Security & Password Management
-
-* Microsoft Authenticator
-* Firefox Lockwise
-
 ## Integrated Development Environment (IDE)
 
-* Visual Studio
-  * JetBrains ReSharper
+* Visual Studio + JetBrains ReSharper
 * JetBrains Rider
 * IntelliJ IDEA
 * Tizen Studio
@@ -42,9 +36,10 @@ This page contains recommendations for applications and tools favouring free and
 
 * JetBrains dotCover
 
-## Misc
+## Misc Development
 
 * [RegExr](https://regexr.com/) is an online tool to learn, build, & test Regular Expressions
+* [CyberChef](https://gchq.github.io/CyberChef/) "The Cyber Swiss Army Knife - a web app for encryption, encoding, compression and data analysis"
 
 ## Visual Studio Code
 
@@ -67,23 +62,28 @@ This page contains recommendations for applications and tools favouring free and
   * Show available formats: `-F`
   * Download specific format: `-f <formatcode>`
 
+## Security & Password Management
+
+* Microsoft Authenticator
+* Firefox Lockwise
+
 ## Design & Creative
 
 | Application                               | Company | License | Comments |
 |-------------------------------------------|---------|---------|----------|
-| Affinity Designer                         |         |         |          |
-| Affinity Photo                            |         |         |          |
+| [Affinity Designer](https://affinity.serif.com/designer/) | Serif | Proprietary, one-time purchase. Free trial. | Vector and raster for drawing and illustration. Alternative to Adobe Illustrator. |
+| [Affinity Photo](https://affinity.serif.com/photo/) | Serif | Proprietary, one-time purchase. Free trial. | Photography and raster graphics. Alternative to Adobe Photoshop. |
+| [Affinity Publisher](https://affinity.serif.com/publisher/) | Serif | Proprietary, one-time purchase. Free trial. | Print & web layouts and design |
 | Clip Studio Paint (formerly Manga Studio) |         |         |          |
 | Krita                                     |         |         |          |
 | [MediBang](https://medibangpaint.com/en/) |         |         |          |
-| Affinity Publisher                        |         |         |          |
 | Paint.NET                                 |         |         |          |
 | Inkspace                                  |         |         |          |
 | Blender                                   |         |         |          |
 | Blackmagic Design DaVinci Resolve         |         |         |          |
 | GIMP                                      |         |         |          |
 
-## Misc
+## General
 
 * 7-Zip
 * Araxis Merge

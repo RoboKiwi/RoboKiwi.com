@@ -17,8 +17,7 @@ If visiting each node simply involves invoking Accept on the node, passing in th
 
 You can use a generic implementation, so that you don't need to update the interface and implementation(s) of the visitor each time you want to support a new node:
 
-```
-
+```csharp
 interface IVisitor {
 
     T Visit<T>(T node) where T : INode;
@@ -27,5 +26,4 @@ interface IVisitor {
 interface INode {
     void Accept(IVisitor visitor);
 }
-
 ```

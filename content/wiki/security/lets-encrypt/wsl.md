@@ -8,6 +8,16 @@ menu:
         parent: "lets-encrypt"
 ---
 
+## Overview
+
+* Create a Service Principal for generating Let's Encrypt certificates and uploading them to KeyVault
+* Create a Custom Role to allow writing DNS records
+* Create a Custom Role to allow uploading certificates to KeyVault
+* Iterate over all listed DNS Zones and find those that have the "Acme" metadata key set
+* For each DNS Zone, check if it already has a certificate in the Key Vault. If it does, and it isn't going to expire within the next 90 days, skip.
+* Generate a certificate for the DNS Zone and upload it to the Key Vault.
+* Set the certificate expiry metadata on the DNS Zone.
+
 ## Prerequisites
 
 * Set up [Ubuntu on Windows Subsystem for Linux (WSL)]({{<relref "/wiki/windows/wsl.md">}})
