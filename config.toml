@@ -71,3 +71,9 @@ icon = true
 identifier = "github"
 post = "external"
 url = "https://github.com/davidmoore/"
+
+[frontmatter]
+  date = ['date', 'publishDate', 'lastmod', ':git']
+  expiryDate = ['expiryDate']
+  lastmod = [':git', 'lastmod', 'date', 'publishDate']
+  publishDate = ['publishDate', 'date']

@@ -48,13 +48,19 @@
 
             {{if .IsPage}}<aside class="fr f6 mid-gray dim ml3">{{ .ReadingTime }} min read</aside>{{end}}
 
-            <date class="f6 db" datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
-              {{ .Lastmod.Format "January 2, 2006" }}
+            <date class="f6 db mb1" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+              {{ .Date.Format "January 2, 2006" }}
             </date>
+
+            {{if ne .Date .Lastmod }}
+            <date class="f6 db mb1 fr" datetime="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+              Edited {{ .Lastmod.Format "January 2, 2006" }}
+            </date>
+            {{end}}
 
             {{ if .Params.categories }}
               {{ range .Params.categories }}
-                <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" class="f6 mb0 ph1 link dim mr3 ba br3 pill">
+                <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" class="f6 mb0 mt2 ph2 pv0 link dim mr2 ba pill">
                   {{ humanize  . | lower }}
                 </a>
               {{ end }}
