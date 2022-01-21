@@ -21,4 +21,7 @@ For example in C#, if `Cat` is a subtype of `Animal`, then:
 
 Neither `IList<Cat>` nor `IList<Animal>` is a subtype of the other, because `IList<T>` is invariant on `T`.
 
-https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
+## Further Reading
+
+* [Wikipedia on Covariance and Contravariance](https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science))
+* [MS Docs on Covariance and Contravariance](https://docs.microsoft.com/dotnet/standard/generics/covariance-and-contravariance)

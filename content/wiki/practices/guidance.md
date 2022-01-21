@@ -8,3 +8,11 @@ title: Guidance
 * State is the enemy.
   * Global and static state are a no-no.
   * Use dependency-injected classes that can be lifestyle managed by the container (i.e. scoped or singleton) to handle shared state.
+
+* Creating an initial class, don't worry about extracting an interface until necessary, despite the Design by Contract principle.
+
+* Only create new project / assembly if necessary; try to keep as few as possible.
+
+* Hand-coded SQL isn't necessarily a bad thing.
+
+* Unit test what's important

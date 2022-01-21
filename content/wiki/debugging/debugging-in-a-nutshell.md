@@ -28,6 +28,15 @@ Set using `cmd.exe`:
 set _NT_SYMBOL_PATH=SRV*%TEMP%\SymbolCache*http://msdl.microsoft.com/download/symbols;SRV*%TEMP%\SymbolCache*https://nuget.smbsrc.net;SRV*%TEMP%\SymbolCache*http://referencesource.microsoft.com/symbols;SRV*%TEMP%\SymbolCache*https://dotnet.myget.org/F/dotnet-core/symbols
 ```
 
+## Launching debugger at program startup
+
+Configure a `Debugger` string value under `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\currentversion\image file execution options\appname.exe` (where `appname.exe` is your application name) to automatically
+launch a debugger and attach it to the process, no matter how the application is launched.
+
+The `Debugger` value should be the path to your preferred debugger, including command-line arguments.
+
+If you wish to use Visual Studio, you only need to use `vsjitdebugger.exe` as the `Debugger` value. The Visual Studio Just-In-Time Debugger is usually installed in the System32 (64 bit) and SysWOW64 (32 bit) folders and thus available on the system path.
+
 ## PerfView
 
 ## WinDBG
