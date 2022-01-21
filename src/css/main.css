@@ -139,3 +139,7 @@ blockquote {
   overflow-x: auto;
   background-color: rgba(0,0,0,5%);
 }
+
+.clear-fix {
+  clear: both;
+}

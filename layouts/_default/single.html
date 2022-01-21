@@ -61,14 +61,14 @@
             {{ if .Params.categories }}
               {{ range .Params.categories }}
                 <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" class="f6 mb0 mt2 ph2 pv0 link dim mr2 ba pill">
-                  {{ humanize  . | lower }}
+                  {{ humanize . | lower }}
                 </a>
               {{ end }}
             {{end}}
 
           </header>
           
-          <aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100 nested-links">
+          <aside class="clear-fix bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100 nested-links">
             {{ with .Params.description }}
               <div class="f4 fw4 lh-copy">
                 {{ . | markdownify }}
