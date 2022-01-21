@@ -22,7 +22,7 @@ aliases: /2008/10/19/operas-mama-analyses-the-spread-and-use-of-web-technologies
 
 The Opera guys have created a project called **MAMA** &#8211; "Metadata Analysis and Mining Application". It is designed to trawl the web and analyse what technologies and techniques are actually being used in web pages.
 
-Their intial study results are in, taken from 3 and a half million URLs.
+Their initial study results are in, taken from 3 and a half million URLs.
 
 Interestingly, tables are still right up there with most popular tags, suggesting there are still a lot of people using tables for layouts, particularly when you see this quote:
 
@@ -34,12 +34,12 @@ It's hard to tell at this point if this is because those pages are old, or if ne
 
 Some more findings:
 
-  * A little over 4% of the pages passed W3C HTML validation
-  * A third of the URLs used Flash. The lowest regional use of Flash is 25%, meaning at least 1 in 4 pages use Flash.
-  * Nearly 3/4 of the URLs used javascript in one form or another
+* A little over 4% of the pages passed W3C HTML validation
+* A third of the URLs used Flash. The lowest regional use of Flash is 25%, meaning at least 1 in 4 pages use Flash.
+* Nearly 3/4 of the URLs used javascript in one form or another
 
-Main article: <a title="Main Article" href="https://dev.opera.com/articles/view/mama/" target="_blank">https://dev.opera.com/articles/view/mama/</a>
-  
-Key Findings: <a title="Key Findings" href="https://dev.opera.com/articles/view/mama-key-findings/" target="_blank">https://dev.opera.com/articles/view/mama-key-findings/</a>
-  
-The average web page: <a title="The average web page" href="https://dev.opera.com/articles/view/mama-the-average-web-page/" target="_blank">https://dev.opera.com/articles/view/mama-the-average-web-page/</a>
+Read more:
+
+* [Main article](https://dev.opera.com/articles/view/mama/)
+* [Key Findings](https://dev.opera.com/articles/view/mama-key-findings/)
+* [The average web page](https://dev.opera.com/articles/view/mama-the-average-web-page/)

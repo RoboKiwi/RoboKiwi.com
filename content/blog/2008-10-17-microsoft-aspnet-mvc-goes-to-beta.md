@@ -22,4 +22,4 @@ I've been using CodePlex community builds, but MVC has finally gone to Beta. I'm
 
 I'm really liking many things about MVC so far, but a review of MVC is another blog post for the future.
 
-<a title="Download ASP.NET MVC Beta" href="https://go.microsoft.com/fwlink/?LinkID=129910&clcid=0x409" target="_blank">Download ASP.NET MVC Beta</a>
+[Download ASP.NET MVC Beta](https://go.microsoft.com/fwlink/?LinkID=129910&clcid=0x409 "Download ASP.NET MVC Beta")

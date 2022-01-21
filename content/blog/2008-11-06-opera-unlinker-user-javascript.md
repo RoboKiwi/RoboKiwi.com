@@ -23,15 +23,15 @@ Opera doesn't have a fully-fledged plugin system like Firefox (which is a pro ju
 
 I've made a simple script to implement a very basic version of Unlinker. It will scan the page for links to images, and embed the image in the page under the link. It currently also scales the image down while maintaining aspect ratio if it exceeds 640&#215;480.
 
-To use this, create a directory on your machine to store your user javascripts, and save the source there as unlinker.js (or whatever name you like).
+To use this, create a directory on your machine to store your user javascripts, and save the source there as `unlinker.js` (or whatever name you like).
 
-  * Now in Opera, go to the Tools > Preferences menu
-  * Go to the **Advanced** tab
-  * Click the **Content** section
-  * Click the **JavaScript Options&#8230;** button
-  * Browse to the User JavaScript files folder where you saved the file, then hit OK
-  * Hit OK
-  * You don't have to restart Opera for the changes to take effect
+* Now in Opera, go to the **Tools** > **Preferences** menu
+* Go to the **Advanced** tab
+* Click the **Content** section
+* Click the **JavaScript Options&#8230;** button
+* Browse to the User JavaScript files folder where you saved the file, then hit **OK**
+* Hit **OK**
+* You don't have to restart Opera for the changes to take effect
 
 The source code is:
   
@@ -73,5 +73,6 @@ The source code is:
           },
           false
       );
-```    
+```
+
 **Edit 2010-05-29**: Updated for Opera 10.x

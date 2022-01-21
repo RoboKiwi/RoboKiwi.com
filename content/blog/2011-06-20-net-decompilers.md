@@ -31,153 +31,118 @@ Red Gate backpedalled in April 2011 by saying that the final 6.8 version of Refl
     <td valign="top" width="116">
       Name
     </td>
-    
     <td valign="top" width="109">
       Company
     </td>
-    
     <td valign="top" width="115">
       License
     </td>
-    
     <td valign="top" width="93">
       Language Support
     </td>
-    
     <td valign="top" width="83">
       Rating
     </td>
-    
     <td valign="top" width="328">
       Comments
     </td>
   </tr>
-  
   <tr>
     <td valign="top" width="126">
       <a href="https://wiki.sharpdevelop.net/ilspy.ashx">ILSpy</a>
     </td>
-    
     <td valign="top" width="119">
       SharpDevelop
     </td>
-    
     <td valign="top" width="125">
       Open Source
     </td>
-    
     <td valign="top" width="102">
       C# 4 except for expression trees, dynamic, fixed fields
     </td>
-    
     <td valign="top" width="81">
       &nbsp;
     </td>
-    
     <td valign="top" width="312">
       ILSpy development was started directly as a result of Red Gate’s announcement that Reflector would be paid for.
     </td>
   </tr>
-  
   <tr>
     <td valign="top" width="131">
       <a href="https://www.devextras.com/decompiler/">CodeReflect</a>
     </td>
-    
     <td valign="top" width="123">
       DevExtras
     </td>
-    
     <td valign="top" width="129">
       Free (Commercially supported)
     </td>
-    
     <td valign="top" width="107">
       MSIL, C#, VB.NET
     </td>
-    
     <td valign="top" width="81">
       &nbsp;
     </td>
-    
     <td valign="top" width="306">
       &nbsp;
     </td>
   </tr>
-  
   <tr>
     <td valign="top" width="133">
       <a href="https://www.telerik.com/products/decompiling.aspx">JustDecompile</a>
     </td>
-    
     <td valign="top" width="125">
       Telerik
     </td>
-    
     <td valign="top" width="131">
       Free (Commerically supported)
     </td>
-    
     <td valign="top" width="109">
       &nbsp;
     </td>
-    
     <td valign="top" width="80">
       &nbsp;
     </td>
-    
     <td valign="top" width="300">
       &nbsp;
     </td>
   </tr>
-  
   <tr>
     <td valign="top" width="138">
       <a href="https://www.jetbrains.com/decompiler/">dotPeek</a>
     </td>
-    
     <td valign="top" width="125">
       JetBrains
     </td>
-    
     <td valign="top" width="131">
       Free (Commercially supported)
     </td>
-    
     <td valign="top" width="109">
       C#
     </td>
-    
     <td valign="top" width="80">
       &nbsp;
     </td>
-    
     <td valign="top" width="298">
       &nbsp;
     </td>
   </tr>
-  
   <tr>
     <td valign="top" width="140">
       <a href="https://www.red-gate.com/MessageBoard/viewtopic.php?t=13307">Reflector 6.8</a>
     </td>
-    
     <td valign="top" width="125">
       Red Gate
     </td>
-    
     <td valign="top" width="131">
       Free
     </td>
-    
     <td valign="top" width="109">
       MSIL, C#, VB.NET, more through plugins
     </td>
-    
     <td valign="top" width="80">
       &nbsp;
     </td>
-    
     <td valign="top" width="298">
       Any future versions (7.x) are paid for. You need to be an existing Reflector user, and allow your Reflector to update to version 6.8.
     </td>

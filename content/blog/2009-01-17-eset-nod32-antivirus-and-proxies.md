@@ -21,17 +21,21 @@ aliases: /2009/01/17/eset-nod32-antivirus-and-proxies/
 
 Today I'm working on a .NET hobby project.
 
-At a simple level, I'm writing a web proxy implementation, � and was using 8080 as the default port.
+At a simple level, I'm writing a web proxy implementation, and was using 8080 as the default port.
 
 When trying to write and run unit tests to make sure my server was binding to this port and shutting down as and when expected, I found I could connect to 8080 even when the proxy wasn't running. Telnet-ing to that port would initiate a connection, and would eventually drop out at varying speeds, and immediately if I hit a key.
 
-I could see nothing in netstat, and I got to the point of shutting down all programs and services I could and it still happened.
+I could see nothing in `netstat`, and I got to the point of shutting down all programs and services I could and it still happened.
 
-I loaded up <a title="TCPView" href="https://technet.microsoft.com/sysinternals/bb897437.aspx" target="_blank">TCPView</a> and watched it, and saw that an ekrn.exe was doing stuff when I tried to telnet to port 8080. � This is the ESET Service, part of <a title="ESET NOD32 Antivirus Home Page" href="https://www.eset.com/products/nod32.php" target="_blank">ESET NOD32 Antivirus</a>. I had already tried disabling NOD32 Antivirus while troubleshooting, but I went and inspected the options, and sure enough I saw this:
+I loaded up [TCPView](https://technet.microsoft.com/sysinternals/bb897437.aspx "TCPView") and watched it, and saw that an `ekrn.exe` was doing stuff when I tried to telnet to port 8080.
+
+This is the ESET Service, part of [ESET NOD32 Antivirus](https://www.eset.com/products/nod32.php "ESET NOD32 Antivirus Home Page").
+
+I had already tried disabling NOD32 Antivirus while troubleshooting, but I went and inspected the options, and sure enough I saw this:
 
 <img class="size-full wp-image-71" title="ESET NOD32 Anti-Virus HTTP Options" src="/wp-content/uploads/2009/01/nod32.png" alt="ESET NOD32 Anti-Virus HTTP Options" width="729" height="527" />
 
-To get the above options window, you need to open the main NOD32 window, click **Setup** from the left bar and click **Enter entire advanced setup tree&#8230;**
+To get the above options window, you need to open the main NOD32 window, click **Setup** from the left bar and click **Enter entire advanced setup tree&hellip;**
 
 Eureka! NOD32 sits there and quietly intercepts web requests to the usual web and proxy ports, so that it can appear that there are actually programs listening on those ports when there _aren't_. Even when you've disabled the Web Access Protection and Real-time protection.
 

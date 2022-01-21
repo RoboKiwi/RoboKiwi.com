@@ -20,21 +20,23 @@ Imagine that the installer requires admin privileges; you don’t want to run th
 
 So how can we check if the user is an admin or not?
 
-## In VB6, C++ etc
+### In VB6, C++ etc
 
 There is a Windows API function you can use very easily to see if the current user is an admin: [IsUserAnAdmin](https://msdn.microsoft.com/library/bb776463(v=vs.85).aspx).
 
-> BOOL IsUserAnAdmin(void);
+```c
+BOOL IsUserAnAdmin(void);
+```
 
 ### Visual Basic 6 Declaration
 
-> <span style="font-family: &amp;quot;"><span style="line-height: 12pt;"><span style="color: #00007f;"><span style="font-size: 10pt;">Private</span></span></span><span style="font-size: 10pt;"><span style="line-height: 12pt;"> </span><span style="line-height: 12pt;"><span style="color: #00007f;">Declare</span></span><span style="line-height: 12pt;"> </span><span style="line-height: 12pt;"><span style="color: #00007f;">Function</span></span><span style="line-height: 12pt;"> IsUserAnAdmin </span><span style="line-height: 12pt;"><span style="color: #00007f;">Lib</span></span><span style="line-height: 12pt;"> </span><span style="line-height: 12pt;"><span style="color: #7f007f;">"Shell32&#8243;</span></span><span style="line-height: 12pt;"> </span><span style="line-height: 12pt;"><span style="color: #00007f;">Alias</span></span><span style="line-height: 12pt;"> </span><span style="line-height: 12pt;"><span style="color: #7f007f;">"#680&#8243;</span></span><span style="line-height: 12pt;"> () </span><span style="line-height: 12pt;"><span style="color: #00007f;">As</span></span><span style="line-height: 12pt;"> </span></span><span style="line-height: 12pt;"><span style="font-size: 10pt; color: #00007f;">Integer</span></span></span>
+```vb
+    Private Declare Function IsUserAnAdmin Lib “Shell32″ Alias "#680″ () As Integer
+```
 
 While you can still use this, it is actually deprecated, and the documentation recommends you call the [CheckTokenMembership](https://msdn.microsoft.com/library/aa376389(v=vs.85).aspx) function instead (which IsUserAnAdmin is a wrapper for).
 
-## .NET
-
-### C#.NET
+### C# .NET
 
 ```csharp
 using System;
@@ -56,7 +58,7 @@ A way around this is to use the [GetTokenInformation](https://msdn.microsoft.com
 
 _This is not 100% reliable_ (see References) but it’s probably the best we can do for now.
 
-### C#.NET
+### C\#
 
 This code is slightly easier in .NET, as there’s already a fair amount of code we don’t have to write to get the current process’s token.
 
@@ -189,6 +191,7 @@ Public Const VER_PLATFORM_WIN32s =
 Public Const VER_PLATFORM_WIN32_WINDOWS = 1
 Public Const VER_PLATFORM_WIN32_NT = 2
 Public Declare Function GetVersionEx Lib "kernel32″ Alias "GetVersionExA" (ByRef lpVersionInformation As OSVERSIONINFO) As Long
+
 ' These functions are for getting the process token information, which IsUserAnAdministrator uses to
 ' handle detecting an administrator that's running in a non-elevated process under UAC.
 Private Const TOKEN_READ As Long = &H20008
@@ -199,79 +202,63 @@ Private Declare Function OpenProcessToken Lib "advapi32.dll" (ByVal ProcessHandl
 Private Declare Function GetTokenInformation Lib "advapi32.dll" (ByVal TokenHandle As Long, ByVal TokenInformationClass As Long, TokenInformation As Any,_ ByVal TokenInformationLength As Long, ReturnLength As Long) As Long
 
 Public Function IsUserAnAdministrator() As Boolean
-  On Error GoTo IsUserAnAdministratorError
-  IsUserAnAdministrator = False
-  If IsUserAnAdmin() Then
-    IsUserAnAdministrator = True
+    On Error GoTo IsUserAnAdministratorError
+    IsUserAnAdministrator = False
+
+    If IsUserAnAdmin() Then
+        IsUserAnAdministrator = True
+        Exit Function
+    End If
+    
+    ' If we're on Vista onwards, check for UAC elevation token
+    ' as we may be an admin but we're not elevated yet, so the
+    ' IsUserAnAdmin() function will return false
+    Dim osVersion As OSVERSIONINFO
+    osVersion.dwOSVersionInfoSize = Len(osVersion)
+    
+    If GetVersionEx(osVersion) = Then
+        Exit Function
+    End If
+    
+    If osVersion.dwPlatformId <> VER_PLATFORM_WIN32_NT Or osVersion.dwMajorVersion < 6 Then
+        ' If the user is not on Vista or greater, then there's no UAC, so don't bother checking.
+        Exit Function
+    End If
+
+    Dim result As Long
+    Dim hProcessID As Long
+    Dim hToken As Long
+    Dim lReturnLength As Long
+    Dim tokenElevationType As Long
+    
+    ' We need to get the token for the current process
+    hProcessID = GetCurrentProcess()
+    
+    If hProcessID <> Then
+        If OpenProcessToken(hProcessID, TOKEN_READ, hToken) = 1 Then
+            result = GetTokenInformation(hToken, TOKEN_ELEVATION_TYPE, tokenElevationType, 4, lReturnLength)
+            If result = Then
+                ' Couldn't get token information
+                Exit Function
+            End If
+    
+            If tokenElevationType <> 1 Then
+                IsUserAnAdministrator = True
+            End If
+    
+            CloseHandle hToken
+        End If
+    
+        CloseHandle hProcessID
+    End If
+    
     Exit Function
-  End If
-
-  ' If we're on Vista onwards, check for UAC elevation token
-  ' as we may be an admin but we're not elevated yet, so the
-  ' IsUserAnAdmin() function will return false
-  Dim osVersion As OSVERSIONINFO
-  osVersion.dwOSVersionInfoSize = Len(osVersion)
-
-  If GetVersionEx(osVersion) = Then
-    Exit Function
-  End If
-
-  If osVersion.dwPlatformId <> VER_PLATFORM_WIN32_NT Or osVersion.dwMajorVersion < 6 Then
-    ' If the user is not on Vista or greater, then there's no UAC, so don't bother checking.
-    Exit Function
-  End If
-
-Dim result As Long
-
-Dim hProcessID As Long
-
-Dim hToken As Long
-
-Dim lReturnLength As Long
-
-Dim tokenElevationType As Long
-
-' We need to get the token for the current process
-
-hProcessID = GetCurrentProcess()
-
-If hProcessID <> Then
-
-If OpenProcessToken(hProcessID, TOKEN_READ, hToken) = 1 Then
-
-result = GetTokenInformation(hToken, TOKEN_ELEVATION_TYPE, tokenElevationType, 4, lReturnLength)
-
-If result = Then
-
-' Couldn't get token information
-
-Exit Function
-
-End If
-
-If tokenElevationType <> 1 Then
-
-IsUserAnAdministrator = True
-
-End If
-
-CloseHandle hToken
-
-End If
-
-CloseHandle hProcessID
-
-End If
-
-Exit Function
 
 IsUserAnAdministratorError:
-
 ' Handle errors
-
 End Function 
 ```
-    
+
 ## References
 
 [Blog Post by Chris Jackson: How to Determine if a User is a Member of the Administrators Group with UAC Enabled on Windows Vista](https://blogs.msdn.com/b/cjacks/archive/2006/10/09/how-to-determine-if-a-user-is-a-member-of-the-administrators-group-with-uac-enabled-on-windows-vista.aspx)

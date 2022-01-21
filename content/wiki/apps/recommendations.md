@@ -117,6 +117,7 @@ This page contains recommendations for applications and tools, favouring free an
 * Signal
 * Sumatra PDF
 * Thunderbird
+* OneNote
 
 ## Utils
 
