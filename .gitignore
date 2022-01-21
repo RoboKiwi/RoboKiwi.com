@@ -3,3 +3,4 @@ public/
 backup/
 assets/
 .hugo_build.lock
+.vs/

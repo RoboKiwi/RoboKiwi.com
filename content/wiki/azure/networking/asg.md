@@ -4,7 +4,7 @@ title: Application Security Groups (ASG)
 
 ## Overview
 
-Application Security Groups (ASG) lets you "tag" resources.
+Application Security Groups (ASG) let you "tag" resources.
 
 For example, you could have a Quarantine tag that can assign a resource to a locked-down subnet / nsg until it can be secured.
 

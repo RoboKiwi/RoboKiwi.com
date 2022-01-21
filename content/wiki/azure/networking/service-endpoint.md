@@ -26,7 +26,7 @@ The established service endpoint enables an efficient route to the service, dire
 
 ## Disadvantages
 
-You can protect a resource so that it can only be used by resources from a particular subnet, it doesn't protect from data exfiltration in that that same consumer could then just go and exfiltrate that data to a different unprotected resource. For that, you can use Service Endpoint Policies.
+You can protect a resource so that it can only be used by resources from a particular subnet, it doesn't protect from data exfiltration in that that same consumer could then just go and exfiltrate that data to a different unprotected resource. For that, you can use [Service Endpoint Policies]({{<relref "service-endpoint-policy">}}).
 
 ## Troubleshooting
 
