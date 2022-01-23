@@ -1,0 +1,23 @@
+{{ $comments := .comments }}
+{{ $depth := .depth }}
+{{ $parent := string .parent }}
+{{ with .comments }}
+<ol class="comments list {{ if eq $depth 1 }}pl0{{end}}">
+  {{ range where $comments "comment_parent" $parent }}
+    <li>
+        <article class="comment depth-{{ $depth }}">
+          <div class="br3 pa3 mv3 nested-links shadow-1">
+            {{ with .comment_author_email }}<img src="https://www.gravatar.com/avatar/{{ md5 . }}?s=56&d=identicon" class="br-100 ba dib fl mr3" alt="avatar">{{ end }}
+            <cite class="">{{ .comment_author | safeHTML }}</cite>
+            <div>{{ dateFormat "January 2, 2006" .comment_date }} at {{ dateFormat ":time_short" .comment_date }}</div>
+            <p class="">{{ .comment_content | markdownify }}</p>
+          </div>
+        </article>
+        {{- $children := len (where $comments "comment_parent" (string .comment_id)) -}}
+        {{ if gt $children 0 }}
+        {{ partial "comments.html" (dict "comments" $comments "depth" (add $depth 1) "parent" .comment_id ) }}
+        {{ end }}
+      </li>
+  {{ end }}
+</ol>
+{{ end }}

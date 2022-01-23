@@ -1,29 +1,63 @@
 {{ define "main" }}
 {{ $currentPage := . }}
+{{ $item := "" }}
+{{ $comments := slice }}
+{{ if .Params.id }}
+  {{ $items := (where $.Site.Data.comments.channel.item "post_id" (string .Params.id)) }}
+  {{ $item = index $items 0 }}
+  {{ with $item }}
+    {{ with .comment}}
+        {{ if reflect.IsMap . }}
+          {{ $comments = slice . }}
+        {{ else if reflect.IsSlice . }}
+          {{ $comments = . }}
+        {{ else }}
+          <h1>Comments busted?</h1>
+        {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
   <article class="w-100 ph4 pb5 pb6-ns pt1 pt3-ns">
     <div class="flex-l">
 
       <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4">
-        <aside class="fixed-lTK right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height sticky sticky-r">
+        <aside class="fixed-lTK right-0 f6 bl-l w-20 b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height sticky sticky-r">
+          {{- if or .PrevInSection .NextInSection -}}
+          <div date-pref>
+            {{if .PrevInSection}}
+              <a href="{{ .PrevInSection.Permalink }}" class="tr fr w-50 dib pa2 f6 pr1 hover-bg-light-gray overflow-hidden" title="{{ .PrevInSection.Title }}">
+              {{ partial "svg/ic_chevron_right_black_24px.svg" (dict "fill" "#0594CB" "size" "30px") }}<br/>
+              <span>{{ .PrevInSection.Title }}</span>
+              </a>
+            {{end}}
+
+            {{if .NextInSection}}
+              <a href="{{.NextInSection.Permalink }}" class="fl w-50 dib f6 pa2 pl1 hover-bg-light-gray overflow-hidden" title="{{ .NextInSection.Title }} ">
+                {{ partial "svg/ic_chevron_left_black_24px.svg" (dict "fill" "#0594CB" "size" "30px") }}<br/>
+                <span>{{ .NextInSection.Title }}</span>
+              </a>
+            {{end}}
+          </div>
+          {{- end -}}
+          <div class="clear-fix"></div>
           {{ if not .Params.notoc }}
-            <p class="b">Contents</p>
+            <p class="mt-2 b clear-fix">Contents</p>
             {{ .TableOfContents }}
           {{ end }}
-          {{- if or .PrevInSection .NextInSection -}}
-              <div date-pref>
-                {{if .NextInSection}}
-                  <a href="{{.NextInSection.Permalink }}" class="dib f6 pl1 hover-bg-light-gray br-100" title="{{ .NextInSection.Title }} ">
-                    {{ partial "svg/ic_chevron_left_black_24px.svg" (dict "fill" "#0594CB" "size" "30px") }}
-                  </a>
-                {{end}}
+          
+          <p class="b">Comments</p>
+          <a href="#comments" class="dib f6 pr1 hover-bg-light-gray br-100" title="Comments">
+              {{- with $comments -}}
+                {{- if eq 1 (len .) -}}
+                  1 comment
+                {{- else -}}
+                  {{- len . -}}&nbsp;comments
+                {{- end -}}
+              {{- else -}}
+                0 comments
+              {{- end -}}
+          </a>
 
-                {{if .PrevInSection}}
-                  <a href="{{ .PrevInSection.Permalink }}" class="dib f6 pr1 hover-bg-light-gray br-100" title="{{ .PrevInSection.Title }}">
-                  {{ partial "svg/ic_chevron_right_black_24px.svg" (dict "fill" "#0594CB" "size" "30px") }}
-                  </a>
-                {{end}}
-              </div>
-          {{- end -}}
         </aside>
       </div>
 
@@ -84,6 +118,14 @@
             {{ .Content }}
           </div>
 
+          <div class="prose nested-links clear-fix bt bw1" id="comments">
+            <aside class="pt3 mt2 mid-gray b--mid-gray fn w-100 nested-links">
+              <h1>Comments</h1>
+            </aside>
+            {{ with $comments }}
+              {{ partial "comments.html" (dict "comments" . "depth" 1 "parent" 0) }}
+            {{ end }}
+          </div>
         </div>
       </div>
 
