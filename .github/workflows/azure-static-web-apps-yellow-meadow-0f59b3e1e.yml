@@ -23,7 +23,7 @@ jobs:
       - name: Download comments data
         id: downloadcomments
         run: |
-            wget "${{secrets.COMMENTS_URL}}" -O data/comments.xml
+            wget "${{secrets.COMMENTS_URL}}" -O "${{github.workspace}}/data/comments.xml"
 
       - name: Build And Deploy
         id: builddeploy
