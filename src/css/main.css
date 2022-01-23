@@ -91,6 +91,11 @@ h1, h2, h3, h4 {
 
 .fill-current { fill: currentColor; }
 
+div.highlight {
+  display: inline-block;
+  max-width: 100%;
+}
+
 div.highlight pre {
   padding: 1em;
   overflow-wrap: break-word;

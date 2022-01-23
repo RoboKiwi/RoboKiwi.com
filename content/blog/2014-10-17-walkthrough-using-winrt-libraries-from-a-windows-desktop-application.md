@@ -94,14 +94,17 @@ Then hit the **Browse** button, and select **C:\Program Files (x86)\Windows Kits
 
 Checking the documentation as instructed, we read this:
 
->   In the desktop projects, the Core subgroup doesn’t appear by default. You can add the Windows Runtime by opening the shortcut menu for the project node, <em>choosing Unload Project, adding the following snippet, and re-opening the project</em> (on the project node, choose Reload Project). When you invoke the Reference Manager dialog box, the Core subgroup appears.
-> 
+> In the desktop projects, the Core subgroup doesn’t appear by default. You can add the Windows Runtime by opening the shortcut menu for the project node,
+> *choosing Unload Project, adding the following snippet, and re-opening the project* (on the project node, choose Reload Project).
+> When you invoke the Reference Manager dialog box, the Core subgroup appears.
+>
 > ```xml
-<PropertyGroup>
-     <TargetPlatformVersion>8.0</TargetPlatformVersion>
-</PropertyGroup>
-```
-> From https://msdn.microsoft.com/library/hh708954.aspx
+><PropertyGroup>
+>     <TargetPlatformVersion>8.0</TargetPlatformVersion>
+></PropertyGroup>
+>```
+>
+> From [How to: Add or Remove References By Using the Reference Manager](https://msdn.microsoft.com/library/hh708954.aspx)
 
 Great! So now we know we must specify our target platform as 8.0.
 
@@ -146,7 +149,7 @@ First, add a reference to the NuGet package for the HttpClient.
   1. In the Visual Studio menu, go to **Tools** > **NuGet Package Manager** > **Package Manager Console**
   2. Then type in the following command at the prompt:**Install-Package Microsoft.AspNet.WebApi.Client**
 
-```
+```Powershell
 Install-Package Microsoft.AspNet.WebApi.Client
 Attempting to resolve dependency 'Newtonsoft.Json (≥ 6.0.4)'.
 Installing 'Newtonsoft.Json 6.0.4'.
