@@ -4,3 +4,4 @@ backup/
 assets/
 .hugo_build.lock
 .vs/
+data/comments.xml
