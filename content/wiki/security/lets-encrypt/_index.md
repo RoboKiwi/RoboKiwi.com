@@ -10,7 +10,7 @@ menu:
 
 ## Overview
 
-All HTTP traffic should encrypted end-to-end using SSL/TLS.
+All HTTP traffic should be encrypted end-to-end using SSL/TLS.
 
 Let's Encrypt makes this possible by offering free SSL certificates to any domain you can prove ownership of.
 

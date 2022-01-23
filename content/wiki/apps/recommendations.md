@@ -1,6 +1,7 @@
 ---
 title: Recommendations
 description: Recommendations for applications and tools
+aliases: "/blog/software-picks/"
 ---
 
 This page contains recommendations for applications and tools, favouring free and Open Source alternatives.

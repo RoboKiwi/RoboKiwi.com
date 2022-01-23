@@ -22,7 +22,7 @@ h1, h2, h3, h4 {
   }
 
   .prose table {
-    width: 100%;
+    width: auto;
     margin-bottom: 3em;
     border-collapse: collapse;
     border-spacing: 0;

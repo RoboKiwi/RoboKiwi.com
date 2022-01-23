@@ -1,7 +1,7 @@
 ---
 author: David
 categories:
-- C++
+- "C++"
 date: 2013-05-27T13:26:20Z
 guid: https://www.sadrobot.co.nz/?p=641
 id: 641
@@ -32,12 +32,12 @@ Well if we jump into that code, we see this:
 
 ```cpp
 #ifndef _USING_V110_SDK71_
-	// the LOAD_LIBRARY_SEARCH_SYSTEM32 flag for LoadLibraryExW is only supported if the DLL-preload fixes are installed, so
-	// use LoadLibraryExW only if SetDefaultDllDirectories is available (only on Win8, or with KB2533623 on Vista and Win7)...
-	IFDYNAMICGETCACHEDFUNCTION(L"kernel32.dll", SetDefaultDllDirectories, pfSetDefaultDllDirectories)
-	{
-		return(::LoadLibraryExW(pszLibrary, NULL, LOAD_LIBRARY_SEARCH_SYSTEM32));
-	}
+    // the LOAD_LIBRARY_SEARCH_SYSTEM32 flag for LoadLibraryExW is only supported if the DLL-preload fixes are installed, so
+    // use LoadLibraryExW only if SetDefaultDllDirectories is available (only on Win8, or with KB2533623 on Vista and Win7)...
+    IFDYNAMICGETCACHEDFUNCTION(L"kernel32.dll", SetDefaultDllDirectories, pfSetDefaultDllDirectories)
+    {
+        return(::LoadLibraryExW(pszLibrary, NULL, LOAD_LIBRARY_SEARCH_SYSTEM32));
+    }
 #endif
 ```
 
@@ -57,20 +57,20 @@ But was getting blown away in my project file:
 
 ```xml
 <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-	<ClCompile>
-		<SuppressStartupBanner>true</SuppressStartupBanner>
-		<WarningLevel>Level3</WarningLevel>
-		...
-		<PreprocessorDefinitions></PreprocessorDefinitions>
-		...
-	</ClCompile>
+    <ClCompile>
+        <SuppressStartupBanner>true</SuppressStartupBanner>
+        <WarningLevel>Level3</WarningLevel>
+        ...
+        <PreprocessorDefinitions></PreprocessorDefinitions>
+        ...
+    </ClCompile>
 </ItemDefinitionGroup>
 ```
 
 So the fix is to include any existing pre-processor definitions (i.e. the Microsoft one) before defining our own (don’t forget to do this for all configurations and platforms in your project file):
 
 ```xml
-		<PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+        <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
 ```
 
 Otherwise, you can simply remove the PreprocessorDefinition element itself (if you have no defines of your own), or choose to inherit from the parent or project defaults from the project properties (which will essentially do the same thing):
