@@ -104,12 +104,33 @@ div.highlight pre {
   overflow:   auto;
 }
 
+div.gist div.highlight pre {
+  margin-bottom: 0;
+}
+
+div.gist footer {
+  
+}
+
+table.lntable pre {
+  padding-top: 0;
+  margin-top: 1em;
+}
+
 code:not([data-lang]) {
   padding: .2em .4em;
   margin: 0;
   font-size: 85%;
   background-color: #ddd;
   border-radius: 6px;
+}
+
+.chroma code:not([data-lang]) {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  background-color: inherit;
+  border-radius: 0;
 }
 
 blockquote {
