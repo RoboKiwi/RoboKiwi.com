@@ -26,14 +26,10 @@ The reason behind this is a common one when scheduling deferred actions; the cus
 
 You can do this in WiX code by setting Impersonate to No:
 
-<pre><p>
-  &lt;CustomAction Id="RegisterAspNet4" BinaryKey="WixCA" DllEntry="CAQuietExec"
-</p>
-
-<p>
-  Execute="deferred" Return="check" <strong><font color="#ff0000">Impersonate="no"</font></strong>/&gt;
-  
-</p></pre>
+```xml {hl_lines=[2]}
+<CustomAction Id="RegisterAspNet4" BinaryKey="WixCA" DllEntry="CAQuietExec"
+  Execute="deferred" Return="check" Impersonate="no" />
+```
 
 The documentation in WiX on the Impersonate attribute reads (emphasis mine):
 

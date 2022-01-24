@@ -34,7 +34,7 @@ BOOL IsUserAnAdmin(void);
     Private Declare Function IsUserAnAdmin Lib “Shell32″ Alias "#680″ () As Integer
 ```
 
-While you can still use this, it is actually deprecated, and the documentation recommends you call the [CheckTokenMembership](https://msdn.microsoft.com/library/aa376389(v=vs.85).aspx) function instead (which IsUserAnAdmin is a wrapper for).
+While you can still use this, it is actually deprecated, and the documentation recommends you call the [CheckTokenMembership](https://msdn.microsoft.com/library/aa376389(v=vs.85).aspx) function instead (which `IsUserAnAdmin` is a wrapper for).
 
 ### C# .NET
 
@@ -176,7 +176,7 @@ finally
 
 For Visual Basic 6, there’s some additional code, as we need to get the token for the current process, and use more calls to also get the operating system version.
 
-```vb
+```vb {linenos=table}
 Type OSVERSIONINFO
   dwOSVersionInfoSize As Long
   dwMajorVersion As Long
