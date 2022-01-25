@@ -6,8 +6,8 @@
   Weight = "10"
 
 [[project]]
-  Title = "ElvUI Updater"
-  Description = "Updates ElvUI for World of Warcraft"
-  Date = "2017-07-22"
-  Permalink = "https://github.com/DavidMoore/ElvUI.Updater"
+  Title = "Bron Cena"
+  Description = "World of Warcraft Interface AddOn to announce Bron Cena when he is summoned"
+  Date = "2021-07-31"
+  Permalink = "https://github.com/SadRobotGG/BronCena"
   Weight = 20

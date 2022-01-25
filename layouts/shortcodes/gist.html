@@ -5,7 +5,7 @@
 	{{- if or (not $file) (eq $file .filename ) -}}
 	<div class="gist">
 		{{ highlight .content .language "guessSyntax=true" }}
-		<footer><a href="{{ $payload.html_url }}#file-{{ replace .filename "." "-" | lower }}">{{ .filename }}</a> from <a href="{{ $payload.html_url }}">gist by {{ $payload.owner.login }}</a></footer>
+		<footer><a href="{{ $payload.html_url }}#file-{{ replace .filename "." "-" | lower }}" target="_blank">{{ .filename }}</a> from <a href="{{ $payload.html_url }}" target="_blank">gist by {{ $payload.owner.login }}</a></footer>
 	</div>
 	{{- end -}}
 {{- end -}}
