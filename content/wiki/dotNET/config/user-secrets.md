@@ -26,6 +26,15 @@ if (env.IsDevelopment())
         config.AddUserSecrets(appAssembly, optional: true);
     }
 }
+
+## Managing User Secrets
+
+You can edit the secrets.json file yourself (through Visual Studio), or opening it from the file system.
+
+If you wish, you can always copy and paste in a bunch of settings from appSettings.json for example, in nested json format, and prune as you like.
+
+The file will get normalized and re-formatted into the flat style using the ":" delimiter, so don't waste your time trying to make it look pretty or organized.
+
 ```
 
 ## How User Secrets work
