@@ -39,9 +39,7 @@ namespace RoboKiwi.Functions
             model.Url = headers.Referer?.ToString();
             model.Permalink = headers.Referer?.ToString();
             model.Date = DateTime.UtcNow;
-
-
-
+            
             var result = bool.Parse( await AkismetApiClient.CommentCheck(model) );
 
             model.IsSpam = result;

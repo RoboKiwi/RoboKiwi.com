@@ -1,4 +1,3 @@
-using System.Linq;
 using Microsoft.AspNetCore.Http;
 
 namespace RoboKiwi.Functions;
@@ -13,6 +12,7 @@ static class HttpHeadersExtensions
 
     public static string GetSingleHeader(this IHeaderDictionary headers, string name)
     {
-        return !headers.TryGetValue(name, out var values) ? null : values.SingleOrDefault();
+        if (!headers.TryGetValue(name, out var values)) return null;
+        return values;
     }
 }
