@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Http;
 
-namespace RoboKiwi.Functions;
+namespace RoboKiwi.Functions.Helpers;
 
 static class HttpHeadersExtensions
 {

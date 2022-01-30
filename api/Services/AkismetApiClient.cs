@@ -1,39 +1,46 @@
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net.Http;
-using System.Threading.Tasks;
+using RoboKiwi.Functions.Helpers;
+using RoboKiwi.Functions.Models.Messages;
 
-namespace RoboKiwi.Functions;
+namespace RoboKiwi.Functions.Services;
 
 static class AkismetApiClient
 {
     static readonly HttpClient client = new();
 
-    public static async Task<string> CommentCheck(CommentPost comment)
+    public static bool CommentCheck(CommentCheckSpamMessage comment)
     {
         var form = new Dictionary<string, string>
         {
             {"blog", "https://www.robokiwi.com/"},
             {"user_ip", comment.UserIp},
             {"referrer", comment.Referrer.ToString()},
-            {"permalink", comment.Permalink},
+            {"permalink", comment.Url.ToString()},
             {"comment_type","comment"},
             {"comment_author",comment.Name},
             {"comment_author_email",comment.Email},
-            {"comment_author_url",comment.Url},
-            {"comment_content", comment.Comment},
+            //{"comment_author_url",comment.Url},
+            {"comment_content", comment.Content},
             {"comment_date_gmt", comment.Date.ToISO8601()},
-            {"comment_post_modified_gmt", comment.PostModifiedDate?.ToISO8601()},
             {"blog_lang","en"},
             {"blog_charset","utf-8"},
             {"is_test","true"},
-            {"honeypot_field_name ","subject"},
-            {"subject ", comment.Subject},
+            // {"honeypot_field_name ","subject"},
+            // {"subject ", comment.Subject},
 
             // {"user_role","administrator"},
             // {"recheck_reason","edit"},
         };
-            
-        var apiKey = PostComment.GetAkismetApiKey();
+
+        if (DateTimeOffset.TryParse(comment.PageDate, out DateTimeOffset pageEdited))
+        {
+            form.Add("comment_post_modified_gmt", pageEdited.UtcDateTime.ToISO8601());
+        }
+        
+        var apiKey = PostCommentHttpTrigger.GetAkismetApiKey();
 
         var url = $"https://{apiKey}.rest.akismet.com/1.1/comment-check";
 
@@ -44,11 +51,15 @@ static class AkismetApiClient
 
         request.Headers.Add("User-Agent", "WordPress/4.4.1 | Akismet/3.1.7");
 
-        var response = await client.SendAsync(request);
+        
+        var response = client.Send(request);
 
-        var result = await response.Content.ReadAsStringAsync();
+        using var reader = new StreamReader(response.Content.ReadAsStream());
 
-        return result;
+        var result = reader.ReadToEnd();
+        
+        return bool.Parse(result);
+
         // X-akismet-alert-code
         // X-akismet-alert-msg
         // X-akismet-guid

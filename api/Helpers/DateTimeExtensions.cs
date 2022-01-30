@@ -1,6 +1,6 @@
 using System;
 
-namespace RoboKiwi.Functions;
+namespace RoboKiwi.Functions.Helpers;
 
 static class DateTimeExtensions
 {
