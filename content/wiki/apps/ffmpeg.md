@@ -1,6 +1,7 @@
 ---
 title: FFMpeg
 description: FFMpeg tips and tricks
+guid: "119aa225-ea06-4f5b-b672-52c6acde890c"
 ---
 
 # Convert format

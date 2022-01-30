@@ -1,6 +1,7 @@
 ---
 title: Overview
 description: "JavaScript: what is it? How does it relate to ECMAScript, Java and TypeScript?"
+guid: "0723b590-fa47-4839-9642-891150226291"
 ---
 
 ## ECMAScript, JavaScript, Java, asm.js

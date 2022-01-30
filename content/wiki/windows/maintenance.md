@@ -2,6 +2,7 @@
 title: Windows Maintenance
 description: Tips for keeping Windows running smoothly
 toc: true
+guid: "d5403866-28ed-4d37-894e-252e8ecddae0"
 ---
 
 ## Deployment Image Servicing and Management tool (DISM)

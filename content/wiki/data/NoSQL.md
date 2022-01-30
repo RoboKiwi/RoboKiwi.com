@@ -1,6 +1,7 @@
 ---
 title: NoSQL Databases
 description: A comparison of various NoSQL databases
+guid: "01da0be8-3b90-4dff-94df-cd4eee1192a8"
 ---
 
 ## Comparison

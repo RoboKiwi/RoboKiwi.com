@@ -1,5 +1,6 @@
 ---
 title: Debugging ASP.NET Core
+guid: "8e7cd31d-9e78-4bed-a246-9c4596d55549"
 ---
 
 ```csharp

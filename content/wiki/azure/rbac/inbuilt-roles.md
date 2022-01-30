@@ -1,5 +1,6 @@
 ---
 title: Azure RBAC built-in roles
+guid: "ef272a74-d048-4e40-af7f-7038f6483567"
 ---
 
 ## Overview

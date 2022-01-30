@@ -1,5 +1,6 @@
 ---
 title: PostgreSQL
+guid: "a1d02288-a1c7-4631-a5be-9e8c939a78bf"
 ---
 
 ## Docker

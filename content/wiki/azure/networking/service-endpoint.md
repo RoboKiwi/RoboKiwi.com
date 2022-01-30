@@ -1,5 +1,6 @@
 ---
 title: Service Endpoints
+guid: "4eb727f3-8192-4fb9-9f1d-51a7d2569955"
 ---
 
 ## Overview

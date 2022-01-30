@@ -1,5 +1,6 @@
 ---
 title: GitHub Actions for Azure
+guid: "6c153bc9-d6e9-4785-91e2-d9ce91fe70f2"
 ---
 
 ## Overview

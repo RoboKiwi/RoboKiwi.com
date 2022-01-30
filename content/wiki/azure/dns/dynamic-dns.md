@@ -1,6 +1,7 @@
 ---
 title: Dynamic DNS for Azure DNS
 description: How to update Azure DNS with a dynamically changing IP
+guid: "b96947f1-481d-48fa-bd54-9166a3807354"
 ---
 
 ## Overview

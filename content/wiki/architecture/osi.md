@@ -1,6 +1,7 @@
 ---
 title: OSI Model
 description: Open Systems Interconnection model
+guid: "545e358b-782a-4406-8b34-f3c18f797d4e"
 ---
 
 ## Overview

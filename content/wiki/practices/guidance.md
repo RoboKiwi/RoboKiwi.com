@@ -1,5 +1,6 @@
 ---
 title: Guidance
+guid: "72a5e56c-6cc7-4159-aa9d-8c22cdd003a6"
 ---
 
 * Static methods and extension methods are encouraged. They are easily testable, operating simply on inputs and outputs, not creating side effects and not relying on external state or conditions, in the functional paradigm.

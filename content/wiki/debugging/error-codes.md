@@ -4,6 +4,7 @@ title: Error Codes
 date: 2010-12-17T10:38:15+00:00
 description: Common error codes, causes and solutions.
 parent: debugging
+guid: "b471d715-e9f1-4ca6-8dc0-1be69432e2f3"
 ---
 
 # Error Table

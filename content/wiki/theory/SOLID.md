@@ -4,6 +4,7 @@ menu:
     wiki:
         parent: principles
 description: Description of the 5 principles and practices that make up the SOLID acronym
+guid: "d7c62cd6-2b07-434c-bcb2-1be5e420dba0"
 ---
 
 S.O.L.I.D.

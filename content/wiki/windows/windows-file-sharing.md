@@ -3,7 +3,7 @@ id: 506
 title: Windows File Sharing
 date: 2011-08-12T22:20:05+00:00
 author: David
-guid: https://www.davidmoore.info/how-to/windows-file-sharing/
+guid: "694b7e72-245a-407c-90ea-309bbb342f89"
 ---
 So, you want to share your files on the lan without requiring people to log in or join your Home Group?
 

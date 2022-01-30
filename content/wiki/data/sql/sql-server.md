@@ -4,6 +4,7 @@ title: SQL Server
 date: 2012-01-27T09:51:31+00:00
 author: David
 
+guid: "bf689207-96bf-41dd-93c8-5a262d79f40e"
 ---
 
 ## Exporting all tables with BCP

@@ -3,6 +3,7 @@ title: Let's Encrypt for Azure DNS
 description: Create free SSL certificates for Azure DNS domains using Let's Encrypt
 categories:
 - azure
+guid: "a6646e59-ec02-4f74-8043-c8197e52724e"
 ---
 
 ## Steps

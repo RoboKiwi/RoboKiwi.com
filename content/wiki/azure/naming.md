@@ -1,5 +1,6 @@
 ---
 title: Naming restrictions and conventions
+guid: "1f0fad8e-c002-46bd-8b2a-b10d290abe7a"
 ---
 
 ## Overview

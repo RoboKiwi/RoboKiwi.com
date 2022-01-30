@@ -1,6 +1,7 @@
 ---
 title: Cassandra Database
 description: Getting started with the Cassandra NoSQL database
+guid: "d51a62de-35f2-43a2-8edd-6888ce065b73"
 ---
 
 Concepts

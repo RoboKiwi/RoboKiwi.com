@@ -1,6 +1,7 @@
 ---
 title: Exponential back-off retry
 description: Gracefully handle transient exceptions with a retry
+guid: "bccd38c3-008b-4a91-b5e4-91d631a20eb5"
 ---
 
 ## Overview

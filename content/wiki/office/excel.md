@@ -1,6 +1,7 @@
 ---
 title: "Excel Tips & Tricks"
 description: "Excel tips & tricks"
+guid: "e1d9ddde-51d2-46da-8fe7-6c7be6a3d162"
 ---
 # Excel Tricks
 

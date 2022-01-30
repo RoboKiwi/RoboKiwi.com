@@ -6,6 +6,7 @@ menu:
     wiki:
         identifier: "certbot-wsl"
         parent: "lets-encrypt"
+guid: "38fdccb3-7242-489f-ba96-96d76bee620e"
 ---
 
 ## Overview

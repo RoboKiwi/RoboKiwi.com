@@ -1,5 +1,6 @@
 ---
 title: PowerShell Snippets
+guid: "0832683a-eab0-4396-9028-081f75dc0dc7"
 ---
 
 ## List all environment variables

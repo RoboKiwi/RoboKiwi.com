@@ -1,5 +1,6 @@
 ---
 title: Service Endpoint Policies
+guid: "be169ac4-cb98-46fe-8382-e829a24e4c98"
 ---
 
 ## Overview

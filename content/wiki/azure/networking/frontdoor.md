@@ -1,5 +1,6 @@
 ---
 title: Azure FrontDoor
+guid: "54bc126a-ea18-48b2-a802-471b0d3fa4ae"
 ---
 
 ## Using custom certificates

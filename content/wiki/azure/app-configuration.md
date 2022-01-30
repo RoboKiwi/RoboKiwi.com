@@ -1,5 +1,6 @@
 ---
 title: App Configuration
+guid: "957595f8-36c1-48d0-b7f9-c557d66d32a8"
 ---
 
 ## Overview

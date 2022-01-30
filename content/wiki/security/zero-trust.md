@@ -1,5 +1,6 @@
 ---
 title: Zero Trust
+guid: "cf5a890d-977b-4e02-a03b-3f525e1abb02"
 ---
 
 ## Overview

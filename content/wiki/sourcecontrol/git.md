@@ -1,6 +1,7 @@
 ---
 title: Git
 description: Git recipes and tricks
+guid: "742d447d-7989-417a-892d-be575dd3768f"
 ---
 
 ## Enforce `LF` for line endings

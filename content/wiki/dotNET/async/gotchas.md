@@ -2,6 +2,7 @@
 title: Gotchas
 description: "Do's and don'ts when working with async"
 toc: true
+guid: "35353d5d-0951-4083-90d6-cf7efb290a77"
 ---
 
 ## Async / Await Gotchas

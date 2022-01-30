@@ -7,6 +7,7 @@ menu:
         name: "Visitor Pattern"
         parent: "net"
         weight: 30
+guid: "1e951dcf-45fe-4088-b8f9-a11a68fc98a0"
 ---
 
 # Generic Implementation

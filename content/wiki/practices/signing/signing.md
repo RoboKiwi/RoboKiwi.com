@@ -1,6 +1,7 @@
 ---
 title: Signing
 description: Authenticode signing practices
+guid: "2784f074-1b1a-438b-b3d8-fa0b2754ce08"
 ---
 
 # Authenticode

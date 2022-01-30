@@ -1,6 +1,7 @@
 ---
 title: Windows Tweaks
 description: Tweaks and customisations
+guid: "b3c3b3c8-46b1-43d5-9840-5db05599ebd6"
 ---
 
 ## Task Bar

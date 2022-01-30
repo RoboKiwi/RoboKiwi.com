@@ -1,6 +1,7 @@
 ---
 title: Azure Networking
 description: Explaining the networking and related security options in Azure, and how to use them.
+guid: "1211f2eb-a5b0-4264-b5a9-081c4771e615"
 ---
 
 ## Overview

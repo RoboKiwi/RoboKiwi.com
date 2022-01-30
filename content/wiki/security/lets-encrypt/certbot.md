@@ -5,6 +5,7 @@ menu:
     wiki:
         parent: "lets-encrypt"
         weight: 10
+guid: "1bfc8935-aecd-4c08-bb31-9bebefc59e76"
 ---
 
 ## Overview

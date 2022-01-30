@@ -1,6 +1,7 @@
 ---
 title: Visual Studio
 description: Visual Studio Performance, Tips and Tricks
+guid: "335c6b70-2416-4fa7-9b89-28674097950f"
 ---
 
 # Web project node_modules performance

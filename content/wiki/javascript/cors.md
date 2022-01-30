@@ -1,5 +1,6 @@
 ---
 title: Cross-Origin Resource Sharing (CORS)
+guid: "14053bd5-a5d9-40da-84c7-79dedfabed74"
 ---
 ## What problem does CORS solve?
 
