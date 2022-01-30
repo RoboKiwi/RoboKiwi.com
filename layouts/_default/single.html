@@ -125,6 +125,7 @@
             {{ with $comments }}
               {{ partial "comments.html" (dict "comments" . "depth" 1 "parent" 0) }}
             {{ end }}
+            {{ if .Site.Params.enableComments }}
             <aside class="pt3 mt2 mid-gray b--mid-gray fn measure nested-links">
               <h1>Post a comment</h1>
               <article class="black-80">
@@ -162,6 +163,7 @@
                 </form>
               </article>
             </aside>
+            {{ end }}
           </div>
         </div>
       </div>
