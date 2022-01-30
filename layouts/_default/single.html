@@ -151,10 +151,13 @@
                       <small id="comment-desc" class="f6 black-60">This comment will be checked for spam, and enter a moderation queue.</small>
                     </div>
                   </fieldset>
+                  <input type="hidden" name="author" id="author" value="{{ .Param "author" }}" />
+                  <input type="hidden" name="date" id="date" value="{{ .Lastmod.Format "2006-01-02T15:04:05-0700" }}" />
                   <input type="hidden" name="guid" id="guid" value="{{ .Params.guid }}" />
-                  <input type="hidden" name="ghmac" id="ghmac" value="{{ .Params.guid | hmac "sha512" (os.Getenv "HUGO_HMAC_SECRET") }}" />
                   <input type="hidden" name="url" id="url" value="{{ (urls.Parse .Permalink).Path }}" />
-                  <input type="hidden" name="uhmac" id="uhmac" value="{{ (urls.Parse .Permalink).Path | hmac "sha512" (os.Getenv "HUGO_HMAC_SECRET") }}" />
+                  <input type="hidden" name="hmac" id="uhmac" value="{{-
+                    delimit (slice .Params.guid (urls.Parse .Permalink).Path (.Lastmod.Format "2006-01-02T15:04:05-0700") .Author) "-" | hmac "sha512" (os.Getenv "HUGO_HMAC_SECRET")
+                   -}}" />
                   <div class="mt3"><input class="b ph3 pv2 input-reset ba b--black grow pointer f6" type="submit" value="Post"></div>
                 </form>
               </article>
