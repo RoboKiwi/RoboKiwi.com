@@ -3,7 +3,7 @@ author: David
 categories:
 - Uncategorized
 date: 2008-06-13T06:20:52Z
-guid: https://davidmoore.info/?p=4
+guid: "aeb01560-fdbd-43ab-a42c-cbd5896c3aa9"
 id: 4
 tags:
 - all blacks

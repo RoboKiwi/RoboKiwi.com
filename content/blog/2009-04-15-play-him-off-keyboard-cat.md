@@ -6,7 +6,7 @@ date: 2009-04-15T18:24:10Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: https://www.davidmoore.info/?p=126
+guid: "6cc0f30c-44bb-41a8-b328-d3564c7a4792"
 id: 126
 tags:
 - cat

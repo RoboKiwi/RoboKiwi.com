@@ -3,7 +3,7 @@ author: David
 categories:
 - Sql
 date: 2017-02-02T18:28:32Z
-guid: https://www.davidmoore.info/blog/?p=1901
+guid: "94c60540-6628-49b0-b366-ff90062b7ed3"
 id: 1901
 tags:
 - sql

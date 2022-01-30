@@ -5,7 +5,7 @@ categories:
 - How To
 - Software Development
 date: 2009-05-21T16:53:17Z
-guid: https://www.davidmoore.info/?p=138
+guid: "b82e13e9-3c6b-4565-8be3-2a0d85a0691e"
 id: 138
 tags:
 - bindings

@@ -8,7 +8,7 @@ date: 2009-05-28T17:25:27Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: https://www.davidmoore.info/?p=166
+guid: "342c0fc9-5ef2-4899-a237-fa3c500c9c36"
 id: 166
 tags:
 - .net

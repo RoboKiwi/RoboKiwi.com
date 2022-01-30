@@ -3,7 +3,7 @@ author: David
 categories:
 - Entertainment
 date: 2011-06-20T14:55:03Z
-guid: https://www.davidmoore.info/2011/06/20/net-decompilers/
+guid: "b4f729d7-e418-4b47-8b9f-b7a211b75bfa"
 id: 420
 title: .NET Decompilers
 url: /blog/2011/06/20/net-decompilers/

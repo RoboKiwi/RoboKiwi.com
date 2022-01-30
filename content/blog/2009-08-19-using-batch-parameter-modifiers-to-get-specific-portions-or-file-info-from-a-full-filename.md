@@ -7,7 +7,7 @@ date: 2009-08-19T16:10:40Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: https://www.davidmoore.info/?p=200
+guid: "a420bd26-33b7-471d-aa5a-03c6caae63cb"
 id: 200
 tags:
 - argument

@@ -4,7 +4,7 @@ categories:
 - .net
 - WiX
 date: 2010-06-30T17:09:49Z
-guid: https://www.davidmoore.info/2010/06/30/how-to-detect-if-the-visual-c-2010-redistributable-package-is-installed-with-wix-2/
+guid: "20b1e314-0d10-47c5-a65b-11e270c4cdd8"
 id: 302
 tags:
 - "2010"

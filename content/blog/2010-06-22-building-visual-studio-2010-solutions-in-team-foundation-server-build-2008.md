@@ -4,7 +4,7 @@ categories:
 - .net
 - Software Development
 date: 2010-06-22T10:02:36Z
-guid: https://www.davidmoore.info/?p=288
+guid: "7a551648-427c-44ab-ad33-ec99d1a4ca2c"
 id: 288
 title: Building Visual Studio 2010 Solutions in Team Foundation Server Build 2008
 url: /blog/2010/06/22/building-visual-studio-2010-solutions-in-team-foundation-server-build-2008/

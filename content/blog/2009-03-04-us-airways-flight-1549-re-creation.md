@@ -6,7 +6,7 @@ date: 2009-03-04T00:15:08Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: https://www.davidmoore.info/?p=117
+guid: "a072fd76-8664-4dcf-af75-d8be42cc58e8"
 id: 117
 tags:
 - "1549"

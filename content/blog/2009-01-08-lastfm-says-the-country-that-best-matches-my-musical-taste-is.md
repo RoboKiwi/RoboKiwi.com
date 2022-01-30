@@ -3,7 +3,7 @@ author: David
 categories:
 - Music
 date: 2009-01-08T03:26:43Z
-guid: https://davidmoore.info/?p=68
+guid: "0395e134-d052-4506-b575-5fed10f4d304"
 id: 68
 tags:
 - last.fm

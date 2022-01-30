@@ -4,7 +4,7 @@ categories:
 - .net
 - Visual Studio
 date: 2014-10-17T18:03:08Z
-guid: https://www.davidmoore.info/blog/?p=1801
+guid: "b2d5c7d5-4ef2-434f-8745-8062158d5781"
 id: 1801
 tags:
 - lockscreen

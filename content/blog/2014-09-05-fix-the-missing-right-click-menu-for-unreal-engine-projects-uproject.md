@@ -3,7 +3,7 @@ author: David
 categories:
 - Unreal Tournament
 date: 2014-09-05T23:26:35Z
-guid: https://www.davidmoore.info/blog/?p=1491
+guid: "694f5044-f0cd-4fcc-9925-d6843d22840a"
 id: 1491
 tags:
 - unreal

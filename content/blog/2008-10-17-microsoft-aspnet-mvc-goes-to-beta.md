@@ -3,7 +3,7 @@ author: David
 categories:
 - Software Development
 date: 2008-10-17T11:22:03Z
-guid: https://davidmoore.info/?p=30
+guid: "50fb5063-73bd-4e70-be6d-a682bf2c452c"
 id: 30
 tags:
 - asp.net

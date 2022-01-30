@@ -5,7 +5,7 @@ categories:
 - Software Development
 date: 2009-02-07T02:17:03Z
 excerpt: |2
-guid: https://davidmoore.info/?p=76
+guid: "b2a67f35-d435-4691-a05b-076b943314d1"
 id: 76
 tags:
 - .net

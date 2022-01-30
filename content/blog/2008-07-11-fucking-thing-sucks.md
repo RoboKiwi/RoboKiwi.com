@@ -3,7 +3,7 @@ author: David
 categories:
 - Entertainment
 date: 2008-07-11T17:12:40Z
-guid: https://davidmoore.info/?p=12
+guid: "709612b8-0e54-488f-bca2-8587dcac561b"
 id: 12
 tags:
 - battle

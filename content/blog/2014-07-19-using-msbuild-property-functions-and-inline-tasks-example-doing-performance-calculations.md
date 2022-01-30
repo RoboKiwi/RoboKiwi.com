@@ -6,7 +6,7 @@ categories:
 - Software Development
 - Visual Studio
 date: 2014-07-19T17:15:50Z
-guid: https://www.davidmoore.info/blog/?p=1081
+guid: "069ae124-37a9-45e8-8fb9-3b8e278f1669"
 id: 1081
 title: 'Using MSBuild property functions and inline tasks: Example doing performance
   calculations'

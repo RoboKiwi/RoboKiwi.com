@@ -6,7 +6,7 @@ date: 2009-06-04T10:38:48Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: https://www.davidmoore.info/?p=187
+guid: "7132d364-32ae-4883-aed4-ad8ab2cbfdce"
 id: 187
 tags:
 - Applications

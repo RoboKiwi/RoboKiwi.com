@@ -5,7 +5,7 @@ categories:
 - Entertainment
 - Software Development
 date: 2008-07-10T12:15:40Z
-guid: https://davidmoore.info/?p=11
+guid: "bc4f30bd-1351-4768-a9da-4f3b431ca328"
 id: 331
 tags:
 - .net

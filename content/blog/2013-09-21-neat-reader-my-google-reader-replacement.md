@@ -3,7 +3,7 @@ author: David
 categories:
 - Neat Reader
 date: 2013-09-21T23:21:30Z
-guid: https://www.sadrobot.co.nz/?p=761
+guid: "ce0de57c-de01-4102-8eda-a57bfb0480a6"
 id: 761
 tags:
 - feed
