@@ -1,5 +1,6 @@
 ---
 title: Setting up PowerShell environment
+guid: "43ed8be2-e1b0-48e8-a7c3-d2b10b4ab779"
 ---
 
 ## Terminal: Windows Terminal

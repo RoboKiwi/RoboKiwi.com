@@ -10,6 +10,7 @@ author: David
 url: /blog/2018/01/14/sql-operations-studio/
 aliases: /2018/01/14/sql-operations-studio/
 description: Microsoft has released a preview version of a free new SQL Management product
+guid: "18473b5b-fa8f-4f8e-9c3c-c999ec19cd95"
 ---
 ## SQL Operations Studio Released
 

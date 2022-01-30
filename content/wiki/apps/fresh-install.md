@@ -1,6 +1,7 @@
 ---
 title: Fresh Install
 description: Notes on install order and apps after a fresh install of Windows
+guid: "8c7d9ba5-3073-421d-8ec1-9019f3dd6426"
 ---
 
 ## Fresh

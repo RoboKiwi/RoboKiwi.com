@@ -1,5 +1,6 @@
 ---
 title: Migrations
+guid: "ca0e9d28-e369-4602-b69e-d4355c56d50a"
 ---
 
 ## Exporting all tables with BCP

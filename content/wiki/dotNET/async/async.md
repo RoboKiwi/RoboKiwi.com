@@ -8,6 +8,7 @@ menu:
         name: "Overview"
         parent: "net"
         weight: 10
+guid: "d7665a03-6a91-41e0-b010-80249995cc1f"
 ---
 
 ## Asynchronous Programming Model (APM): C# 1.0 /  .NET 1.0 Style

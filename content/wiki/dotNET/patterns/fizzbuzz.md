@@ -7,6 +7,7 @@ menu:
         name: "Fizz Buzz"
         parent: "net"
         weight: 100
+guid: "ead14905-e81e-46af-bc15-5ef3837df75c"
 ---
 
 

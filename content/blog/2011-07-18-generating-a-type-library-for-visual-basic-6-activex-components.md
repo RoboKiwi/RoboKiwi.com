@@ -3,7 +3,7 @@ author: David
 categories:
 - Entertainment
 date: 2011-07-18T14:12:27Z
-guid: https://www.davidmoore.info/2011/07/18/generating-a-type-library-for-visual-basic-6-activex-components/
+guid: "b313b951-c75a-43d8-980e-751f549fa793"
 id: 430
 title: Generating a type library for Visual Basic 6 ActiveX Components
 url: /blog/2011/07/18/generating-a-type-library-for-visual-basic-6-activex-components/

@@ -6,7 +6,7 @@ date: 2009-05-22T22:39:14Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: https://www.davidmoore.info/?p=143
+guid: "59899890-395f-4353-a9af-71c2abd0b02a"
 id: 143
 tags:
 - boot

@@ -7,7 +7,7 @@ date: 2009-09-30T12:03:22Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: https://www.davidmoore.info/?p=223
+guid: "6bfc3182-51b0-4b66-9f2c-58af078cf487"
 id: 223
 tags:
 - "2008"

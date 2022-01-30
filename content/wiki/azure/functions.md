@@ -1,5 +1,6 @@
 ---
 title: Azure Functions
+guid: "1c072dba-dd6b-43b9-b3b7-327c6b13144c"
 ---
 
 # Azure Functions 4.x Early Preview

@@ -3,7 +3,7 @@ author: David
 categories:
 - Visual Studio
 date: 2014-01-23T11:14:13Z
-guid: https://www.sadrobot.co.nz/?p=771
+guid: "e129f870-791e-4057-94e2-1252e440d7b2"
 id: 771
 tags:
 - vb6

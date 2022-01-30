@@ -1,5 +1,6 @@
 ---
 title: "Marshaling objects in C#"
+guid: "e475e67a-3b5b-4972-ba69-5e6b052d765a"
 ---
 
 # Serializing structures

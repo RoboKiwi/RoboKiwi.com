@@ -1,5 +1,6 @@
 ---
 title: Application Security Groups (ASG)
+guid: "39970bcd-096c-4412-b853-9979ee5234eb"
 ---
 
 ## Overview

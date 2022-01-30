@@ -3,7 +3,7 @@ author: David
 categories:
 - Misc
 date: 2008-06-26T12:06:43Z
-guid: https://davidmoore.info/?p=8
+guid: "b14d4240-4c78-47d8-a4af-615daf6174df"
 id: 8
 tags:
 - london

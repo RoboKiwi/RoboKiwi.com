@@ -3,7 +3,7 @@ author: David
 categories:
 - Entertainment
 date: 2011-06-21T16:06:13Z
-guid: https://www.davidmoore.info/?p=421
+guid: "6cd4dd87-5a2b-4e4c-bb4d-ebb6fddbc528"
 id: 421
 title: When System.Diagnostics.Process creates a process, it inherits inheritable
   handles from the parent process.

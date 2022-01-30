@@ -5,7 +5,7 @@ categories:
 - How To
 - Software Development
 date: 2009-05-26T15:54:34Z
-guid: https://www.davidmoore.info/?p=153
+guid: "d4da84d1-04b4-449f-94fb-d97212dec525"
 id: 153
 tags:
 - .net

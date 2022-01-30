@@ -3,7 +3,7 @@ author: David
 categories:
 - Entertainment
 date: 2008-10-12T22:45:09Z
-guid: https://davidmoore.info/?p=22
+guid: "dd6a1f11-2d26-46af-935c-ec96b102426d"
 id: 22
 tags:
 - digg

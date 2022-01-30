@@ -7,6 +7,7 @@ menu:
     wiki:
         identifier: "code-coverage"
         weight: 40
+guid: "3b47d222-16fc-4624-84b7-e8241217229b"
 ---
 
 ## Collect default code coverage

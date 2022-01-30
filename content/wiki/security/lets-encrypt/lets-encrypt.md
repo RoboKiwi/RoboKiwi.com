@@ -4,6 +4,7 @@ description: Details about the Let's Encrypt organization
 menu:
     wiki:
         parent: "lets-encrypt"
+guid: "e05b2efa-b517-4989-bc0e-c67265bcf512"
 ---
 
 ## Overview

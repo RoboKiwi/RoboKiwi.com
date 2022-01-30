@@ -1,6 +1,7 @@
 ---
 title: .editorconfig
 description: How to use .editorconfig
+guid: "d697cb7d-e502-4cfc-9dd5-fb588372e269"
 ---
 
 ## Overview

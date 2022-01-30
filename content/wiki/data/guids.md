@@ -1,6 +1,7 @@
 ---
 title: The case for unique identifiers (UUID / GUID)
 description: Why using a globally / universally unique identifier can make your applications more scalable and maintainable
+guid: "ad76edb5-8f60-4e84-b94c-698382fe5502"
 ---
 
 ## Preamble

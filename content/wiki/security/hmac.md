@@ -1,6 +1,7 @@
 ---
 title: HMAC
 description: Hashed Message Authentication Code
+guid: "201168a3-56f5-455d-989e-bb8704afd453"
 ---
 
 ## Overview

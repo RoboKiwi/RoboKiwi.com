@@ -4,7 +4,7 @@ categories:
 - Applications
 - How To
 date: 2009-08-19T20:45:01Z
-guid: https://www.davidmoore.info/?p=206
+guid: "04b10cc5-91b5-4cb5-9a5c-e4e9b7ffd02c"
 id: 206
 tags:
 - '{B8DA6310-E19B-11D0-933C-00A0C90DCAA9}'

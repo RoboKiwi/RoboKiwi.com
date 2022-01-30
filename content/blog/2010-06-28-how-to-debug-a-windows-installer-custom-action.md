@@ -5,7 +5,7 @@ categories:
 - Software Development
 - WiX
 date: 2010-06-28T10:53:58Z
-guid: https://www.davidmoore.info/?p=293
+guid: "14e7f720-d1f2-485d-b408-712524eebf9e"
 id: 293
 tags:
 - custom action

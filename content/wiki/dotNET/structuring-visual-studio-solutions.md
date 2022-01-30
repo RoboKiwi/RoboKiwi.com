@@ -3,7 +3,7 @@ id: 409
 title: Structuring Visual Studio solutions
 date: 2011-01-22T23:12:44+00:00
 author: David
-guid: https://www.davidmoore.info/?page_id=409
+guid: "a880717e-998d-4368-9a11-b771f6d44e77"
 ---
 The entire solution will be under a root folder, that may differ depending on the developer’s preferences, the branch they’re checking out etc.
 

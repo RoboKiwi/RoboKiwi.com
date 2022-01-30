@@ -1,5 +1,6 @@
 ---
 title: Registration-Free COM
+guid: "6de192e6-fb75-4823-8256-9da74871ce3c"
 ---
 
 ## Registration-Free COM

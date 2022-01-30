@@ -9,6 +9,7 @@ tags:
 author: David
 description: This blog has been migrated to a new platform
 url: /blog/2020/08/20/jamstack-migration/
+guid: "44b2aadd-cf01-498d-b2e7-0606b2ce4347"
 ---
 ## JAMstack Migration
 

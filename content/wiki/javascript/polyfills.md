@@ -1,5 +1,6 @@
 ---
 title: Polyfills
+guid: "a0e95a15-7099-4ac6-b389-cf6c5a74198c"
 ---
 
 ## Object.create

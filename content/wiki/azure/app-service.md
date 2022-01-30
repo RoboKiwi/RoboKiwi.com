@@ -1,6 +1,7 @@
 ---
 title: Azure App Service
 description: Technical details on Azure App Service
+guid: "2e4eaaa9-ae00-4fb3-9a86-0ef9fa48f9f4"
 ---
 
 ## Sandbox restrictions and limits

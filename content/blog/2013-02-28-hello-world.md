@@ -3,7 +3,7 @@ author: David
 categories:
 - Uncategorized
 date: 2013-02-28T09:01:35Z
-guid: https://sadrobot.azurewebsites.net/?p=1
+guid: "707c7b67-78e6-4f51-a243-bbb57e359dc6"
 id: 1
 title: Hello!
 url: /blog/2013/02/28/hello-world/

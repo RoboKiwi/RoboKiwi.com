@@ -4,7 +4,7 @@ categories:
 - Setup
 - WiX
 date: 2013-03-01T09:44:14Z
-guid: https://sadrobot.azurewebsites.net/?p=82
+guid: "b9c62f64-2b17-44a6-8cad-2dd6be6d8c75"
 id: 82
 tags:
 - elevation

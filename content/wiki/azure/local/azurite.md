@@ -1,5 +1,6 @@
 ---
 title: Azurite Storage Emulator
+guid: "86e0a748-7afb-4eda-849b-00069789c63c"
 ---
 
 ## Overview

@@ -1,5 +1,6 @@
 ---
 title: Windows Communication Foundation (WCF)
+guid: "506923a3-4cf7-4f97-bded-f547d5a6cd74"
 ---
 
 ## Message Exchange Patterns (MEP)

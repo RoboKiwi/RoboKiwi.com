@@ -2,6 +2,7 @@
 title: Recommendations
 description: Recommendations for applications and tools
 aliases: "/blog/software-picks/"
+guid: "e9406b6a-ba37-431a-bf9f-59b4caa0af34"
 ---
 
 This page contains recommendations for applications and tools, favouring free and Open Source alternatives.

@@ -1,6 +1,7 @@
 ---
 title: Gaming Performance
 description: Settings and tweaks for gaming performance
+guid: "d1237708-4f1c-4f62-b627-fb7898de8542"
 ---
 
 ## NVIDIA & G-Sync

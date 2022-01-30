@@ -1,6 +1,7 @@
 ---
 title: OAuth 2.0
 layout: page
+guid: "260a9c53-aeef-43d7-a040-bb787e7f4f6c"
 ---
 #Open Authorization 2.0 (OAuth 2.0)
 

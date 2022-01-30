@@ -4,6 +4,7 @@ parent: "net"
 menu:
     wiki:
         parent: "net"
+guid: "bb334511-0d7f-451f-9a3c-e823f5ee33c2"
 ---
 
 * Covariant if it preserves the ordering of types (≤), which orders types from more specific to more generic;

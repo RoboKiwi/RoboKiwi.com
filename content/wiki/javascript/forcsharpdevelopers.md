@@ -1,5 +1,6 @@
 ---
 title: JavaScript for C# Developers
+guid: "f849258b-9df4-4e43-8859-8102b4cf2cc3"
 ---
 
 ## Objects

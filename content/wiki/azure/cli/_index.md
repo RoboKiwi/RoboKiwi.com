@@ -1,6 +1,7 @@
 ---
 title: Azure CLI
 description: Azure CLI tips, tricks & snippets
+guid: "45c455e5-4eb0-47ef-a955-2abf6b0961a3"
 ---
 
 ## App Service

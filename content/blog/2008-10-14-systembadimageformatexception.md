@@ -3,7 +3,7 @@ author: David
 categories:
 - Software Development
 date: 2008-10-14T12:52:42Z
-guid: https://davidmoore.info/?p=28
+guid: "eb5a5fbe-d5ec-44f8-be7b-99506ae82e48"
 id: 28
 tags:
 - .net

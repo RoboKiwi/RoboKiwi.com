@@ -1,5 +1,6 @@
 ---
 title: SVG
+guid: "773732b2-8df4-4e28-8f27-7388e4408361"
 ---
 
 # SVG Sprites

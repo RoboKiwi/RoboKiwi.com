@@ -8,6 +8,7 @@ menu:
         name: "ORM"
         parent: "dotnet"
         weight: 30
+guid: "d0d5d7fa-0357-43fc-837f-1b5a4e77516c"
 ---
 
 ## Generic Implementation

@@ -6,7 +6,7 @@ date: 2009-02-28T14:23:15Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: https://davidmoore.info/?p=114
+guid: "d2e2ee27-7a94-440e-ab61-ca6fad318014"
 id: 114
 tags:
 - bark

@@ -3,7 +3,7 @@ author: David
 categories:
 - .net
 date: 2010-07-06T22:30:00Z
-guid: https://www.davidmoore.info/2010/07/06/dependency-property-resharper-live-template/
+guid: "42a72864-165d-4416-b9b5-a152bdb778ed"
 id: 368
 tags:
 - Dependency Property

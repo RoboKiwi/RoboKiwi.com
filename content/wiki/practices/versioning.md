@@ -1,6 +1,7 @@
 ---
 title: Versioning
 description: Versioning recommendations
+guid: "f060a21b-5058-4345-8417-e042e28adade"
 ---
 
 ## Windows Installer

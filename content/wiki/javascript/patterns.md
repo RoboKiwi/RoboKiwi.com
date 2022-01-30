@@ -1,5 +1,6 @@
 ---
 title: JavaScript Patterns
+guid: "79d5b74f-38cb-4dc7-9621-e1902df34475"
 ---
 # JavaScript Patterns
 

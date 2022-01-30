@@ -7,7 +7,7 @@ date: 2009-02-28T10:59:09Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: https://davidmoore.info/?p=101
+guid: "20c7bf32-3861-442b-a8d9-3b62c16752b6"
 id: 1421
 tags:
 - column

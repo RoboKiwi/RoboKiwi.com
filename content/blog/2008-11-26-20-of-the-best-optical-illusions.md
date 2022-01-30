@@ -3,7 +3,7 @@ author: David
 categories:
 - Entertainment
 date: 2008-11-26T17:18:43Z
-guid: https://davidmoore.info/?p=54
+guid: "c4ca4689-e7ae-4190-aaf7-9300e79b13fa"
 id: 54
 tags:
 - illusion

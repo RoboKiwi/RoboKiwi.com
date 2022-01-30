@@ -6,6 +6,7 @@ menu:
     wiki:
         parent: "dynamics"
         weight: 30
+guid: "ac312a22-4e7b-4e3f-815b-4d87e9df67ab"
 ---
 
 # CRM Web API

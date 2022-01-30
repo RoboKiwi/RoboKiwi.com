@@ -3,7 +3,7 @@ author: David
 categories:
 - Software Development
 date: 2008-11-27T16:44:39Z
-guid: https://davidmoore.info/?p=56
+guid: "124ac234-d5ea-4118-8d84-141668a0fd93"
 id: 56
 tags:
 - plug and play

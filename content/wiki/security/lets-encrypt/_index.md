@@ -6,6 +6,7 @@ menu:
         parent: "security"
         identifier: "lets-encrypt"
         weight: 10
+guid: "0d2adfe4-ee1b-4d0d-8e11-f85be37e02ed"
 ---
 
 ## Overview

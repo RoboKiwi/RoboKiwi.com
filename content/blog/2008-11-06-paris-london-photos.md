@@ -3,7 +3,7 @@ author: David
 categories:
 - Misc
 date: 2008-11-06T01:24:47Z
-guid: https://davidmoore.info/?p=47
+guid: "6341726a-0a19-4127-afcc-b62ce6e59e97"
 id: 47
 tags:
 - elinor

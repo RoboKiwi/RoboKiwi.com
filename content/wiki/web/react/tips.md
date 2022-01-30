@@ -1,6 +1,7 @@
 ---
 title: React Tips
 description: React Tips
+guid: "38824191-9dfa-4b59-977b-1c42bd725217"
 ---
 
 # Integrating dev server in Visual Studio

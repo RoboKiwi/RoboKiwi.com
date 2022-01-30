@@ -1,6 +1,7 @@
 ---
 title: Make a bootable Windows USB Drive
 description: Turn your USB pen drive into a bootable Windows installer
+guid: "c12b0bfb-6aa6-447a-aa84-f76ec1989bac"
 ---
 
 ## Format the USB drive and make it bootable

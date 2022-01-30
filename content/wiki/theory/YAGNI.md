@@ -4,6 +4,7 @@ menu:
     wiki:
         parent: principles
 description: An explanation of YAGNI
+guid: "e1aa8158-56a2-4708-a0da-7972386c611b"
 ---
 
 YAGNI

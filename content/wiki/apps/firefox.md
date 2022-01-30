@@ -1,5 +1,6 @@
 ---
 title: Firefox
+guid: "05bb8cd4-7b7e-4842-be30-e284ec78aca7"
 ---
 
 ## User Styles

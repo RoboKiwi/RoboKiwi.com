@@ -1,5 +1,6 @@
 ---
 title: Azure PowerShell Module
+guid: "55c565a4-a9f4-40b9-900a-601d8c746cd3"
 ---
 
 ## Installation and updating

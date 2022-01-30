@@ -1,5 +1,6 @@
 ---
 title: Authenticate a service principal using a self-signed certificate
+guid: "b0eaed4d-b28e-4091-8164-229a1657559d"
 ---
 
 ## Create certificate

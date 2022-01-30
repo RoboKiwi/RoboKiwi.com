@@ -1,5 +1,6 @@
 ---
 title: RoboCopy
+guid: "98866d7e-3f05-42b6-ad7f-0845e8c4faeb"
 ---
 
 # Backup / Mirror Drive

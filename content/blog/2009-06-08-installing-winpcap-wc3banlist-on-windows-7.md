@@ -6,7 +6,7 @@ date: 2009-06-08T19:47:16Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: https://www.davidmoore.info/?p=193
+guid: "567900ce-3891-4a4e-b546-059909452a68"
 id: 193
 tags:
 - dota

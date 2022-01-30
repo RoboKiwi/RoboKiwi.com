@@ -1,6 +1,7 @@
 ---
 title: Async Tasks
 description: Using async code in custom MSBuild tasks
+guid: "578d7d16-6047-41a4-9beb-56d5bf65e73e"
 ---
 # Async Tasks
 

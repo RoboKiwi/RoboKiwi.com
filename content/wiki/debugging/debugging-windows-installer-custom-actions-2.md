@@ -4,7 +4,7 @@ title: Debugging Windows Installer Custom Actions
 description: How to debug your custom actions using an IDE
 date: 2011-08-10T13:34:41+00:00
 author: David
-guid: https://www.davidmoore.info/?page_id=461
+guid: "8045bac3-042a-4ade-9e8a-436fb6c1e1ca"
 ---
 ## General
 

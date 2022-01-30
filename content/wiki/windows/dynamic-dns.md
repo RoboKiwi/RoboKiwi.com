@@ -1,5 +1,6 @@
 ---
 title: Dynamic DNS
+guid: "63ae34f9-e709-4c4a-8b9c-1f01068d6563"
 ---
 
 ## Dynamic DNS with Namecheap

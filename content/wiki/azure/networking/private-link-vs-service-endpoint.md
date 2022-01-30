@@ -1,5 +1,6 @@
 ---
 title: Comparing Private Link and Service Endpoints
+guid: "b78b29c8-9675-49c9-9208-bfe9cb8cbdfc"
 ---
 
 ## Overview

@@ -1,5 +1,6 @@
 ---
 title: Windows Security
+guid: "668e6489-3fa9-4ec6-8127-ed10a9c70bcb"
 ---
 
 ## Wiping unused drives

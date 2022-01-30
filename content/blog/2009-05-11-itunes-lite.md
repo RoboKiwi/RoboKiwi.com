@@ -6,7 +6,7 @@ date: 2009-05-11T21:23:15Z
 excerpt: |2
 
   <![CDATA[]]>
-guid: https://www.davidmoore.info/?p=136
+guid: "9d57e428-ed30-4210-9410-16e6dd3e77d1"
 id: 136
 tags:
 - alternative

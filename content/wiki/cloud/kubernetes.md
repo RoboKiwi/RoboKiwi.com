@@ -4,6 +4,7 @@ description: Kubernetes and its offerings across cloud providers
 menu:
     wiki:
         parent: cloud
+guid: "f50de9cb-e8ec-4a6a-9d76-a4639e87434d"
 ---
 
 # Kubernetes Services
