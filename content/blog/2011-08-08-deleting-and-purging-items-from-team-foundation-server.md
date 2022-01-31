@@ -5,7 +5,7 @@ categories:
 - How To
 - Software Development
 date: 2011-08-08T11:32:00Z
-guid: https://www.davidmoore.info/2011/08/08/deleting-and-purging-items-from-team-foundation-server/
+guid: "f94f8bb6-763c-4fc1-955c-be54047b0094"
 id: 454
 tags:
 - delete
@@ -35,23 +35,30 @@ You might find it useful to add that path to your command line.
 
 The commandlet you want to use is **destroy**, which tf.exe can give us info on:
 
-> `C:WindowsSystem32>tf help destroy<br />
-TF - Team Foundation Version Control Tool, Version 10.0.30319.1<br />
-Copyright (c) Microsoft Corporation.  All rights reserved.</p>
-<p>Destroys, or permanently deletes, version-controlled items from Team<br />
-Foundation version control.</p>
-<p>tf destroy [/keephistory] itemspec1 [;versionspec]<br />
-[itemspec2...itemspecN] [/stopat:versionspec] [/preview]<br />
-[/startcleanup] [/noprompt] [/silent]<br />
-[/login:username,[password]]<br />
-[/collection:TeamProjectCollectionUrl]</p>
-<p>Versionspec:<br />
-Date/Time         D"any .Net Framework-supported format"<br />
-or any of the date formats of the local machine<br />
-Changeset number  Cnnnnnn<br />
-Label             Llabelname<br />
-Latest version    T<br />
-Workspace         Wworkspacename;workspaceowner`
+> On newer versions of `tf.exe`, you need to specify `tf vc destroy`
+
+```cmd
+C:\Windows\System32>tf help destroy
+TF - Team Foundation Version Control Tool, Version 10.0.30319.1
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Destroys, or permanently deletes, version-controlled items from Team
+Foundation version control.
+
+tf destroy [/keephistory] itemspec1 [;versionspec]
+           [itemspec2...itemspecN] [/stopat:versionspec] [/preview]
+           [/startcleanup] [/noprompt] [/silent]
+           [/login:username,[password]]
+           [/collection:TeamProjectCollectionUrl]
+
+Versionspec:
+    Date/Time         D"any .Net Framework-supported format"
+                      or any of the date formats of the local machine
+    Changeset number  Cnnnnnn
+    Label             Llabelname
+    Latest version    T
+    Workspace         Wworkspacename;workspaceowner`
+```
 
 To run the command, you have to specify the collection URL. An easy way to get this is open your Team Explorer window in Visual Studio (**View** > **Team Explorer**), select the root server node and look in the Properties window at the **Url** property.
 
@@ -61,9 +68,11 @@ The **Server Name:** value is what you want and can be selected and copied to th
 
 Now you can run the command:
 
-> `tf destroy <strong>$/MyProject/Main/Bin</strong> /collection:https://servername:8080/tfs/myproject<br />
-Do you want to destroy $/MyProject/Main/Bin and all of its children? (Yes/No) y<br />
-Destroyed: $/MyProject/Main/Bin;X3601<br />
-Destroyed: $/MyProject/Main/Bin/Native;X3601`
+```batch
+> tf destroy <strong>$/MyProject/Main/Bin</strong> /collection:https://servername:8080/tfs/myproject
+Do you want to destroy $/MyProject/Main/Bin and all of its children? (Yes/No) y
+Destroyed: $/MyProject/Main/Bin;X3601
+Destroyed: $/MyProject/Main/Bin/Native;X3601
+```
 
 Now if you refresh in Solution Explorer, the purged items won't even show up anymore.
