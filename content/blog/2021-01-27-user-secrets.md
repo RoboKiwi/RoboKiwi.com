@@ -10,6 +10,7 @@ tags:
 author: David
 description: Using User Secrets
 url: /blog/2021/01/27/user-secrets/
+guid: "1a8faff4-3845-4681-8b32-526e2de9bacd"
 ---
 ## Local development and user secrets
 
