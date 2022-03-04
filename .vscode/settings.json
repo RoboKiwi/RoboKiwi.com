@@ -1,0 +1,19 @@
+{
+    "markdownlint.config": {
+        "MD028": false,
+        "MD025": {
+            "front_matter_title": ""
+        }
+    },
+    "cSpell.words": [
+        "CERTBOT",
+        "Kubernetes"
+    ],
+    "azureFunctions.deploySubpath": "api/bin/Release/net6.0/publish",
+    "azureFunctions.postDeployTask": "npm install (functions)",
+    "azureFunctions.projectLanguage": "C#",
+    "azureFunctions.projectRuntime": "~4",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.preDeployTask": "publish (functions)",
+    "azureFunctions.projectSubpath": "api"
+}
