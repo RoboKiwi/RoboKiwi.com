@@ -32,3 +32,18 @@ SELECT * FROM SYSMESSAGES WHERE msglangid='1033' ORDER BY error ASC
 
 Under Services, stop the SQLTELEMETRY service  (SQL Server CEIP service (MSSQLSERVER) service) and set it to Disabled.
 
+## Snapshot Isolation
+
+Enable Snapshot Isolation for the database:
+
+```tsql
+ALTER DATABASE [DBNAME] SET ALLOW_SNAPSHOT_ISOLATION ON;
+GO
+```
+
+Enable Read Committed Snapshot isolation level:
+
+```tsql
+ALTER DATABASE [DBNAME] SET READ_COMMITTED_SNAPSHOT ON WITH ROLLBACK IMMEDIATE;
+GO
+```

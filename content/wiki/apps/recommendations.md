@@ -84,6 +84,7 @@ This page contains recommendations for applications and tools, favouring free an
 | Blender                                   |         |         |          |
 | Blackmagic Design DaVinci Resolve         |         |         |          |
 | GIMP                                      |         |         |          |
+| Paint Tool Sai  | | | |
 
 ## General
 

@@ -12,7 +12,7 @@ Global git setting `git config --global core.autocrlf input` or edit `%USERPROFI
 
 ```ini
 [core]
-	autocrlf = input
+    autocrlf = input
 ```
 
 If you want to force LF line endings for other users of your repository, create a `.gitattributes` file in your repository base:
@@ -24,8 +24,8 @@ If you want to force LF line endings for other users of your repository, create 
 As a one-time conversion, you can normalize line endings for files that have already been committed previously:
 
 ```bash
-$ git add --renormalize .
-$ git commit -m "Normalize all the line endings"
+git add --renormalize .
+git commit -m "Normalize all the line endings"
 ```
 
 Optional: Create an `.editorconfig` file:
