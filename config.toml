@@ -81,3 +81,8 @@ url = "https://github.com/davidmoore/"
   expiryDate = ['expiryDate']
   lastmod = [':git', 'lastmod', 'date', 'publishDate']
   publishDate = ['publishDate', 'date']
+
+[module]
+[[module.mounts]]
+  source = 'src/css'
+  target = 'assets/css'

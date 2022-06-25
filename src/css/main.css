@@ -1,9 +1,9 @@
 /*Base Styles*/
-@import "_tachyons";
+@import "_tachyons.css";
 
-@import '_color-scheme';
+@import '_color-scheme.css';
 
-@import "_variables";
+@import "_variables.css";
 
 @import "syntax-light.css";
 @import "syntax-dark.css";

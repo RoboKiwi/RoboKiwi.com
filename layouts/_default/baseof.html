@@ -13,7 +13,7 @@
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
     {{ end -}}    
     {{ $isDev := eq hugo.Environment "development" }}
-    {{ $stylesheet := resources.Get "app.css"  }}
+    {{ $stylesheet := resources.Get "css/main.css" | resources.PostCSS (dict "config" "/src/css/postcss.config.js" "inlineImports" true) }}
     {{ if not $isDev }}
     {{ $stylesheet = $stylesheet | minify | fingerprint }}
     {{ end }}
