@@ -5,17 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <title>{{ block "title" . }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
-    <link rel="preload" href="{{ "fonts/muli-latin-200.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ "fonts/muli-latin-400.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ "fonts/muli-latin-800.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
     <meta name="robots" content="index, follow">
     {{ range .AlternativeOutputFormats -}}
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
     {{ end -}}    
     {{ $isDev := eq hugo.Environment "development" }}
-    {{ $stylesheet := resources.Get "css/main.css" | resources.PostCSS (dict "config" "/src/css/postcss.config.js" "inlineImports" true) }}
+    {{ $stylesheet := resources.Get "css/main.css" | resources.PostCSS (dict "config" "src/css/postcss.config.js") }}
     {{ if not $isDev }}
-    {{ $stylesheet = $stylesheet | minify | fingerprint }}
+    {{ $stylesheet = $stylesheet | fingerprint }}
     {{ end }}
     {{ with $stylesheet }}
       {{ if $isDev }}
