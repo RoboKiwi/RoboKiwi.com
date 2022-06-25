@@ -26,21 +26,22 @@
       {{ $.Scratch.Set "stylesheet" . }}    
     {{end}}
 
-
   {{ block "scripts" . }}
     {{ $scripts := resources.Get "app.js" }}
-    {{ $isDev := eq hugo.Environment "development" }}
-    {{ if not $isDev }}
-      {{ $scripts = $scripts | fingerprint }}
-    {{ end }}
-    {{ with $scripts }}
-      {{ if  $isDev }}
-      <script type="text/javascript" src="{{ .RelPermalink }}" crossorigin="anonymous" defer></script>
-      {{ else }}
-      <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+    {{ if $scripts }}
+      {{ $isDev := eq hugo.Environment "development" }}
+      {{ if not $isDev }}
+        {{ $scripts = $scripts | fingerprint }}
       {{ end }}
-      {{ $.Scratch.Set "scripts" . }}    
-    {{end}}
+      {{ with $scripts }}
+        {{ if  $isDev }}
+        <script type="text/javascript" src="{{ .RelPermalink }}" crossorigin="anonymous" defer></script>
+        {{ else }}
+        <script type="text/javascript" src="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous" defer></script>
+        {{ end }}
+        {{ $.Scratch.Set "scripts" . }}    
+      {{end}}
+    {{ end }}
   {{ end }}
 
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
