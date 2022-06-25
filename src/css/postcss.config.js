@@ -1,16 +1,13 @@
 module.exports = {
-    plugins: {
-     'postcss-import': {},
-     'postcss-cssnext': {
-           browsers: ['last 2 versions', '> 5%'],
-           },
-      'cssnano': {
-        discardComments: {
-          removeAll: true
-        },
-        minifyFontValues: false,
-        autoprefixer: false
-      }
-      }
-  };
-  
+  plugins: [
+    require('postcss-import'),
+    require('postcss-cssnext'),
+    require('postcss-custom-media'),
+    // require('cssnano')({
+    //   //preset: 'default',
+    //   discardComments: {removeAll: true},
+    //   minifyFontValues: false,
+    //   autoprefixer: false
+    // })
+  ]
+}
