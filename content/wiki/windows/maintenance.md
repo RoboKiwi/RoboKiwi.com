@@ -5,6 +5,23 @@ toc: true
 guid: "d5403866-28ed-4d37-894e-252e8ecddae0"
 ---
 
+## Rebuild Icon Cache
+
+Open a command prompt:
+
+```cmd
+TaskKill /f /im explorer.exe
+DEL /F "%LocalAppData%\Microsoft\Windows\Explorer\*Cache*.db"
+DEL /F "%LocalAppData%\IconCache.db"
+explorer.exe
+```
+
+Alternatively:
+
+```cmd
+ie4uinit.exe -show
+```
+
 ## Deployment Image Servicing and Management tool (DISM)
 
 DISM can be used to mount and service a Windows image from a .wim file, .vhd file, or a .vhdx file or, in some cases, to update a running operating system.

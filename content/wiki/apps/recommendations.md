@@ -107,7 +107,9 @@ This page contains recommendations for applications and tools, favouring free an
 * Parsec
 * qBitTorrent
 * VLC Player
-* Media Player Classic Home Cinema (MPC-HC)
+
+* [Media Player Classic Home Cinema (MPC-HC)](https://github.com/clsid2/mpc-hc/)
+
 * VisualSVN
 * WiX, Orca
 * Mozilla Thunderbird

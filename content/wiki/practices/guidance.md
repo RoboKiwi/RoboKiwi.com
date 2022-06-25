@@ -17,3 +17,5 @@ guid: "72a5e56c-6cc7-4159-aa9d-8c22cdd003a6"
 * Hand-coded SQL isn't necessarily a bad thing.
 
 * Unit test what's important
+
+* Simple doesn't mean easy, and complex doesn't mean difficult.

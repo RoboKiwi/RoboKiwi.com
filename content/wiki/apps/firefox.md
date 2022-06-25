@@ -7,7 +7,7 @@ guid: "05bb8cd4-7b7e-4842-be30-e284ec78aca7"
 
 Enable user styles by going to `about:config` and finding the `toolkit.legacyUserProfileCustomizations.stylesheets` setting, and toggling it to `true`.
 
-Open up the Troubleshooting page to find your user profile location (hit `ALT` > `Help` > `Troubleshooting Information`, or `Hamburger Menu` > `Help` > `Troubleshooting Information`).
+Open up the Troubleshooting page to find your user profile location (hit `ALT` > `Help` > `More Troubleshooting Information`, or `Hamburger Menu` > `Help` > `More troubleshooting information`).
 
 Find the `Profile Folder` setting and click `Open Folder`
 

@@ -109,6 +109,33 @@ git push origin --tags
 git fetch <upstream> <branch>:<branch>
 ```
 
+## Fetching submodules
+
+```bash
+git submodule init
+git submodule update
+```
+
+## Ownership
+
+You might get this warning from git, and the Git panel in Visual Studio may not show that you're in a Git repository:
+
+```bash
+fatal: unsafe repository ('C:/path/to/repo' is owned by someone else)
+```
+
+This could happen if the repository was checked out by a different user on your machine. You can take ownership (from an elevated Administrator terminal)
+
+```cmd
+takeown /R /F 'C:/path/to/repo'
+```
+
+Alternatively, you can trust the repo:
+
+```bash
+git config --global --add safe.directory C:/path/to/repo
+```
+
 ## Git policies
 
 * [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/)

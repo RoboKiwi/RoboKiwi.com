@@ -4,13 +4,13 @@ description: FFMpeg tips and tricks
 guid: "119aa225-ea06-4f5b-b672-52c6acde890c"
 ---
 
-# Convert format
+## Convert format
 
 To do a basic, automatic conversion, just specify the input file, and set a different extension on the output and FFMpeg will usually do the rest:
 
 `ffmpeg -i input.opus output.ogg`
 
-# Trimming & Slicing
+## Trimming & Slicing
 
 When exporting portions of a file, unless you're changing codec, you should use `copy` for the audio and video codecs.
 
@@ -21,7 +21,7 @@ e.g. to skip to 10.5 seconds in, and take the next 10 seconds and output to trim
 
 `ffmpeg -i source.mp4 -acodec copy -vcodec copy -ss 00:00:10 -t 10 trimmed.mp4`
 
-# Stripping audio, video or subtitles
+## Stripping audio, video or subtitles
 
 * `-an` No audio
 * `-sn` No subtitles
