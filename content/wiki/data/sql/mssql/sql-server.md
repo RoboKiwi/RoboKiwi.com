@@ -11,10 +11,15 @@ guid: "bf689207-96bf-41dd-93c8-5a262d79f40e"
 
 ## MSSQL on Docker
 
+This will start a container called `mssql`, on the default port of `1433` while limiting it to 8GB RAM and setting a password for `sa`.
+
 ```bash
-docker pull mcr.microsoft.com/mssql/server
-docker run --name mssql -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=<password>' -p 1433:1433 -d mcr.microsoft.com/mssql/server
+docker run --name mssql -m 8G -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=<password>' -p 1433:1433 -d mcr.microsoft.com/mssql/server
 ```
+
+> Note you have to accept the EULA by passing `'ACCEPT_EULA=Y'` or the container won't start
+
+> The container will also shutdown if the sa password you specify doesn't meet the minimum requirements: minimum 8 characters
 
 ## Viewing all SQL Error Codes & Messages
 
