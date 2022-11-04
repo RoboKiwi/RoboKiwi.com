@@ -58,9 +58,9 @@ This page contains recommendations for applications and tools, favouring free an
   * [Facebook Container](https://addons.mozilla.org/en-US/firefox/addon/facebook-container/)
   * [Foxy Gestures](https://addons.mozilla.org/en-US/firefox/addon/foxy-gestures/)
   * [React Developer Tools](https://addons.mozilla.org/en-US/firefox/addon/react-devtools/)
-* YouTube-DL
-  * `choco install youtube-dl`
-  * Extract audio as mp3: `youtube-dl <url> -x --audio-format mp3`
+* ~~YouTube-DL~~ [YT-DLP](https://github.com/yt-dlp/yt-dlp) (Fork of YouTube DL)
+  * `choco install yt-dlp`
+  * Extract audio as mp3: `yt-dlp <url> -x --audio-format mp3`
   * Show available formats: `-F`
   * Download specific format: `-f <formatcode>`
 
