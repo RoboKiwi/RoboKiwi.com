@@ -3,9 +3,6 @@ author: David
 categories:
 - Uncategorized
 date: 2009-02-25T09:17:34Z
-excerpt: |2
-
-  <![CDATA[]]>
 guid: "2614e83a-59a5-49ae-81f3-0cc77897228e"
 id: 94
 tags:
