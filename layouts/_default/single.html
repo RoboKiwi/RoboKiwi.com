@@ -2,19 +2,14 @@
 {{ $currentPage := . }}
 {{ $item := "" }}
 {{ $comments := slice }}
-{{ if .Params.id }}
-  {{ $items := (where $.Site.Data.comments.channel.item "post_id" (string .Params.id)) }}
-  {{ $item = index $items 0 }}
+{{ if .Params.guid }}
+  {{ $item := index $.Site.Data.comments (string .Params.guid) }}
   {{ with $item }}
-    {{ with .comment}}
-        {{ if reflect.IsMap . }}
-          {{ $comments = slice . }}
-        {{ else if reflect.IsSlice . }}
-          {{ $comments = . }}
-        {{ else }}
-          <h1>Comments busted?</h1>
-        {{ end }}
-    {{ end }}
+      {{ if reflect.IsSlice . }}
+        {{ $comments = . }}
+      {{ else }}
+        <h1>Comments busted?</h1>
+      {{ end }}
   {{ end }}
 {{ end }}
   <article class="w-100 ph4 pb5 pb6-ns pt1 pt3-ns">
@@ -44,7 +39,7 @@
             <p class="mt-2 b clear-fix">Contents</p>
             {{ .TableOfContents }}
           {{ end }}
-          
+
           <p class="b">Comments</p>
           <a href="#comments" class="dib f6 pr1 hover-bg-light-gray br-100" title="Comments">
               {{- with $comments -}}
@@ -123,7 +118,7 @@
               <h1>Comments</h1>
             </aside>
             {{ with $comments }}
-              {{ partial "comments.html" (dict "comments" . "depth" 1 "parent" 0) }}
+              {{ partial "comments.html" (dict "comments" . "depth" 1 "parent" nil) }}
             {{ end }}
             {{ if .Site.Params.enableComments }}
             <aside class="pt3 mt2 mid-gray b--mid-gray fn measure nested-links">

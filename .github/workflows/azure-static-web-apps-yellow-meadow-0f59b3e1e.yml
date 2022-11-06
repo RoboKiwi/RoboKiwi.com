@@ -23,8 +23,8 @@ jobs:
       - name: Download comments data
         id: downloadcomments
         run: |
-            wget "${{secrets.COMMENTS_URL}}" -O "${{github.workspace}}/data/comments.xml"
-
+            azcopy copy "${{secrets.COMMENTS_URL}}" "${{github.workspace}}/data/" --recursive
+            
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
