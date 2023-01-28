@@ -43,7 +43,7 @@ jobs:
         id: run-sitegen
         run: |
             dotnet run --project "${{ env.SITE_PATH }}/RoboKiwi.com.csproj" &
-            sleep 5
+            sleep 20
             dotnet sitegen
 
       - name: Build And Deploy
