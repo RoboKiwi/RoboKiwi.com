@@ -14,16 +14,24 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+    env:
+        SITE_PATH: /RoboKiwi.com
+
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
           submodules: true
 
-      - name: Download comments data
-        id: downloadcomments
+      - name: Install SiteGen tool
+        id: setup-sitegen
         run: |
-            wget "${{secrets.COMMENTS_URL}}" -O "${{github.workspace}}/data/comments.xml"
+            dotnet tool install --global SiteGen.Cli --version 0.1.0-alpha
+
+      - name: Launch the dynamic website
+        id: run-dotnet
+        run: |
+            dotnet run "${{ env.SITE_PATH }}"
 
       - name: Build And Deploy
         id: builddeploy
@@ -37,9 +45,10 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/" # App source code path
+          app_location: ${{ env.SITE_PATH }} # App source code path
           api_location: "/api" # Api source code path - optional
-          output_location: "public" # Built app content directory - optional
+          output_location: '/public' # Built app content directory - optional
+          app_build_command: 'dotnet sitegen'
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
