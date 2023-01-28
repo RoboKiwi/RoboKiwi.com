@@ -36,7 +36,7 @@ jobs:
       - name: Launch the dynamic website
         id: run-dotnet
         run: |
-            dotnet run "${{ env.SITE_PATH }}"
+            dotnet run "${{ env.SITE_PATH }}/RoboKiwi.com.csproj"
 
       - name: Build And Deploy
         id: builddeploy
