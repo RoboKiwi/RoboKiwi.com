@@ -32,7 +32,7 @@ jobs:
       - name: Install Pygments
         id: setup-pygments
         run: |
-            pip install pygmentize
+            pip install pygments
 
       #- name: Directory listing
       #  id: dir-listing
