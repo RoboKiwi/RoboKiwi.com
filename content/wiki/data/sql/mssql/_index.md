@@ -1,3 +1,0 @@
----
-title: Microsoft SQL Server
----
