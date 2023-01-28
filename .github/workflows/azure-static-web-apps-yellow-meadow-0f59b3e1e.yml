@@ -41,6 +41,13 @@ jobs:
             sudo apt-get install tree
             tree "${{ env.SITE_PATH }}"
 
+      - name: NPM build
+        id: build-npm
+        run: |
+            cd "${{ env.SITE_PATH }}"
+            npm install
+            npm run build
+            
       - name: Run SiteGen
         id: run-sitegen
         run: |
