@@ -29,6 +29,11 @@ jobs:
             dotnet new tool-manifest
             dotnet tool install --local SiteGen.Cli --version 0.1.0-alpha
 
+      - name: Install Pygments
+        id: setup-pygments
+        run: |
+            pip install pygmentize
+
       #- name: Directory listing
       #  id: dir-listing
       #  run: |
