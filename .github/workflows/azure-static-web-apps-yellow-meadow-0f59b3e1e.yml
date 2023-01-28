@@ -28,6 +28,11 @@ jobs:
         run: |
             dotnet tool install --global SiteGen.Cli --version 0.1.0-alpha
 
+      - name: Directory listing
+        id: dir-listing
+        run: |
+            ls -al "${{ env.SITE_PATH }}"
+
       - name: Launch the dynamic website
         id: run-dotnet
         run: |
