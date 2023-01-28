@@ -12,7 +12,7 @@ on:
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     name: Build and Deploy Job
     env:
         SITE_PATH: ./RoboKiwi.com
@@ -29,16 +29,16 @@ jobs:
             dotnet new tool-manifest
             dotnet tool install --local SiteGen.Cli --version 0.1.0-alpha
 
-      - name: Directory listing
-        id: dir-listing
-        run: |
-            ls -al "${{ env.SITE_PATH }}"
+      #- name: Directory listing
+      #  id: dir-listing
+      #  run: |
+      #      ls -al "${{ env.SITE_PATH }}"
 
       - name: Build site
         id: build-site
         run: |
             dotnet build "${{ env.SITE_PATH }}/RoboKiwi.com.csproj"
-            sudo apt-get install tree
+            #sudo apt-get install tree
             tree "${{ env.SITE_PATH }}"
 
       - name: Run SiteGen
