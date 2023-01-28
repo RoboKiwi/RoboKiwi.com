@@ -34,10 +34,16 @@ jobs:
         run: |
             ls -al "${{ env.SITE_PATH }}"
 
+      - name: Build site
+        id: build-site
+        run: |
+            dotnet build --project "${{ env.SITE_PATH }}/RoboKiwi.com.csproj"
+
       - name: Run SiteGen
         id: run-sitegen
         run: |
             dotnet run --project "${{ env.SITE_PATH }}/RoboKiwi.com.csproj" &
+            sleep 5
             dotnet sitegen
 
       - name: Build And Deploy
