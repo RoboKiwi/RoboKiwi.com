@@ -37,7 +37,7 @@ jobs:
       - name: Build site
         id: build-site
         run: |
-            dotnet build --project "${{ env.SITE_PATH }}/RoboKiwi.com.csproj"
+            dotnet build "${{ env.SITE_PATH }}/RoboKiwi.com.csproj"
 
       - name: Run SiteGen
         id: run-sitegen
