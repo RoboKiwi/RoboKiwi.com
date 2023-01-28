@@ -1,1 +1,0 @@
-<a href="{{ .Destination | safeURL }}"{{ with .Title}} title="{{ . | safeHTML }}"{{ end }}{{ if strings.HasPrefix .Destination "http" }} target="_blank" title="{{.Text | safeHTML}} @ {{ (urls.Parse .Destination).Host }}" {{ end }}>{{ .Text | safeHTML }}</a>
