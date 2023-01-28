@@ -1,0 +1,29 @@
+{
+    "name": "robokiwi.com",
+    "version": "1.0.0",
+    "private": true,
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "webpack --mode=production",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@mermaid-js/mermaid-cli": "^9.1.6",
+        "autoprefixer": "^10.4.12",
+        "css-loader": "^6.7.1",
+        "mini-css-extract-plugin": "^2.6.1",
+        "postcss": "^8.4.16",
+        "postcss-csso": "^6.0.1",
+        "postcss-custom-media": "^8.0.2",
+        "postcss-import": "^15.0.0",
+        "postcss-loader": "^7.0.1",
+        "postcss-nested": "^5.0.6",
+        "postcss-preset-env": "^7.8.2",
+        "style-loader": "^3.3.1",
+        "webpack": "^5.74.0",
+        "webpack-cli": "^4.10.0"
+    }
+}
