@@ -1,8 +1,8 @@
 node_modules/
 public/
-backup/
-assets/
-.hugo_build.lock
 .vs/
+bin/
+obj/
+wwwroot/
 data/comments.xml
 *.user
