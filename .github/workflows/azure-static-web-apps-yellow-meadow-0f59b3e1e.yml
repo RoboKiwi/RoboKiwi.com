@@ -34,14 +34,10 @@ jobs:
         run: |
             ls -al "${{ env.SITE_PATH }}"
 
-      - name: Launch the dynamic website
-        id: run-dotnet
-        run: |
-            dotnet run --project "${{ env.SITE_PATH }}/RoboKiwi.com.csproj" &
-
       - name: Run SiteGen
         id: run-sitegen
         run: |
+            dotnet run --project "${{ env.SITE_PATH }}/RoboKiwi.com.csproj" &
             dotnet sitegen
 
       - name: Build And Deploy
