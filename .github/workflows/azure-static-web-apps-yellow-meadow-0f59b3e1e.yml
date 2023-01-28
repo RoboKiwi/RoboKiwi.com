@@ -38,7 +38,7 @@ jobs:
         id: build-site
         run: |
             dotnet build "${{ env.SITE_PATH }}/RoboKiwi.com.csproj"
-            apt-get tree
+            sudo apt-get install tree
             tree "${{ env.SITE_PATH }}"
 
       - name: Run SiteGen
