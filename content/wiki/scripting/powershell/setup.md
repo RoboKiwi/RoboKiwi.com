@@ -83,23 +83,22 @@ pwsh.exe -noprofile -command "Install-Module PSReadLine -Force -SkipPublisherChe
 * Install [Posh-Git]() for git status indicators
 
 ```powershell
-Install-Module posh-git -Scope CurrentUser -Force
-Install-Module oh-my-posh -Scope CurrentUser -Force
-```
-
-or to update:
-
-```powershell
-Update-Module posh-git
-Update-Module oh-my-posh
+Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'))
 ```
 
 Add to your `$profile`:
 
 ```powershell
-Import-Module posh-git
-Import-Module oh-my-posh
+New-Item -Path $PROFILE -Type File -Force
 Set-PoshPrompt -Theme paradox
+```
+
+List themes with `Get-PoshThemes` or [view online](https://ohmyposh.dev/docs/themes).
+
+Select a theme:
+
+```powershell
+
 ```
 
 > Themes other than Paradox can be seen at https://github.com/JanDeDobbeleer/oh-my-posh#themes
