@@ -1,0 +1,120 @@
+﻿@using RoboKiwi.Views.Shared
+@using SiteGen.Core.Models
+@model SiteGen.Core.Models.SiteNode
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<article class="w-100 ph4 pb5 pb6-ns pt1 pt3-ns">
+    <div class="flex-l">
+
+        <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4">
+            <aside class="fixed-lTK right-0 f6 bl-l w-20 b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height sticky sticky-r">
+                @if (Model.Tree.PreviousSibling != null || Model.Tree.NextSibling != null)
+                {
+                    <div date-pref>
+                        @if (Model.Tree.PreviousSibling != null)
+                        {
+                            <a href="@Model.Tree.PreviousSibling.Url" class="tr fr w-50 dib pa2 f6 pr1 hover-bg-light-gray overflow-hidden" title="@Model.Tree.PreviousSibling.Title">
+                                <component type="typeof(ChevronRight)" render-mode="ServerPrerendered" param-Size="@("30px")" /><br />
+                                <span>@Model.Tree.PreviousSibling.Title</span>
+                            </a>
+                        }
+
+                        @if (Model.Tree.NextSibling != null)
+                        {
+                            <a href="@Model.Tree.NextSibling.Url" class="fl w-50 dib f6 pa2 pl1 hover-bg-light-gray overflow-hidden" title="@Model.Tree.NextSibling.Title">
+                                <component type="typeof(ChevronLeft)" render-mode="ServerPrerendered" param-Size="@("30px")" /><br />
+                                <span>@Model.Tree.NextSibling.Title</span>
+                            </a>
+                        }
+                    </div>
+                }
+                <div class="clear-fix"></div>
+                {{ if not .Params.notoc }}
+                <p class="mt-2 b clear-fix">Contents</p>
+                {{ .TableOfContents }}
+                {{ end }}
+
+                <p class="b">Comments</p>
+                <a href="#comments" class="dib f6 pr1 hover-bg-light-gray br-100" title="Comments">
+                    0 comments
+                </a>
+
+            </aside>
+        </div>
+
+        <div class="order-1 w-60-l ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-copy-seperator nested-blockquote mt0-ns" style="flex-grow:1;">
+
+            <nav class="nested-links">
+                @{ BreadcrumbNav(Model, Model); }
+            </nav>
+
+            @functions {
+
+                public void BreadcrumbNav(SiteNode node, SiteNode currentPage)
+                {
+                    if (node == null) return;
+                    if( node.Tree?.Parent != null && node.Tree?.Parent != ViewBag.Root)
+                    {
+                        BreadcrumbNav(node.Tree.Parent, currentPage);
+                        <span class="mr3">/</span>
+                    }
+                    if( node == currentPage)
+                    {
+                        <span class="gray f4 f5-ns dib mr3 active" title="@(node.Title)">@(node.Title)</span>
+                    }
+                    else
+                    {
+                        <a class="link dim f4 f5-ns dib mr3" href="@node.Url" title="@node.Title">@node.Title</a>       
+                    }
+                }
+            }
+
+            <article class="w-100 nested-copy-line-height nested-links nested-img">
+                <h1 class="primary-color-dark f2">@Model.Title</h1>
+                <div class="mid-gray">
+                    @Html.Raw(Model.HtmlContent)
+                </div>
+            </article>
+
+            <div class="flex flex-wrap">
+                <section class="flex-ns flex-wrap justify-between w-100">
+                @foreach (var child in Model.Tree.Children.Where(x => x.Type == NodeType.Section).OrderByDescending(x => x.Weight))
+                {
+                        <div class="relative flex-auto w-100 w-40-l mr3 mb3 ba br3 b--moon-gray bg-white nested-copy-line-height shadow-4 weight-@(Model.Weight)">
+                            <div class="mb2 pa3 pa4-l gray">
+                                <h1 class="near-black f3">
+                                    <a href="@child.Url" class="link primary-color dim">@child.Title</a>
+                                </h1>
+
+                                <div class="lh-copy links">
+                                    @child.Description         
+                                    <a href="@child.Url" class="f6 mt2 db link primary-color dim">Read More &raquo;</a>
+                                </div>
+                            </div>
+                        </div>
+                }
+                </section>
+            </div>
+
+            <section class="flex-ns flex-wrap justify-between w-100 w-80-nsTK v-top">
+                @foreach(var child in Model.Tree.Children.Where(x => x.Type == NodeType.Page).OrderByDescending(x => x.Weight))
+                {
+                    <div class="relative flex-auto w-100 w-40-l mr3 mb3 bg-white ba b--moon-gray nested-copy-line-height weight-@(Model.Weight)">
+                    <div class="bg-white mb2 pa3 pa4-l gray">
+                        <h1 class="near-black f3">
+                                <a href="@child.Url" class="link primary-color dim">@child.Title</a>
+                        </h1>
+
+                        <div class="lh-copy links">
+                                @child.Description
+                                <a href="@child.Url" class="f6 mt2 db link primary-color dim">Read More &raquo;</a>
+                        </div>
+                    </div>
+                </div>
+                }
+            </section>
+           
+    </div>
+</article>

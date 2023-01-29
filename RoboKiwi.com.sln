@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "api", "api\api.csproj", "{E5560AA9-C8D0-4359-916C-1AFE8BCBBCB1}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoboKiwi.com", "RoboKiwi.com\RoboKiwi.com.csproj", "{73150F80-211F-4CDC-A7E2-AC2916FAB2D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{E5560AA9-C8D0-4359-916C-1AFE8BCBBCB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5560AA9-C8D0-4359-916C-1AFE8BCBBCB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5560AA9-C8D0-4359-916C-1AFE8BCBBCB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73150F80-211F-4CDC-A7E2-AC2916FAB2D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73150F80-211F-4CDC-A7E2-AC2916FAB2D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73150F80-211F-4CDC-A7E2-AC2916FAB2D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73150F80-211F-4CDC-A7E2-AC2916FAB2D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
