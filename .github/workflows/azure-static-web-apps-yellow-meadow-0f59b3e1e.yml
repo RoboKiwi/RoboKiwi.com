@@ -51,9 +51,9 @@ jobs:
       - name: Run SiteGen
         id: run-sitegen
         run: |
+            cd "${{ env.SITE_PATH }}"
             dotnet run --project "${{ env.SITE_PATH }}/RoboKiwi.com.csproj" &
             sleep 20
-            cd "${{ env.SITE_PATH }}"
             dotnet sitegen
 
       - name: Listing
