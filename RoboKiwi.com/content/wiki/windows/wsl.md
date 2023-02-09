@@ -69,3 +69,26 @@ For information on key differences with WSL 2 please visit https://aka.ms/wsl2
 
 Conversion complete.
 ```
+
+### Configure WSL RAM & CPU
+
+It's a good idea to set global limits on WSL memory usage and CPU usage
+
+```powershell
+code ~/.wslconfig
+```
+
+```ini
+[wsl2]
+
+# Limits VM memory to 4 GB
+memory=4GB
+
+# Sets the VM to use two virtual processors
+processors=2
+
+# Limits swap file disk usage to 8GB
+swap=8GB
+```
+
+Save and exit.

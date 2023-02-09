@@ -149,6 +149,29 @@ Install a Distro. Get a list of available options:
 
 Then install from Windows Store or `wsl --install -d <distro>` e.g. `wsl --install -d Ubuntu-20.04`
 
+### Configure WSL
+
+It's a good idea to set global limits on WSL memory usage and CPU usage
+
+```powershell
+code ~/.wslconfig
+```
+
+```ini
+[wsl2]
+
+# Limits VM memory to 4 GB
+memory=4GB
+
+# Sets the VM to use two virtual processors
+processors=2
+
+# Limits swap file disk usage to 8GB
+swap=8GB
+```
+
+Save and exit.
+
 ## Configure Git on WSL
 
 1. `git config --global user.name "Your Name"`
