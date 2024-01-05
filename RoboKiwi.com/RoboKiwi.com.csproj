@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>RoboKiwi</AssemblyName>
@@ -14,9 +14,9 @@
     <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
   </PropertyGroup>
 
-  <ItemGroup>
+<ItemGroup>
     <PackageReference Include="SiteGen.Core" Version="0.1.7-alpha" />
-  </ItemGroup>
+</ItemGroup>
 
 <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
@@ -27,6 +27,7 @@
 
 <ItemGroup>
   <ProjectReference Include="..\..\SiteGen\src\SiteGen.Core\SiteGen.Core.csproj" />
+  <ProjectReference Include="..\..\SiteGen\src\SiteGen.Extensions.Markdown.Prism\SiteGen.Extensions.Markdown.Prism.csproj" />
 </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '' == 'true' and '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
