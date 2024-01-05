@@ -92,8 +92,10 @@ git reset --hard HEAD^
 ## Create a tag
 
 ```bash
-git tag -a v1.5 -m "Tag description"
+git tag -a v1.5 -m "Tag description" -s
 ```
+
+Remove `-s` if you don't want to sign your tag
 
 ## Push tags
 
@@ -101,6 +103,12 @@ When you create a local tag, it isn't pushed by default, so use `--tags`:
 
 ```bash
 git push origin --tags
+```
+
+### Get the "current" tag
+
+```bash
+git describe --tags --abbrev=0
 ```
 
 ## Fetch latest version of branch without checking out
@@ -134,6 +142,20 @@ Alternatively, you can trust the repo:
 
 ```bash
 git config --global --add safe.directory C:/path/to/repo
+```
+
+## Subtrees
+
+Subtrees are an alternative to modules.
+
+```bash
+git subtree add --prefix relative-subtree-path https://github.com/username/repo-name.gif main --squash
+```
+
+Then to update the subtree:
+
+```bash
+git subtree pull --prefix relative-subtree-path https://github.com/username/repo-name.gif main --squash
 ```
 
 ## Git policies

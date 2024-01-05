@@ -127,22 +127,6 @@ table.lntable pre {
   margin: 0;
 }
 
-code:not([data-lang]) {
-  padding: .2em .4em;
-  margin: 0;
-  font-size: 85%;
-  background-color: #ddd;
-  border-radius: 6px;
-}
-
-.chroma code:not([data-lang]) {
-  padding: 0;
-  margin: 0;
-  font-size: 100%;
-  background-color: inherit;
-  border-radius: 0;
-}
-
 blockquote {
   border-left-width: 4px;
   border-left-style: solid;

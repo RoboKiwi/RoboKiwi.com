@@ -3,6 +3,42 @@ title: Setting up PowerShell environment
 guid: "43ed8be2-e1b0-48e8-a7c3-d2b10b4ab779"
 ---
 
+## Windows 11
+
+Windows 11 comes with Windows Terminal pre-installed.
+
+Once you install the latest PowerShell, you will automatically have Cascadia Code Mono and PSReadLine and don't need to do any additional work.
+
+```powershell
+winget install JanDeDobbeleer.OhMyPosh -s winget
+```
+
+Open an Admin powershell and run:
+
+```powershell
+oh-my-posh font install
+```
+
+Choose Cascadia Code and it will download and install CaskaydiaCove NerdFont.
+
+Open Windows Terminal settings
+
+Rendering > Set Use the new text renderer ("AtlasEngine") to On
+Profiles > Defaults > Appearance then Turn on Retro terminal effects and change the Background image and settings if you wish.
+Profiles > Defaults > Appearance set font to CaskaydiaCove NerdFont Mono
+
+For the profiles you don't want, choose `Hide profile from dropdown`.
+
+Open your Powershell profile with `code $profile`
+
+```powershell
+oh-my-posh init pwsh | Invoke-Expression
+```
+
+Restart Windows Terminal, or reload your profile with `. $profile`
+
+`oh-my-posh debug` to view diagnostics of Oh My Posh if you think it or its themes are slowing down your prompt.
+
 ## Terminal: Windows Terminal
 
 [Install from Windows Store](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701) (auto-updating) or:
@@ -81,6 +117,10 @@ pwsh.exe -noprofile -command "Install-Module PSReadLine -Force -SkipPublisherChe
 
 * Install [Oh-My-Posh](https://github.com/JanDeDobbeleer/oh-my-posh) for console theming and coloured indicators
 * Install [Posh-Git]() for git status indicators
+
+```powershell
+winget install JanDeDobbeleer.OhMyPosh -s winget
+```
 
 ```powershell
 Install-Module posh-git -Scope CurrentUser -Force

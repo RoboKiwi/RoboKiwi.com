@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.ConfigureSiteGen();
+builder.Services.ConfigurePrism();
 
 var settings = new SiteGenSettings();
 builder.Configuration.Bind(settings);

@@ -4,6 +4,10 @@ description: FFMpeg tips and tricks
 guid: "119aa225-ea06-4f5b-b672-52c6acde890c"
 ---
 
+## Installation
+
+`winget install --id=Gyan.FFmpeg  -e`
+
 ## Convert format
 
 To do a basic, automatic conversion, just specify the input file, and set a different extension on the output and FFMpeg will usually do the rest:
