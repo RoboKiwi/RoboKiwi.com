@@ -16,6 +16,7 @@
 
 <ItemGroup>
     <PackageReference Include="SiteGen.Core" Version="0.1.7-alpha" />
+    <PackageReference Include="SiteGen.Extensions.Markdown.Prism" Version="0.1.7-alpha" />
 </ItemGroup>
 
 <ItemGroup>
