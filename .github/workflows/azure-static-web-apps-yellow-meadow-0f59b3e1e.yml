@@ -27,7 +27,7 @@ jobs:
         id: setup-sitegen
         run: |
             dotnet new tool-manifest
-            dotnet tool install --local SiteGen.Cli --version 0.1.6-alpha
+            dotnet tool install --local SiteGen.Cli --version 0.1.7-alpha
 
       - name: Install Pygments
         id: setup-pygments
