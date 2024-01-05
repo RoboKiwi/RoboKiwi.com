@@ -44,7 +44,7 @@ jobs:
             npm run build
 
       - name: Install Playwright
-        run: pwsh bin/Debug/net8.0/playwright.ps1 install --with-deps
+        run: pwsh "${{ env.SITE_PATH }}/bin/Debug/net8.0/playwright.ps1" install --with-deps
 
       - name: Run SiteGen
         id: run-sitegen
