@@ -23,11 +23,15 @@ jobs:
           fetch-depth: 0
           submodules: true
 
-      - name: Install SiteGen tool
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Install toolchain
         id: setup-sitegen
         run: |
-            dotnet new tool-manifest
-            dotnet tool install --local SiteGen.Cli --version 0.1.7-alpha
+            dotnet tool restore
 
       - name: Build site
         id: build-site
