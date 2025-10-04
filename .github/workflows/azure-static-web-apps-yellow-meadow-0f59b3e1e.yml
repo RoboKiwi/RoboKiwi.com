@@ -14,17 +14,19 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+    container:
+      image: mcr.microsoft.com/playwright:v1.55.0-noble
+      options: --user 1001
     env:
         SITE_PATH: ./RoboKiwi.com
-
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
           submodules: true
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: '9.0.x'
 
@@ -47,8 +49,10 @@ jobs:
             npm install
             npm run build
 
-      - name: Install Playwright
-        run: pwsh "${{ env.SITE_PATH }}/bin/Release/net9.0/playwright.ps1" install --with-deps
+      - name: Install Playwright dependencies
+        run: |
+          # pwsh "${{ env.SITE_PATH }}/bin/Release/net9.0/playwright.ps1" install --with-deps
+          npm ci
 
       - name: Run SiteGen
         id: run-sitegen
