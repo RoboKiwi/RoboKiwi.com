@@ -32,3 +32,5 @@ Man, have editors and IDEs come a long way; but edit was a great editor for its 
 Edit came along for the ride all the way to Windows 7; but sadly, it doesn’t come with any 64 bit OSes.
 
 RIP, old friend.
+
+> UPDATE: Amazingly, Microsoft has brought back MS-DOS Editor. It's an Open Source application written in Rust, now known simply as Edit and [available on GitHub](github.com/microsoft/edit).

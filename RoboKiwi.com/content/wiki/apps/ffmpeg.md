@@ -35,3 +35,7 @@ To take a slice with a beginning time of 10 secs and an ending time of 30 secs i
 * `-an` No audio
 * `-sn` No subtitles
 * `-vn` No video
+
+## Trim and burn in subtitles
+
+`ffmpeg -i source.mkv -ss 00:00:00 -t 90 -vf subtitles=source.mkv trimmed.mp4`

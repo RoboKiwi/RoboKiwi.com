@@ -12,35 +12,35 @@ guid: "8c7d9ba5-3073-421d-8ec1-9019f3dd6426"
 
 ## Essentials
 
-* Download and install Firefox, logging in to sync
-* Voidtools Everything
-* Download and install KeePassXC
-* 7-Zip
+- Install WinGet
+- Download and install Firefox, logging in to sync
+- Voidtools Everything
+- Download and install KeePassXC
+- 7-Zip
+
+- Sysinternals: `winget install "Sysinternals Suite"`
 
 ## Management & Scripting
 
 * Install latest PowerShell
-* Install latest Cascadia Code
-* Install Chocolatey
-* Install PowerShell modules:
+* Install Oh My Posh
+* Install NerdFont enhancement of Cascadia Code
+
+Admin Powershell:
 
 ```powershell
-Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
-Install-Module posh-git -Scope CurrentUser -Force
-Install-Module oh-my-posh -Scope CurrentUser -Force
+winget install JanDeDobbeleer.OhMyPosh -s winget
+oh-my-posh font install
 ```
 
 * Set your PowerShell profile `notepad $profile`
 
 ```powershell
-if ($host.Name -eq 'ConsoleHost')
-{
-    Import-Module PSReadLine
-}
+# Initialize Oh My Posh
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/jandedobbeleer.omp.json" | Invoke-Expression
 
-Import-Module posh-git
-Import-Module oh-my-posh
-Set-PoshPrompt -Theme paradox
+# Point "code" to VS Code Insiders
+Set-Alias -Name code -Value code-insiders
 
 # dotnet cli parameter completion
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
@@ -60,6 +60,8 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
             [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
         }
 }
+
+
 ```
 
 * In Windows Terminal, go to Settings
@@ -68,12 +70,6 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
   * Go to the Windows PowerShell profile, scroll down in the General tab and toggle to Hide profile from dropdown
 
 ## From Elevated Command prompt
-
-* Install Chocolatey
-
-```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-```
 
 * Disable CAPS LOCK: `reg add 'HKLM\SYSTEM\CurrentControlSet\Control\Keyboard Layout' /f /t REG_BINARY /v 'Scancode Map' /d '00000000000000000200000000003A0000000000'`
 
@@ -89,7 +85,6 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 * Visual Studio 2022
   * Sync with GitHub / Microsoft account
 * JetBrains Resharper Ultimate (including Rider)
-* Install Hugo `choco install hugo`
 * Install Araxis Merge
   * Integrate with git: `code $home/.gitconfig`
 
@@ -190,3 +185,7 @@ Save and exit.
 * `choco install youtube-dl`
 * qBitTorrent
 * Discord
+
+## Utilities
+
+- `winget install --id=Gyan.FFmpeg  -e`
