@@ -36,7 +36,7 @@ jobs:
       - name: Build site
         id: build-site
         run: |
-            dotnet build "${{ env.SITE_PATH }}/RoboKiwi.com.csproj"
+            dotnet build "${{ env.SITE_PATH }}/RoboKiwi.com.csproj" -c Release
             sudo apt-get install tree
             tree "${{ env.SITE_PATH }}"
 
@@ -48,7 +48,7 @@ jobs:
             npm run build
 
       - name: Install Playwright
-        run: pwsh "${{ env.SITE_PATH }}/bin/Debug/net8.0/playwright.ps1" install --with-deps
+        run: pwsh "${{ env.SITE_PATH }}/bin/Release/net9.0/playwright.ps1" install --with-deps
 
       - name: Run SiteGen
         id: run-sitegen
@@ -66,9 +66,6 @@ jobs:
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
-        env:
-          HUGO_VERSION: 0.92.0
-          HUGO_HMAC_SECRET: ${{ secrets.HUGO_HMAC_SECRET }}
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_YELLOW_MEADOW_0F59B3E1E }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
