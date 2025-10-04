@@ -9,7 +9,7 @@
         "CERTBOT",
         "Kubernetes"
     ],
-    "azureFunctions.deploySubpath": "api/bin/Release/net6.0/publish",
+    "azureFunctions.deploySubpath": "api/bin/Release/net9.0/publish",
     "azureFunctions.postDeployTask": "npm install (functions)",
     "azureFunctions.projectLanguage": "C#",
     "azureFunctions.projectRuntime": "~4",
