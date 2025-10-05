@@ -19,6 +19,7 @@ jobs:
       options: --user 1001
     env:
         SITE_PATH: ./RoboKiwi.com
+        DOTNET_INSTALL_DIR: "./.dotnet"
     steps:
       - uses: actions/checkout@v5
         with:
