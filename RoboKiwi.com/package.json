@@ -11,7 +11,7 @@
     "author": "",
     "license": "MIT",
     "devDependencies": {
-        "@mermaid-js/mermaid-cli": "^11.12.0",
+        "@mermaid-js/mermaid-cli": "^11.4.0",
         "autoprefixer": "^10.4.21",
         "css-loader": "^7.1.2",
         "mini-css-extract-plugin": "^2.9.4",
