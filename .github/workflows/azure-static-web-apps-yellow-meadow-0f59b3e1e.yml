@@ -12,14 +12,10 @@ on:
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     name: Build and Deploy Job
-    container:
-      image: mcr.microsoft.com/playwright:v1.55.0-noble
-      options: --user 1001
     env:
         SITE_PATH: ./RoboKiwi.com
-        DOTNET_INSTALL_DIR: "./.dotnet"
     steps:
       - uses: actions/checkout@v5
         with:
@@ -52,8 +48,8 @@ jobs:
 
       - name: Install Playwright dependencies
         run: |
-          # pwsh "${{ env.SITE_PATH }}/bin/Release/net9.0/playwright.ps1" install --with-deps
-          npm ci
+          pwsh "${{ env.SITE_PATH }}/bin/Release/net9.0/playwright.ps1" install --with-deps
+          #npm ci
 
       - name: Run SiteGen
         id: run-sitegen
