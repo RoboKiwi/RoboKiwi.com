@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/common/">
+    <File Path=".config/dotnet-tools.json" />
+  </Folder>
   <Project Path="../SiteGen/src/SiteGen.Cli/SiteGen.Cli.csproj" />
   <Project Path="../SiteGen/src/SiteGen.Core/SiteGen.Core.csproj" />
   <Project Path="../SiteGen/src/SiteGen.Extensions.Markdown.Monaco/SiteGen.Extensions.Markdown.Monaco.csproj" />

@@ -1,5 +1,33 @@
 # CodeQL
 
+## Overview
+
+CodeQL is a static code analysis tool.
+
+Developed by Semmle and acquired by GitHub in 2019
+Based on research from Oxford University.
+
+CodeQL uses data flow analysis and taint analysis to find:
+
+- Code errors
+- Check code quality
+- Identify vulnerabilities.
+
+CodeQL generates a database from the source code, which can be queried using a query DSL called QL.
+
+## Language Support
+
+- C/C++
+- C#
+- Go
+- Java
+- JavaScript
+- Kotlin
+- Python
+- Ruby
+- Swift
+- TypeScript
+
 ## Suppressions
 
 Could implement suppression of CodeQL queries, by following the same options and strategies in .NET:
