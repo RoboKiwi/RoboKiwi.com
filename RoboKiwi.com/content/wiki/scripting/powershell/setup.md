@@ -176,6 +176,49 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 }
 ```
 
+## OpenSSH
+
+Close any existing SSH sessions, otherwise you may have to restart.
+Open an elevated terminal.
+
+```powershell
+Remove-WindowsCapability -Online -Name "OpenSSH.Client~~~~0.0.1.0"
+
+Path          :
+Online        : True
+RestartNeeded : False
+```
+Take note if RestartNeeded is True.
+
+```
+winget install --id Microsoft.OpenSSH.Beta
+```
+
+Disable and stop the SSH Server service (unless you need it):
+
+Get-Service -Name sshd | Stop-Service
+Get-Service -Name sshd | Set-Service -StartupType Disabled
+
+Update your SSH client config:
+
+code $home/.ssh/config
+
+
+Add your key to the server:
+
+```powershell
+cat ~/.ssh/id_rsa.pub | ssh user@hostname 'cat >> .ssh/authorized_keys'
+```
+
+or
+
+Copy your public key to the clipboard, then you can echo it to the server's authorized keys:
+
+```powershell
+echo "ssh-ed25519 <key> name@domain.com" | ssh david@homeserver 'cat >> ~/.ssh/authorized_keys'
+```
+
+
 ## References
 
 [Tutorial: Set up Powerline in Windows Terminal](https://docs.microsoft.com/windows/terminal/tutorials/powerline-setup)

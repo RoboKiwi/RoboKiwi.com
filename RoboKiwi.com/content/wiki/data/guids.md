@@ -39,3 +39,11 @@ In the same way, if you had an identical application that was installed for two 
 
 * For identifiers that are customer facing, such as order or invoice numbers, create a surrogate key that is shorter and more human-readable
 * You can potentially compress or crunch the GUID if you wish to make shorter URLs
+
+## References
+
+[GUIDs as PRIMARY KEY and/or clustered key](https://www.sqlskills.com/blogs/kimberly/guids-as-primary-keys-andor-the-clustering-key/)
+[The clustered index debate continues](https://www.sqlskills.com/blogs/kimberly/the-clustered-index-debate-continues/)
+[Ever-increasing clustering key - the Clustered Index Debate..........again!](https://www.sqlskills.com/blogs/kimberly/ever-increasing-clustering-key-the-clustered-index-debate-again/)
+[Disk space is cheap - that's not the point!](https://www.sqlskills.com/blogs/kimberly/disk-space-is-cheap/)
+https://stackoverflow.com/questions/11938044/what-are-the-best-practices-for-using-a-guid-as-a-primary-key-specifically-rega/11938495#11938495

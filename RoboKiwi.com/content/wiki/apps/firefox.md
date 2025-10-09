@@ -20,6 +20,10 @@ Restart Firefox
 `browser.tabs.closeTabByDblclick` to `true`
 `browser.tabs.insertAfterCurrent` to `true`
 
+## security
+
+Disable WebRTC to prevent IP leaks: `media.peerconnection.enabled` to `false`
+
 ## Advanced
 
 `about:performance`

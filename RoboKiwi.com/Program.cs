@@ -8,6 +8,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.ConfigureSiteGen();
 builder.Services.ConfigurePrism();
+//builder.Services.ConfigureMonaco();
 
 var settings = new SiteGenSettings();
 builder.Configuration.Bind(settings);

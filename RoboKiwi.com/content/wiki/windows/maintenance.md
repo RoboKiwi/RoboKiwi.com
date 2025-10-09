@@ -22,6 +22,21 @@ Alternatively:
 ie4uinit.exe -show
 ```
 
+## Freeing Space
+
+You can compact / free up WSL virtual hdd with the following:
+
+```powershell
+wsl --manage docker-desktop
+```
+
+```bash
+docker image prune -a # Prune all images that aren't in use by any containers
+docker container prune
+docker volume prune
+```
+
+
 ## Deployment Image Servicing and Management tool (DISM)
 
 DISM can be used to mount and service a Windows image from a .wim file, .vhd file, or a .vhdx file or, in some cases, to update a running operating system.

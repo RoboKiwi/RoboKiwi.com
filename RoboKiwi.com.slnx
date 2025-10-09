@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/common/">
+    <File Path=".config/dotnet-tools.json" />
+  </Folder>
+  <Project Path="../SiteGen/src/SiteGen.Cli/SiteGen.Cli.csproj" />
+  <Project Path="../SiteGen/src/SiteGen.Core/SiteGen.Core.csproj" />
+  <Project Path="../SiteGen/src/SiteGen.Extensions.Markdown.Monaco/SiteGen.Extensions.Markdown.Monaco.csproj" />
+  <Project Path="../SiteGen/src/SiteGen.Extensions.Markdown.Prism/SiteGen.Extensions.Markdown.Prism.csproj" />
+  <Project Path="../SiteGen/tests/SiteGen.Tests/SiteGen.Tests.csproj" />
+  <Project Path="api/api.csproj" />
+  <Project Path="RoboKiwi.com/RoboKiwi.com.csproj" />
+</Solution>

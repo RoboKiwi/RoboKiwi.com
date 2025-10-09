@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Company Condition="'$(Company)' == ''">Robo Kiwi</Company>
+    <Copyright Condition="'$(Copyright)' == ''">%A9 $(Company) $([System.DateTime]::Now.ToString(yyyy))</Copyright>
+    <Product Condition="'$(Product)' == ''">SiteGen</Product>
+  </PropertyGroup>
+</Project>

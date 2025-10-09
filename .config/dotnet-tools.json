@@ -1,0 +1,13 @@
+{
+    "version": 1,
+    "isRoot": true,
+    "tools": {
+        "sitegen.cli": {
+            "version": "0.1.11-alpha2",
+            "allowPrerelease": true,
+            "commands": [
+                "sitegen"
+            ]
+        }
+    }
+}

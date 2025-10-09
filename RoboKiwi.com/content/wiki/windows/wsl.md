@@ -43,6 +43,9 @@ wsl --set-default-version 2
 
 ## Install Ubuntu
 
+wsl --list --online
+wsl --install -d <Distribution Name>
+
 Install [Ubuntu from the Microsoft Store](https://www.microsoft.com/store/productId/9NBLGGH4MSV6)
 
 Launch Ubuntu to finish installing, and create your username and password.
